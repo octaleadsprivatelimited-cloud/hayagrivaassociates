@@ -1,0 +1,323 @@
+import { Helmet } from 'react-helmet-async';
+import { Link } from 'react-router-dom';
+import { motion } from 'framer-motion';
+import { useInView } from 'framer-motion';
+import { useRef } from 'react';
+import Hero from '../components/Hero.jsx';
+// Removed: ClientsStrip, TestimonialsWide, CTASection per request
+
+// Animation variants
+const fadeInUp = {
+  hidden: { opacity: 0, y: 30 },
+  visible: { opacity: 1, y: 0, transition: { duration: 0.6, ease: 'easeOut' } }
+};
+
+const fadeIn = {
+  hidden: { opacity: 0 },
+  visible: { opacity: 1, transition: { duration: 0.6, ease: 'easeOut' } }
+};
+
+const staggerContainer = {
+  hidden: { opacity: 0 },
+  visible: {
+    opacity: 1,
+    transition: {
+      staggerChildren: 0.1,
+      delayChildren: 0.2
+    }
+  }
+};
+
+const itemFadeInUp = {
+  hidden: { opacity: 0, y: 20 },
+  visible: { opacity: 1, y: 0, transition: { duration: 0.5, ease: 'easeOut' } }
+};
+
+// Reusable animated section component
+function AnimatedSection({ children, className = '', variant = fadeInUp }) {
+  const ref = useRef(null);
+  const isInView = useInView(ref, { once: true, margin: '-100px' });
+  
+  return (
+    <motion.div
+      ref={ref}
+      initial="hidden"
+      animate={isInView ? 'visible' : 'hidden'}
+      variants={variant}
+      className={className}
+    >
+      {children}
+    </motion.div>
+  );
+}
+
+// Animated container for staggered children
+function AnimatedContainer({ children, className = '' }) {
+  const ref = useRef(null);
+  const isInView = useInView(ref, { once: true, margin: '-100px' });
+  
+  return (
+    <motion.div
+      ref={ref}
+      initial="hidden"
+      animate={isInView ? 'visible' : 'hidden'}
+      variants={staggerContainer}
+      className={className}
+    >
+      {children}
+    </motion.div>
+  );
+}
+
+export default function Home() {
+  const encodeImagePath = (path) => {
+    // Split path and encode only the filename part
+    const parts = path.split('/');
+    const filename = parts[parts.length - 1];
+    const dir = parts.slice(0, -1).join('/');
+    const encoded = dir + '/' + encodeURIComponent(filename);
+    // Debug for Registration Plans image
+    if (filename.includes('Registration Plans')) {
+      console.log('Encoding image:', filename, '->', encoded);
+    }
+    return encoded;
+  };
+
+  const orgSchema = {
+    '@context': 'https://schema.org',
+    '@type': 'LocalBusiness',
+    name: 'Hayagriva Associates',
+    url: 'https://example.com',
+    telephone: '+91 00000 00000',
+    address: {
+      '@type': 'PostalAddress',
+      streetAddress: 'Your office address',
+      addressLocality: 'City',
+      addressRegion: 'State',
+      postalCode: '000000',
+      addressCountry: 'IN'
+    },
+    areaServed: 'India',
+    sameAs: [
+      'https://www.facebook.com/',
+      'https://www.linkedin.com/',
+      'https://www.instagram.com/'
+    ]
+  };
+
+  return (
+    <div>
+      <Helmet>
+        <title>Professional Land Survey Services in Mancherial | Hayagriva Associates</title>
+        <meta name="description" content="Accurate boundary surveys, DGPS & digital land surveys, DTCP layouts, plot demarcation, construction surveys, and subdivision in Mancherial, Telangana." />
+        <script type="application/ld+json">{JSON.stringify(orgSchema)}</script>
+      </Helmet>
+      <Hero />
+      {/* Services Overview */}
+      <AnimatedSection className="bg-slate-50 py-16 sm:py-20">
+        <div className="container-default">
+          <div className="text-center mb-12">
+            <h2 className="text-3xl sm:text-4xl font-bold text-slate-900">Our Survey Services</h2>
+            <p className="mt-4 text-lg text-slate-600 max-w-2xl mx-auto">We provide comprehensive land surveying services with professional reports and legal compliance.</p>
+          </div>
+          <div className="grid sm:grid-cols-2 gap-4 mb-8 max-w-2xl mx-auto">
+            <div className="rounded-xl border-2 border-brand-primary/20 bg-gradient-to-br from-brand-primary/5 to-white p-5">
+              <div className="text-xs uppercase tracking-wide text-brand-primary font-semibold">Survey Services</div>
+              <div className="mt-2 text-base font-semibold text-slate-900">Professional & Accurate</div>
+            </div>
+            <div className="rounded-xl border-2 border-brand-primary/20 bg-gradient-to-br from-brand-primary/5 to-white p-5">
+              <div className="text-xs uppercase tracking-wide text-brand-primary font-semibold">Company Profile</div>
+              <div className="mt-2 text-base font-semibold text-slate-900">Trusted Surveyors</div>
+            </div>
+          </div>
+          <AnimatedContainer className="grid sm:grid-cols-2 lg:grid-cols-3 gap-6">
+            {[
+              { title: 'DGPS Land Survey', to: '/services/dgps-land-survey', img: '/images/DGPS Land Survey.webp', desc: 'High-precision positioning using DGPS instruments for accurate control and mapping.' },
+              { title: 'Digital Land Survey', to: '/services/digital-land-survey', img: '/images/Digital Land Survey.avif', desc: 'Modern digital workflows with CAD deliverables and GIS-ready data.' },
+              { title: 'DTCP Layouts', to: '/services/dtcp-layouts', img: '/images/DTCP Layouts.webp', desc: 'Layouts prepared as per DTCP norms and approvals.' },
+              { title: 'Enjoyment Survey', to: '/services/enjoyment-survey', img: '/images/Enjoyment Survey.avif', desc: 'Assessment of actual land usage on ground versus records.' },
+              { title: 'Sub-division', to: '/services/sub-division', img: '/images/Sub-division.webp', desc: 'Land subdivision into plots with accurate measurements and markers.' },
+              { title: 'Survey Number Demarcation', to: '/services/survey-number-demarcation', img: '/images/Survey Number Demarcation.jpg', desc: 'On-ground demarcation of survey numbers as per revenue records.' },
+              { title: 'Registration Plans & Location Sketch', to: '/services/registration-plans-location-sketch', img: '/images/Registration Plans & Location Sketch.avif', desc: 'Preparation of registration plans and location sketches for legal processes.' },
+            ].map((s) => (
+              <motion.a key={s.title} variants={itemFadeInUp} href={s.to} className="group border rounded-xl p-0 bg-white hover:shadow-xl hover:-translate-y-1 transition-all duration-300 block overflow-hidden">
+                <img 
+                  src={encodeImagePath(s.img)} 
+                  alt={s.title} 
+                  loading="lazy" 
+                  className="h-40 w-full object-cover bg-slate-100"
+                  onError={(e) => {
+                    console.error('Failed to load image:', s.img);
+                    // Try direct path as fallback
+                    e.target.src = s.img;
+                  }}
+                />
+                <div className="p-6">
+                  <h3 className="font-semibold text-lg text-slate-900 group-hover:text-brand-primary transition-colors">{s.title}</h3>
+                  <p className="text-sm text-slate-600 mt-3 leading-relaxed">{s.desc}</p>
+                  <span className="mt-4 inline-flex items-center text-brand-primary text-sm font-medium group-hover:gap-2 gap-1 transition-all">Read More <span className="group-hover:translate-x-1 transition-transform">→</span></span>
+                </div>
+              </motion.a>
+            ))}
+          </AnimatedContainer>
+          <div className="mt-8 text-center">
+            <a href="/services" className="inline-flex items-center gap-2 px-6 py-3 bg-brand-primary text-white font-semibold rounded-lg hover:bg-brand-primary/90 hover:gap-3 transition-all shadow-lg hover:shadow-xl">
+              View All Services <span>→</span>
+            </a>
+          </div>
+        </div>
+      </AnimatedSection>
+
+      {/* Trusted Partner / Company Intro */}
+      <AnimatedSection className="container-default py-16 sm:py-20">
+        <div className="max-w-5xl mx-auto">
+          <div className="rounded-2xl border-2 border-brand-primary/20 bg-white p-6 sm:p-10 shadow-sm">
+            <div className="flex items-start gap-4">
+              <div className="hidden sm:flex w-12 h-12 rounded-xl bg-brand-primary/10 items-center justify-center text-brand-primary text-2xl">🧭</div>
+              <div className="flex-1">
+                <div className="text-xs uppercase tracking-wider text-brand-primary font-semibold">Company Profile</div>
+                <h2 className="mt-2 text-3xl sm:text-4xl font-bold text-slate-900">Your Trusted Partner in Digital Land Surveying</h2>
+                <p className="mt-2 text-lg text-brand-primary/90 font-semibold">Save your time! Save your money!</p>
+                <p className="mt-4 text-slate-700 leading-relaxed">Hayagriva Associates is comprised of seasoned experts with extensive experience in land surveying. We recognize the importance of time and accuracy, assess client needs thoroughly, and deliver precise reports and guidance efficiently and affordably.</p>
+                <ul className="mt-4 grid sm:grid-cols-2 gap-2 text-slate-700 text-sm">
+                  <li className="flex items-start gap-2"><span className="text-brand-primary">✔</span><span>Accurate, reliable reporting and drawings</span></li>
+                  <li className="flex items-start gap-2"><span className="text-brand-primary">✔</span><span>Fast turnaround with clear communication</span></li>
+                  <li className="flex items-start gap-2"><span className="text-brand-primary">✔</span><span>Modern DGPS and total station workflows</span></li>
+                  <li className="flex items-start gap-2"><span className="text-brand-primary">✔</span><span>Legal-ready documentation as required</span></li>
+                </ul>
+                <div className="mt-6 flex flex-wrap gap-3">
+                  <a href="/contact" className="rounded-lg px-5 py-2.5 bg-brand-primary text-white font-semibold hover:bg-brand-primary/90 transition-colors">Let’s Talk</a>
+                  <a href="/about" className="rounded-lg px-5 py-2.5 border-2 border-brand-primary/30 text-brand-primary font-semibold hover:border-brand-primary/60 transition-colors">Know About Us</a>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </AnimatedSection>
+
+      {/* Removed: Get Updates, Clients strip, Why Choose Us features, Wide Testimonials, and CTA */}
+
+      {/* Completed Projects */}
+      <AnimatedSection className="bg-slate-50 py-16 sm:py-20">
+        <div className="container-default">
+          <div className="text-center mb-12">
+            <h2 className="text-3xl sm:text-4xl font-bold text-slate-900">Completed Projects</h2>
+            <p className="mt-4 text-lg text-slate-600">Our track record speaks for itself</p>
+          </div>
+          <AnimatedContainer className="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-6 gap-4">
+            {[
+              { label: 'All Projects', value: '50+' },
+              { label: 'Boundary Survey', value: '25' },
+              { label: 'Topographic', value: '18' },
+              { label: 'Subdivision', value: '12' },
+              { label: 'Construction', value: '15' },
+              { label: 'Plot Demarcation', value: '20' },
+            ].map((stat) => (
+              <motion.div key={stat.label} variants={itemFadeInUp} className="border-2 border-slate-200 rounded-xl p-6 bg-white hover:border-brand-primary/50 hover:shadow-lg transition-all text-center">
+                <div className="text-3xl sm:text-4xl font-bold text-brand-primary">{stat.value}</div>
+                <div className="text-xs sm:text-sm text-slate-600 mt-2 font-medium">{stat.label}</div>
+              </motion.div>
+            ))}
+          </AnimatedContainer>
+        </div>
+      </AnimatedSection>
+
+      {/* Survey Process */}
+      <AnimatedSection className="bg-white py-16 sm:py-20">
+        <div className="container-default">
+          <div className="text-center mb-12">
+            <h2 className="text-3xl sm:text-4xl font-bold text-slate-900">Survey Process</h2>
+            <p className="mt-4 text-lg text-slate-600">Our systematic approach ensures accurate results</p>
+          </div>
+          <AnimatedContainer className="grid sm:grid-cols-2 lg:grid-cols-4 gap-6">
+            {[
+              { step: '1', title: 'Site Assessment', desc: 'Initial evaluation and planning' },
+              { step: '2', title: 'Field Survey', desc: 'On-site data collection' },
+              { step: '3', title: 'Data Analysis', desc: 'Processing and verification' },
+              { step: '4', title: 'Report Delivery', desc: 'Final documentation' },
+            ].map((p) => (
+              <motion.div key={p.step} variants={itemFadeInUp} className="group border-2 border-slate-200 rounded-2xl p-6 bg-white hover:border-brand-primary/50 hover:shadow-xl transition-all">
+                <span className="w-12 h-12 rounded-full bg-gradient-to-br from-brand-primary to-brand-primary/80 text-white flex items-center justify-center text-lg font-bold mb-4">{p.step}</span>
+                <h3 className="font-bold text-lg text-slate-900 mb-2">{p.title}</h3>
+                <p className="text-sm text-slate-600">{p.desc}</p>
+              </motion.div>
+            ))}
+          </AnimatedContainer>
+        </div>
+      </AnimatedSection>
+
+      {/* Testimonials */}
+      <AnimatedSection className="bg-slate-50 py-16 sm:py-20">
+        <div className="container-default">
+          <div className="text-center mb-12">
+            <h2 className="text-3xl sm:text-4xl font-bold text-slate-900">Client Testimonials</h2>
+            <p className="mt-4 text-lg text-slate-600">What our clients say about us</p>
+          </div>
+          <AnimatedContainer className="grid sm:grid-cols-2 lg:grid-cols-3 gap-6">
+            {[
+              { name: 'Rajesh Kumar', place: 'Mancherial', text: 'Accurate and professional boundary survey. Delivered on time!' },
+              { name: 'Priya Sharma', place: 'Mancherial', text: 'Detailed topographic survey with comprehensive documentation.' },
+              { name: 'Arun R', place: 'Telangana', text: 'Quick turnaround and reliable reports for our project.' },
+            ].map((t, i) => (
+              <motion.div key={i} variants={itemFadeInUp} className="border-2 border-slate-200 rounded-2xl p-6 bg-white hover:border-brand-primary/50 hover:shadow-xl transition-all">
+                <div className="text-4xl text-brand-primary/20 mb-4">"</div>
+                <p className="text-slate-700 leading-relaxed">"{t.text}"</p>
+                <div className="mt-4 pt-4 border-t border-slate-100">
+                  <p className="font-semibold text-slate-900">{t.name}</p>
+                  <p className="text-sm text-slate-500">{t.place}</p>
+                </div>
+              </motion.div>
+            ))}
+          </AnimatedContainer>
+        </div>
+      </AnimatedSection>
+
+      {/* Latest Updates */}
+      <AnimatedSection className="bg-white py-16 sm:py-20">
+        <div className="container-default">
+          <div className="text-center mb-12">
+            <h2 className="text-3xl sm:text-4xl font-bold text-slate-900">Latest Updates</h2>
+            <p className="mt-4 text-lg text-slate-600">Stay informed with industry insights</p>
+          </div>
+          <AnimatedContainer className="grid sm:grid-cols-2 lg:grid-cols-3 gap-6">
+            {[
+              { id: 1, date: '15 Jan', title: 'Importance of Boundary Surveys for Property', img: '/images/Boundary Survey.webp' },
+              { id: 2, date: '10 Jan', title: 'Latest Technology in Land Surveying', img: '/images/Digital Land Survey.avif' },
+              { id: 3, date: '5 Jan', title: 'When Do You Need a Topographic Survey?', img: '/images/Topographic Survey.webp' },
+            ].map((b, i) => (
+              <motion.article key={i} variants={itemFadeInUp} className="group border-2 border-slate-200 rounded-2xl bg-white hover:border-brand-primary/50 hover:shadow-xl transition-all overflow-hidden">
+                <Link to={`/blog/${b.id}`}>
+                  <img src={encodeImagePath(b.img)} alt={b.title} loading="lazy" className="h-40 w-full object-cover" />
+                  <div className="p-6">
+                    <div className="text-xs font-semibold text-brand-primary uppercase tracking-wide">{b.date}</div>
+                    <h3 className="mt-3 font-bold text-lg text-slate-900 group-hover:text-brand-primary transition-colors">{b.title}</h3>
+                    <span className="mt-4 inline-flex items-center gap-2 text-brand-primary text-sm font-medium group-hover:gap-3 transition-all">Read More <span>→</span></span>
+                  </div>
+                </Link>
+              </motion.article>
+            ))}
+          </AnimatedContainer>
+        </div>
+      </AnimatedSection>
+
+      {/* CTA */}
+      <AnimatedSection className="bg-slate-50 py-16 sm:py-20" variant={fadeIn}>
+        <div className="container-default">
+          <div className="rounded-2xl p-8 sm:p-12 bg-gradient-to-r from-brand-primary via-brand-primary to-brand-primary/90 text-white">
+            <div className="flex flex-col sm:flex-row items-start sm:items-center justify-between gap-6">
+              <div className="flex-1">
+                <h3 className="text-2xl sm:text-3xl font-bold mb-3">For Urgent Survey Needs</h3>
+                <p className="text-white/90 text-lg">Call us: +91 9966139588 or request a quote now.</p>
+              </div>
+              <div className="flex gap-3 flex-shrink-0">
+                <a href="tel:+919966139588" className="bg-white/10 hover:bg-white/20 backdrop-blur px-6 py-3 rounded-lg text-white font-semibold transition-colors border border-white/20">Call Now</a>
+                <a href="/contact" className="bg-white text-brand-primary px-6 py-3 rounded-lg font-semibold hover:bg-slate-100 transition-colors">Request Quote</a>
+              </div>
+            </div>
+          </div>
+        </div>
+      </AnimatedSection>
+    </div>
+  );
+}
+

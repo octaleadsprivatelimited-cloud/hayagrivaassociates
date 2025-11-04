@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
+  <url><loc>https://example.com/</loc></url>
+  <url><loc>https://example.com/about</loc></url>
+  <url><loc>https://example.com/services</loc></url>
+  <url><loc>https://example.com/portfolio</loc></url>
+  <url><loc>https://example.com/blog</loc></url>
+  <url><loc>https://example.com/contact</loc></url>
+  <url><loc>https://example.com/pricing</loc></url>
+  <url><loc>https://example.com/testimonials</loc></url>
+  <url><loc>https://example.com/faq</loc></url>
+  <url><loc>https://example.com/careers</loc></url>
+  <url><loc>https://example.com/services/land-surveying</loc></url>
+  <url><loc>https://example.com/services/dgps-land-survey</loc></url>
+  <url><loc>https://example.com/services/digital-land-survey</loc></url>
+  <url><loc>https://example.com/services/dtcp-layouts</loc></url>
+  <url><loc>https://example.com/services/enjoyment-survey</loc></url>
+  <url><loc>https://example.com/services/sub-division</loc></url>
+  <url><loc>https://example.com/services/survey-number-demarcation</loc></url>
+  <url><loc>https://example.com/services/registration-plans-location-sketch</loc></url>
+  <url><loc>https://example.com/land-surveying</loc></url>
+  <url><loc>https://example.com/boundary-surveying</loc></url>
+  <url><loc>https://example.com/plot-demarcation</loc></url>
+  <url><loc>https://example.com/land-title-surveys</loc></url>
+  <url><loc>https://example.com/topographic-surveys</loc></url>
+</urlset>
+
