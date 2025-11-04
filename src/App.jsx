@@ -4,6 +4,7 @@ import { Helmet } from 'react-helmet-async';
 import Header from './components/Header.jsx';
 import Footer from './components/Footer.jsx';
 import FloatingCTA from './components/FloatingCTA.jsx';
+import ScrollRestoration from './components/ScrollRestoration.jsx';
 
 const Home = lazy(() => import('./pages/Home.jsx'));
 const About = lazy(() => import('./pages/About.jsx'));
@@ -25,6 +26,9 @@ const EnjoymentSurvey = lazy(() => import('./pages/services/EnjoymentSurvey.jsx'
 const SubDivision = lazy(() => import('./pages/services/SubDivision.jsx'));
 const SurveyNumberDemarcation = lazy(() => import('./pages/services/SurveyNumberDemarcation.jsx'));
 const RegistrationPlansLocationSketch = lazy(() => import('./pages/services/RegistrationPlansLocationSketch.jsx'));
+const Municipal = lazy(() => import('./pages/services/Municipal.jsx'));
+const Grampanchayat = lazy(() => import('./pages/services/Grampanchayat.jsx'));
+const TSiPASS = lazy(() => import('./pages/services/TSiPASS.jsx'));
 
 // Additional landing pages (5)
 const LandingLandSurveying = lazy(() => import('./pages/landing/LandSurveyingLanding.jsx'));
@@ -41,6 +45,7 @@ export default function App() {
         <meta name="description" content="Land surveying, boundary surveys, plot demarcation, and topographic services by expert surveyors." />
       </Helmet>
       <Header />
+      <ScrollRestoration />
       <main className="flex-1">
         <Suspense fallback={<div className="container-default py-12">Loading...</div>}>
           <Routes>
@@ -63,6 +68,9 @@ export default function App() {
             <Route path="/services/sub-division" element={<SubDivision />} />
             <Route path="/services/survey-number-demarcation" element={<SurveyNumberDemarcation />} />
             <Route path="/services/registration-plans-location-sketch" element={<RegistrationPlansLocationSketch />} />
+            <Route path="/services/municipal" element={<Municipal />} />
+            <Route path="/services/grampanchayat" element={<Grampanchayat />} />
+            <Route path="/services/ts-ipass" element={<TSiPASS />} />
 
             <Route path="/land-surveying" element={<LandingLandSurveying />} />
             <Route path="/boundary-surveying" element={<LandingBoundarySurveying />} />

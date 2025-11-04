@@ -1,41 +1,141 @@
 import { Helmet } from 'react-helmet-async';
+import { motion } from 'framer-motion';
+import { useInView } from 'framer-motion';
+import { useRef } from 'react';
 
-export default function Portfolio() {
+const fadeInUp = {
+  hidden: { opacity: 0, y: 30 },
+  visible: { opacity: 1, y: 0, transition: { duration: 0.6, ease: 'easeOut' } }
+};
+
+const staggerContainer = {
+  hidden: { opacity: 0 },
+  visible: {
+    opacity: 1,
+    transition: { staggerChildren: 0.1, delayChildren: 0.2 }
+  }
+};
+
+const itemFadeInUp = {
+  hidden: { opacity: 0, y: 20 },
+  visible: { opacity: 1, y: 0, transition: { duration: 0.5, ease: 'easeOut' } }
+};
+
+function AnimatedSection({ children, className = '' }) {
+  const ref = useRef(null);
+  const isInView = useInView(ref, { once: true, margin: '-100px' });
   return (
-    <div className="container-default py-12">
-      <Helmet>
-        <title>Portfolio - Hayagriva Associates</title>
-        <meta name="description" content="Past surveying projects: boundary resolution, plot demarcation, topographic mapping, and site surveys." />
-      </Helmet>
-      <h1 className="text-3xl font-semibold">Portfolio</h1>
-      <div className="mt-4 grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-6 gap-4 text-center">
-        {[
-          { label: 'Topographic Survey', value: '18' },
-          { label: 'Boundary Survey', value: '25' },
-          { label: 'Setting-Out Survey', value: '15' },
-          { label: 'Subdivision & Layout', value: '12' },
-          { label: 'Earthwork Volume', value: '9' },
-          { label: 'As-Built Survey', value: '7' },
-        ].map((stat) => (
-          <div key={stat.label} className="border rounded-lg p-4">
-            <div className="text-2xl font-semibold">{stat.value}</div>
-            <div className="text-xs text-slate-600 mt-1">{stat.label} Projects</div>
-          </div>
-        ))}
-      </div>
-
-      <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-6 mt-8">
-        {[1,2,3,4,5,6].map((i) => (
-          <div key={i} className="border rounded overflow-hidden">
-            <img src={`https://picsum.photos/seed/s${i}/600/360.webp`} alt="Project" loading="lazy" className="w-full h-44 object-cover" />
-            <div className="p-4">
-              <h3 className="font-semibold">Survey Project #{i}</h3>
-              <p className="text-sm text-slate-600">Brief description of the surveying work and outcome.</p>
-            </div>
-          </div>
-        ))}
-      </div>
-    </div>
+    <motion.div ref={ref} initial="hidden" animate={isInView ? 'visible' : 'hidden'} variants={fadeInUp} className={className}>
+      {children}
+    </motion.div>
   );
 }
 
+function AnimatedContainer({ children, className = '' }) {
+  const ref = useRef(null);
+  const isInView = useInView(ref, { once: true, margin: '-100px' });
+  return (
+    <motion.div ref={ref} initial="hidden" animate={isInView ? 'visible' : 'hidden'} variants={staggerContainer} className={className}>
+      {children}
+    </motion.div>
+  );
+}
+
+export default function Portfolio() {
+  return (
+    <>
+      <Helmet>
+        <title>Portfolio - Hayagriva Associates | Our Surveying Projects & Case Studies</title>
+        <meta name="description" content="Explore our portfolio of successful surveying projects: boundary resolution, plot demarcation, topographic mapping, DTCP layouts, and site surveys across Telangana." />
+      </Helmet>
+
+      {/* Hero Section */}
+      <section className="relative h-[40vh] sm:h-[45vh] lg:h-[50vh] overflow-hidden bg-gradient-to-br from-brand-primary via-brand-primary/95 to-slate-800">
+        <div className="absolute inset-0 bg-gradient-to-b from-black/60 via-black/50 to-black/70"></div>
+        <div className="absolute inset-0 flex items-center">
+          <div className="container-default w-full">
+            <div className="max-w-4xl mx-auto text-center">
+              <div className="inline-block px-4 py-2 bg-brand-primary/90 backdrop-blur-sm rounded-full text-white text-sm font-semibold mb-6">
+                Our Work
+              </div>
+              <h1 className="text-4xl sm:text-5xl lg:text-6xl font-bold text-white leading-tight mb-6">
+                Our Portfolio
+              </h1>
+              <p className="text-xl sm:text-2xl text-white/95 leading-relaxed max-w-3xl mx-auto">
+                Showcasing successful surveying projects and satisfied clients across Telangana
+              </p>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* Stats Section */}
+      <AnimatedSection className="py-16 sm:py-20 bg-white">
+        <div className="container-default">
+          <div className="text-center mb-12">
+            <h2 className="text-3xl sm:text-4xl font-bold text-slate-900 mb-4">Project Statistics</h2>
+            <p className="text-lg text-slate-600">Our track record of successful projects</p>
+            <div className="w-20 h-1 bg-brand-primary mx-auto mt-4"></div>
+          </div>
+          <AnimatedContainer className="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-6 gap-6">
+            {[
+              { label: 'Topographic Survey', value: '18' },
+              { label: 'Boundary Survey', value: '25' },
+              { label: 'Setting-Out Survey', value: '15' },
+              { label: 'Subdivision & Layout', value: '12' },
+              { label: 'Earthwork Volume', value: '9' },
+              { label: 'As-Built Survey', value: '7' },
+            ].map((stat, i) => (
+              <motion.div key={stat.label} variants={itemFadeInUp} className="border-2 border-slate-200 rounded-xl p-6 bg-white hover:border-brand-primary/50 hover:shadow-lg transition-all text-center">
+                <div className="text-3xl sm:text-4xl font-bold text-brand-primary mb-2">{stat.value}</div>
+                <div className="text-xs sm:text-sm text-slate-600 font-medium">{stat.label}</div>
+              </motion.div>
+            ))}
+          </AnimatedContainer>
+        </div>
+      </AnimatedSection>
+
+      {/* Projects Grid */}
+      <AnimatedSection className="py-16 sm:py-20 bg-slate-50">
+        <div className="container-default">
+          <div className="text-center mb-12">
+            <h2 className="text-3xl sm:text-4xl font-bold text-slate-900 mb-4">Featured Projects</h2>
+            <p className="text-lg text-slate-600">A selection of our completed surveying projects</p>
+            <div className="w-20 h-1 bg-brand-primary mx-auto mt-4"></div>
+          </div>
+          <AnimatedContainer className="grid sm:grid-cols-2 lg:grid-cols-3 gap-6">
+            {[
+              { id: 1, title: 'Residential Layout Survey', category: 'DTCP Layouts', desc: 'Complete DTCP-compliant layout survey for 50-acre residential development project in Mancherial.' },
+              { id: 2, title: 'Industrial Boundary Survey', category: 'Boundary Survey', desc: 'Comprehensive boundary survey and demarcation for industrial site in Telangana.' },
+              { id: 3, title: 'Topographic Mapping Project', category: 'Topographic Survey', desc: 'Detailed topographic survey for infrastructure development project covering 100 acres.' },
+              { id: 4, title: 'Subdivision Planning', category: 'Sub-division', desc: 'Land subdivision survey creating 120 individual plots with complete documentation.' },
+              { id: 5, title: 'Digital Survey Project', category: 'Digital Land Survey', desc: 'Modern digital survey with CAD deliverables for commercial complex development.' },
+              { id: 6, title: 'DGPS Control Network', category: 'DGPS Survey', desc: 'High-precision DGPS control network establishment for large-scale mapping project.' },
+            ].map((project, i) => (
+              <motion.div key={project.id} variants={itemFadeInUp} className="group border-2 border-slate-200 rounded-2xl bg-white hover:border-brand-primary/50 hover:shadow-xl transition-all overflow-hidden">
+                <div className="relative h-48 overflow-hidden bg-gradient-to-br from-brand-primary/20 to-slate-100">
+                  <div className="absolute inset-0 flex items-center justify-center">
+                    <div className="text-6xl text-brand-primary/30 font-bold">{project.id}</div>
+                  </div>
+                  <div className="absolute top-4 left-4">
+                    <span className="px-3 py-1 bg-brand-primary text-white text-xs font-semibold rounded-full">
+                      {project.category}
+                    </span>
+                  </div>
+                </div>
+                <div className="p-6">
+                  <h3 className="font-bold text-lg text-slate-900 group-hover:text-brand-primary transition-colors mb-2">
+                    {project.title}
+                  </h3>
+                  <p className="text-sm text-slate-600 leading-relaxed">
+                    {project.desc}
+                  </p>
+                </div>
+              </motion.div>
+            ))}
+          </AnimatedContainer>
+        </div>
+      </AnimatedSection>
+    </>
+  );
+}
