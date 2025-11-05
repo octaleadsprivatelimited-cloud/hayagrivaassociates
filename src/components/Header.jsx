@@ -38,9 +38,9 @@ export default function Header() {
     <header className="sticky top-0 z-50 bg-white/80 backdrop-blur border-b border-slate-100">
       {/* Top bar */}
       <div className="bg-brand-darker text-white text-xs">
-        <div className="container-default flex items-center justify-between py-1">
-          <div className="flex items-center gap-4">
-            <span className="hidden sm:inline">Opening Hours: Mon - Sat: 9am–6pm • Sun: Closed</span>
+        <div className="container-default flex items-center justify-center sm:justify-between py-1">
+          <div className="hidden sm:flex items-center gap-4">
+            <span>Opening Hours: Mon - Sat: 9am–6pm • Sun: Closed</span>
             <span className="hidden md:inline">Mancherial, Telangana</span>
           </div>
           <a href="tel:+919966139588" className="flex items-center gap-2 hover:opacity-90">

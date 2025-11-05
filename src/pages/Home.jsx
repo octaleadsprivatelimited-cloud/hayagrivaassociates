@@ -140,30 +140,32 @@ export default function Home() {
               { title: 'Survey Number Demarcation', to: '/services/survey-number-demarcation', img: '/images/Survey Number Demarcation.jpg', desc: 'On-ground demarcation of survey numbers as per revenue records.' },
               { title: 'Registration Plans & Location Sketch', to: '/services/registration-plans-location-sketch', img: '/images/Registration Plans & Location Sketch.avif', desc: 'Preparation of registration plans and location sketches for legal processes.' },
             ].map((s) => (
-              <motion.a key={s.title} variants={itemFadeInUp} href={s.to} className="group border rounded-xl p-0 bg-white hover:shadow-xl hover:-translate-y-1 transition-all duration-300 block overflow-hidden">
-                <img 
-                  src={encodeImagePath(s.img)} 
-                  alt={s.title} 
-                  loading="lazy" 
-                  className="h-40 w-full object-cover bg-slate-100"
-                  onError={(e) => {
-                    console.error('Failed to load image:', s.img);
-                    // Try direct path as fallback
-                    e.target.src = s.img;
-                  }}
-                />
-                <div className="p-6">
-                  <h3 className="font-semibold text-lg text-slate-900 group-hover:text-brand-primary transition-colors">{s.title}</h3>
-                  <p className="text-sm text-slate-600 mt-3 leading-relaxed">{s.desc}</p>
-                  <span className="mt-4 inline-flex items-center text-brand-primary text-sm font-medium group-hover:gap-2 gap-1 transition-all">Read More <span className="group-hover:translate-x-1 transition-transform">→</span></span>
-                </div>
-              </motion.a>
+              <motion.div key={s.title} variants={itemFadeInUp}>
+                <Link to={s.to} className="group border rounded-xl p-0 bg-white hover:shadow-xl hover:-translate-y-1 transition-all duration-300 block overflow-hidden">
+                  <img 
+                    src={encodeImagePath(s.img)} 
+                    alt={s.title} 
+                    loading="lazy" 
+                    className="h-40 w-full object-cover bg-slate-100"
+                    onError={(e) => {
+                      console.error('Failed to load image:', s.img);
+                      // Try direct path as fallback
+                      e.target.src = s.img;
+                    }}
+                  />
+                  <div className="p-6">
+                    <h3 className="font-semibold text-lg text-slate-900 group-hover:text-brand-primary transition-colors">{s.title}</h3>
+                    <p className="text-sm text-slate-600 mt-3 leading-relaxed">{s.desc}</p>
+                    <span className="mt-4 inline-flex items-center text-brand-primary text-sm font-medium group-hover:gap-2 gap-1 transition-all">Read More <span className="group-hover:translate-x-1 transition-transform">→</span></span>
+                  </div>
+                </Link>
+              </motion.div>
             ))}
           </AnimatedContainer>
           <div className="mt-8 text-center">
-            <a href="/services" className="inline-flex items-center gap-2 px-6 py-3 bg-brand-primary text-white font-semibold rounded-lg hover:bg-brand-primary/90 hover:gap-3 transition-all shadow-lg hover:shadow-xl">
+            <Link to="/services" className="inline-flex items-center gap-2 px-6 py-3 bg-brand-primary text-white font-semibold rounded-lg hover:bg-brand-primary/90 hover:gap-3 transition-all shadow-lg hover:shadow-xl">
               View All Services <span>→</span>
-            </a>
+            </Link>
           </div>
         </div>
       </AnimatedSection>
@@ -186,8 +188,8 @@ export default function Home() {
                   <li className="flex items-start gap-2"><span className="text-brand-primary">✔</span><span>Legal-ready documentation as required</span></li>
                 </ul>
                 <div className="mt-6 flex flex-wrap gap-3">
-                  <a href="/contact" className="rounded-lg px-5 py-2.5 bg-brand-primary text-white font-semibold hover:bg-brand-primary/90 transition-colors">Let’s Talk</a>
-                  <a href="/about" className="rounded-lg px-5 py-2.5 border-2 border-brand-primary/30 text-brand-primary font-semibold hover:border-brand-primary/60 transition-colors">Know About Us</a>
+                  <Link to="/contact" className="rounded-lg px-5 py-2.5 bg-brand-primary text-white font-semibold hover:bg-brand-primary/90 transition-colors">Let's Talk</Link>
+                  <Link to="/about" className="rounded-lg px-5 py-2.5 border-2 border-brand-primary/30 text-brand-primary font-semibold hover:border-brand-primary/60 transition-colors">Know About Us</Link>
                 </div>
               </div>
             </div>
@@ -311,7 +313,7 @@ export default function Home() {
               </div>
               <div className="flex gap-3 flex-shrink-0">
                 <a href="tel:+919966139588" className="bg-white/10 hover:bg-white/20 backdrop-blur px-6 py-3 rounded-lg text-white font-semibold transition-colors border border-white/20">Call Now</a>
-                <a href="/contact" className="bg-white text-brand-primary px-6 py-3 rounded-lg font-semibold hover:bg-slate-100 transition-colors">Request Quote</a>
+                <Link to="/contact" className="bg-white text-brand-primary px-6 py-3 rounded-lg font-semibold hover:bg-slate-100 transition-colors">Request Quote</Link>
               </div>
             </div>
           </div>
