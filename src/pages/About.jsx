@@ -1,6 +1,15 @@
 import { Helmet } from 'react-helmet-async';
 import { Link } from 'react-router-dom';
 import { motion } from 'framer-motion';
+import {
+  BuildingOffice2Icon,
+  HomeModernIcon,
+  ClipboardDocumentCheckIcon,
+  CheckCircleIcon,
+  SparklesIcon,
+  MapPinIcon,
+  BoltIcon
+} from '@heroicons/react/24/solid';
 import { useInView } from 'framer-motion';
 import { useRef } from 'react';
 
@@ -72,19 +81,19 @@ export default function About() {
   const permissions = [
     {
       title: 'Municipal',
-      icon: '🏛️',
+      icon: BuildingOffice2Icon,
       description: 'Licensed to provide land surveying services for municipal projects and approvals.',
       features: ['Municipal Layout Approvals', 'Building Plan Verification', 'Property Tax Assessment']
     },
     {
       title: 'Grampanchayat',
-      icon: '🏘️',
+      icon: HomeModernIcon,
       description: 'Authorized surveyor for Grampanchayat land records and village-level surveys.',
       features: ['Village Land Surveys', 'Revenue Records', 'Rural Property Documentation']
     },
     {
       title: 'TS iPASS Approvals',
-      icon: '📋',
+      icon: ClipboardDocumentCheckIcon,
       description: 'Certified for TS iPASS (Telangana State Industrial Project Approval and Self Certification System) projects.',
       features: ['Industrial Project Surveys', 'Fast Track Approvals', 'Self Certification Support']
     }
@@ -92,32 +101,26 @@ export default function About() {
 
   const whyChooseUs = [
     {
-      icon: '✓',
       title: 'Licensed & Authorized',
       desc: 'Fully licensed with Municipal, Grampanchayat, and TS iPASS approvals for comprehensive coverage.'
     },
     {
-      icon: '✓',
       title: 'Experienced Team',
       desc: 'Seasoned experts with extensive experience in land surveying and boundary demarcation.'
     },
     {
-      icon: '✓',
       title: 'Advanced Technology',
       desc: 'State-of-the-art DGPS and digital surveying equipment for precise measurements.'
     },
     {
-      icon: '✓',
       title: 'Time & Cost Efficient',
       desc: 'We recognize the importance of time and accuracy, delivering precise reports efficiently.'
     },
     {
-      icon: '✓',
       title: 'Legal Compliance',
       desc: 'All surveys comply with DTCP norms, revenue records, and legal requirements.'
     },
     {
-      icon: '✓',
       title: 'Complete Documentation',
       desc: 'Comprehensive reports, CAD drawings, and GIS-ready data for all your needs.'
     }
@@ -157,8 +160,8 @@ export default function About() {
             <AnimatedContainer className="space-y-6">
               <motion.div variants={itemFadeInUp} className="bg-gradient-to-br from-brand-primary/5 to-white rounded-xl p-6 border-2 border-brand-primary/20 hover:border-brand-primary/40 transition-all">
                 <div className="flex items-start gap-4">
-                  <div className="flex-shrink-0 w-12 h-12 rounded-lg bg-brand-primary text-white flex items-center justify-center font-bold text-xl">
-                    🎯
+                  <div className="flex-shrink-0 w-12 h-12 rounded-lg bg-brand-primary text-white flex items-center justify-center">
+                    <SparklesIcon className="w-7 h-7" />
                   </div>
                   <div>
                     <h3 className="font-bold text-xl text-slate-900 mb-2">Expert Team</h3>
@@ -171,8 +174,8 @@ export default function About() {
               
               <motion.div variants={itemFadeInUp} className="bg-gradient-to-br from-slate-50 to-white rounded-xl p-6 border-2 border-slate-200 hover:border-brand-primary/30 transition-all">
                 <div className="flex items-start gap-4">
-                  <div className="flex-shrink-0 w-12 h-12 rounded-lg bg-slate-800 text-white flex items-center justify-center font-bold text-xl">
-                    📍
+                  <div className="flex-shrink-0 w-12 h-12 rounded-lg bg-slate-800 text-white flex items-center justify-center">
+                    <MapPinIcon className="w-7 h-7" />
                   </div>
                   <div>
                     <h3 className="font-bold text-xl text-slate-900 mb-2">Serving Telangana</h3>
@@ -185,8 +188,8 @@ export default function About() {
               
               <motion.div variants={itemFadeInUp} className="bg-gradient-to-br from-brand-primary/5 to-white rounded-xl p-6 border-2 border-brand-primary/20 hover:border-brand-primary/40 transition-all">
                 <div className="flex items-start gap-4">
-                  <div className="flex-shrink-0 w-12 h-12 rounded-lg bg-brand-primary text-white flex items-center justify-center font-bold text-xl">
-                    ⚡
+                  <div className="flex-shrink-0 w-12 h-12 rounded-lg bg-brand-primary text-white flex items-center justify-center">
+                    <BoltIcon className="w-7 h-7" />
                   </div>
                   <div>
                     <h3 className="font-bold text-xl text-slate-900 mb-2">Technology & Expertise</h3>
@@ -246,21 +249,26 @@ export default function About() {
             <div className="w-20 h-1 bg-brand-primary mx-auto mt-4"></div>
           </div>
           <AnimatedContainer className="grid sm:grid-cols-1 md:grid-cols-3 gap-8 max-w-6xl mx-auto">
-            {permissions.map((perm, i) => (
-              <motion.div key={i} variants={itemFadeInUp} className="bg-white rounded-2xl p-8 shadow-lg hover:shadow-xl transition-all duration-300 border-2 border-transparent hover:border-brand-primary/30">
-                <div className="text-5xl mb-4 text-center">{perm.icon}</div>
-                <h3 className="text-2xl font-bold text-slate-900 mb-3 text-center">{perm.title}</h3>
-                <p className="text-slate-600 mb-6 text-center leading-relaxed">{perm.description}</p>
-                <ul className="space-y-2">
-                  {perm.features.map((feature, j) => (
-                    <li key={j} className="flex items-start gap-2 text-sm text-slate-700">
-                      <span className="text-brand-primary mt-1">✓</span>
-                      <span>{feature}</span>
-                    </li>
-                  ))}
-                </ul>
-              </motion.div>
-            ))}
+            {permissions.map((perm, i) => {
+              const Icon = perm.icon;
+              return (
+                <motion.div key={i} variants={itemFadeInUp} className="bg-white rounded-2xl p-8 shadow-lg hover:shadow-xl transition-all duration-300 border-2 border-transparent hover:border-brand-primary/30">
+                  <div className="mx-auto mb-4 w-14 h-14 rounded-xl bg-brand-primary/10 text-brand-primary flex items-center justify-center">
+                    <Icon className="w-7 h-7" />
+                  </div>
+                  <h3 className="text-2xl font-bold text-slate-900 mb-3 text-center">{perm.title}</h3>
+                  <p className="text-slate-600 mb-6 text-center leading-relaxed">{perm.description}</p>
+                  <ul className="space-y-2">
+                    {perm.features.map((feature, j) => (
+                      <li key={j} className="flex items-start gap-2 text-sm text-slate-700">
+                        <CheckCircleIcon className="w-5 h-5 text-brand-primary mt-0.5" />
+                        <span>{feature}</span>
+                      </li>
+                    ))}
+                  </ul>
+                </motion.div>
+              );
+            })}
           </AnimatedContainer>
         </div>
       </AnimatedSection>
@@ -279,8 +287,8 @@ export default function About() {
             {whyChooseUs.map((item, i) => (
               <motion.div key={i} variants={itemFadeInUp} className="bg-white rounded-xl p-6 border-2 border-slate-200 hover:border-brand-primary/30 hover:shadow-lg transition-all duration-300">
                 <div className="flex items-start gap-4">
-                  <div className="flex-shrink-0 w-10 h-10 rounded-full bg-brand-primary/10 flex items-center justify-center text-brand-primary font-bold text-lg">
-                    {item.icon}
+                  <div className="flex-shrink-0 w-10 h-10 rounded-full bg-brand-primary/10 flex items-center justify-center text-brand-primary">
+                    <CheckCircleIcon className="w-6 h-6" />
                   </div>
                   <div>
                     <h3 className="font-semibold text-lg text-slate-900 mb-2">{item.title}</h3>

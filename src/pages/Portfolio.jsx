@@ -42,6 +42,56 @@ function AnimatedContainer({ children, className = '' }) {
 }
 
 export default function Portfolio() {
+  const projects = [
+    {
+      id: 1,
+      title: 'Residential Layout Survey',
+      category: 'DTCP Layouts',
+      desc: 'Complete DTCP-compliant layout survey for 50-acre residential development project in Mancherial.',
+      img: '/images/DTCP Layouts.webp'
+    },
+    {
+      id: 2,
+      title: 'Industrial Boundary Survey',
+      category: 'Boundary Survey',
+      desc: 'Comprehensive boundary survey and demarcation for industrial site in Telangana.',
+      img: '/images/Boundary Survey.webp'
+    },
+    {
+      id: 3,
+      title: 'Topographic Mapping Project',
+      category: 'Topographic Survey',
+      desc: 'Detailed topographic survey for infrastructure development project covering 100 acres.',
+      img: '/images/Topographic Survey.webp'
+    },
+    {
+      id: 4,
+      title: 'Subdivision Planning',
+      category: 'Sub-division',
+      desc: 'Land subdivision survey creating 120 individual plots with complete documentation.',
+      img: '/images/Sub-division.webp'
+    },
+    {
+      id: 5,
+      title: 'Digital Survey Project',
+      category: 'Digital Land Survey',
+      desc: 'Modern digital survey with CAD deliverables for commercial complex development.',
+      img: '/images/Digital Land Survey.avif'
+    },
+    {
+      id: 6,
+      title: 'DGPS Control Network',
+      category: 'DGPS Survey',
+      desc: 'High-precision DGPS control network establishment for large-scale mapping project.',
+      img: '/images/DGPS Land Survey.webp'
+    }
+  ];
+  const encodeImagePath = (path) => {
+    const parts = path.split('/');
+    const filename = parts[parts.length - 1];
+    const dir = parts.slice(0, -1).join('/');
+    return dir + '/' + encodeURIComponent(filename);
+  };
   return (
     <>
       <Helmet>
@@ -104,19 +154,18 @@ export default function Portfolio() {
             <div className="w-20 h-1 bg-brand-primary mx-auto mt-4"></div>
           </div>
           <AnimatedContainer className="grid sm:grid-cols-2 lg:grid-cols-3 gap-6">
-            {[
-              { id: 1, title: 'Residential Layout Survey', category: 'DTCP Layouts', desc: 'Complete DTCP-compliant layout survey for 50-acre residential development project in Mancherial.' },
-              { id: 2, title: 'Industrial Boundary Survey', category: 'Boundary Survey', desc: 'Comprehensive boundary survey and demarcation for industrial site in Telangana.' },
-              { id: 3, title: 'Topographic Mapping Project', category: 'Topographic Survey', desc: 'Detailed topographic survey for infrastructure development project covering 100 acres.' },
-              { id: 4, title: 'Subdivision Planning', category: 'Sub-division', desc: 'Land subdivision survey creating 120 individual plots with complete documentation.' },
-              { id: 5, title: 'Digital Survey Project', category: 'Digital Land Survey', desc: 'Modern digital survey with CAD deliverables for commercial complex development.' },
-              { id: 6, title: 'DGPS Control Network', category: 'DGPS Survey', desc: 'High-precision DGPS control network establishment for large-scale mapping project.' },
-            ].map((project, i) => (
+            {projects.map((project) => (
               <motion.div key={project.id} variants={itemFadeInUp} className="group border-2 border-slate-200 rounded-2xl bg-white hover:border-brand-primary/50 hover:shadow-xl transition-all overflow-hidden">
-                <div className="relative h-48 overflow-hidden bg-gradient-to-br from-brand-primary/20 to-slate-100">
-                  <div className="absolute inset-0 flex items-center justify-center">
-                    <div className="text-6xl text-brand-primary/30 font-bold">{project.id}</div>
-                  </div>
+                <div className="relative h-48 overflow-hidden bg-slate-100">
+                  <img
+                    src={encodeImagePath(project.img)}
+                    alt={project.title}
+                    loading="lazy"
+                    className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300"
+                    onError={(e) => {
+                      e.currentTarget.src = project.img;
+                    }}
+                  />
                   <div className="absolute top-4 left-4">
                     <span className="px-3 py-1 bg-brand-primary text-white text-xs font-semibold rounded-full">
                       {project.category}

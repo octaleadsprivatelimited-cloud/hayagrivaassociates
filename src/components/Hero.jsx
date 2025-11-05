@@ -13,6 +13,7 @@ export default function Hero() {
   ], []);
 
   const encodeImagePath = (path) => {
+    if (path.startsWith('http')) return path;
     // Split path and encode only the filename part
     const parts = path.split('/');
     const filename = parts[parts.length - 1];
