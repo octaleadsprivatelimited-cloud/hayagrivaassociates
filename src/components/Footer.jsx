@@ -1,4 +1,5 @@
 import { useState } from 'react';
+import { Link } from 'react-router-dom';
 
 function Section({ title, children }) {
   const [open, setOpen] = useState(false);
@@ -43,18 +44,23 @@ export default function Footer() {
         </Section>
         <Section title="Services">
           <ul className="space-y-1">
-            <li><a href="/services/land-surveying" className="hover:underline">Land Surveying</a></li>
-            <li><a href="/services/boundary-surveys" className="hover:underline">Boundary Surveys</a></li>
-            <li><a href="/services/plot-demarcation" className="hover:underline">Plot Demarcation</a></li>
-            <li><a href="/services/topographic-surveys" className="hover:underline">Topographic Surveys</a></li>
-            <li><a href="/services/construction-site-surveys" className="hover:underline">Construction Site Surveys</a></li>
+            <li><Link to="/services/dgps-land-survey" className="hover:underline">DGPS Land Survey</Link></li>
+            <li><Link to="/services/digital-land-survey" className="hover:underline">Digital Land Survey</Link></li>
+            <li><Link to="/services/dtcp-layouts" className="hover:underline">DTCP Layouts</Link></li>
+            <li><Link to="/services/enjoyment-survey" className="hover:underline">Enjoyment Survey</Link></li>
+            <li><Link to="/services/sub-division" className="hover:underline">Sub-division</Link></li>
+            <li><Link to="/services/survey-number-demarcation" className="hover:underline">Survey Number Demarcation</Link></li>
+            <li><Link to="/services/registration-plans-location-sketch" className="hover:underline">Registration Plans & Location Sketch</Link></li>
           </ul>
         </Section>
         <Section title="Company">
           <ul className="space-y-1">
-            <li><a href="/about" className="hover:underline">About Us</a></li>
-            <li><a href="/portfolio" className="hover:underline">Portfolio</a></li>
-            <li><a href="/faq" className="hover:underline">FAQ</a></li>
+            <li><Link to="/about" className="hover:underline">About Us</Link></li>
+            <li><Link to="/services" className="hover:underline">Services</Link></li>
+            <li><Link to="/portfolio" className="hover:underline">Portfolio</Link></li>
+            <li><Link to="/blog" className="hover:underline">Blog</Link></li>
+            <li><Link to="/faq" className="hover:underline">FAQ</Link></li>
+            <li><Link to="/contact" className="hover:underline">Contact</Link></li>
           </ul>
         </Section>
       </div>
