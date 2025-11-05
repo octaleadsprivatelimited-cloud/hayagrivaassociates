@@ -3,6 +3,16 @@ import { Link } from 'react-router-dom';
 import { motion } from 'framer-motion';
 import { useInView } from 'framer-motion';
 import { useRef } from 'react';
+import VideoHero from '../../components/VideoHero.jsx';
+import { 
+  RulerIcon, 
+  MapIcon, 
+  MapPinIcon, 
+  DocumentTextIcon,
+  ChartBarIcon,
+  Squares2X2Icon,
+  CheckCircleIcon
+} from '@heroicons/react/24/solid';
 
 const fadeInUp = {
   hidden: { opacity: 0, y: 30 },
@@ -54,25 +64,25 @@ export default function SubDivision() {
 
   const features = [
     {
-      icon: '📏',
+      icon: RulerIcon,
       title: 'Precise Measurements',
       desc: 'Accurate plot sizing and boundary measurements',
       color: 'from-blue-500 to-blue-600'
     },
     {
-      icon: '🗺️',
+      icon: MapIcon,
       title: 'Layout Planning',
       desc: 'Strategic plot layout with optimal utilization',
       color: 'from-purple-500 to-purple-600'
     },
     {
-      icon: '📍',
+      icon: MapPinIcon,
       title: 'On-Ground Marking',
       desc: 'Physical demarcation with pegs and markers',
       color: 'from-green-500 to-green-600'
     },
     {
-      icon: '📄',
+      icon: DocumentTextIcon,
       title: 'Legal Documentation',
       desc: 'Survey plans and documents for registration',
       color: 'from-orange-500 to-orange-600'
@@ -89,11 +99,11 @@ export default function SubDivision() {
   ];
 
   const process = [
-    { step: '1', title: 'Site Survey', desc: 'Comprehensive land survey', icon: '📊' },
-    { step: '2', title: 'Layout Design', desc: 'Plot subdivision planning', icon: '📐' },
-    { step: '3', title: 'Demarcation', desc: 'On-ground marking', icon: '📍' },
-    { step: '4', title: 'Documentation', desc: 'Survey plans and reports', icon: '📄' },
-    { step: '5', title: 'Registration Support', desc: 'Legal documentation assistance', icon: '✅' }
+    { step: '1', title: 'Site Survey', desc: 'Comprehensive land survey', icon: ChartBarIcon },
+    { step: '2', title: 'Layout Design', desc: 'Plot subdivision planning', icon: Squares2X2Icon },
+    { step: '3', title: 'Demarcation', desc: 'On-ground marking', icon: MapPinIcon },
+    { step: '4', title: 'Documentation', desc: 'Survey plans and reports', icon: DocumentTextIcon },
+    { step: '5', title: 'Registration Support', desc: 'Legal documentation assistance', icon: CheckCircleIcon }
   ];
 
   return (
@@ -104,9 +114,7 @@ export default function SubDivision() {
       </Helmet>
 
       {/* Hero Section */}
-      <section className="relative h-[50vh] sm:h-[60vh] lg:h-[70vh] overflow-hidden">
-        <img src={imagePath} alt="Sub-division Survey" className="w-full h-full object-cover" loading="eager" />
-        <div className="absolute inset-0 bg-gradient-to-b from-black/60 via-black/50 to-black/70"></div>
+      <VideoHero>
         <div className="absolute inset-0 flex items-center">
           <div className="container-default w-full">
             <div className="max-w-3xl">
@@ -130,7 +138,7 @@ export default function SubDivision() {
             </div>
           </div>
         </div>
-      </section>
+      </VideoHero>
 
       {/* Overview Section */}
       <AnimatedSection className="py-20 sm:py-24 bg-white">
@@ -184,17 +192,20 @@ export default function SubDivision() {
             <div className="w-24 h-1 bg-brand-primary mx-auto mt-6"></div>
           </div>
           <AnimatedContainer className="grid sm:grid-cols-2 lg:grid-cols-4 gap-8">
-            {features.map((feature, i) => (
+            {features.map((feature, i) => {
+              const IconComponent = feature.icon;
+              return (
               <motion.div key={i} variants={itemFadeInUp} className="group relative">
                 <div className="bg-white rounded-2xl p-8 border-2 border-slate-200 hover:border-brand-primary/50 hover:shadow-2xl transition-all duration-300 h-full">
-                  <div className={`w-16 h-16 rounded-xl bg-gradient-to-br ${feature.color} text-white flex items-center justify-center text-3xl mb-6 shadow-lg group-hover:scale-110 transition-transform`}>
-                    {feature.icon}
+                  <div className={`w-16 h-16 rounded-xl bg-gradient-to-br ${feature.color} text-white flex items-center justify-center mb-6 shadow-lg group-hover:scale-110 transition-transform`}>
+                    <IconComponent className="w-8 h-8" />
                   </div>
                   <h3 className="text-2xl font-bold text-slate-900 mb-3">{feature.title}</h3>
                   <p className="text-slate-600 leading-relaxed">{feature.desc}</p>
                 </div>
               </motion.div>
-            ))}
+              );
+            })}
           </AnimatedContainer>
         </div>
       </AnimatedSection>
@@ -249,7 +260,14 @@ export default function SubDivision() {
                     <div className="w-20 h-20 rounded-full bg-gradient-to-br from-brand-primary to-brand-primary/80 text-white flex items-center justify-center text-3xl font-bold mx-auto mb-6 shadow-lg">
                       {p.step}
                     </div>
-                    <div className="text-4xl mb-4">{p.icon}</div>
+                    <div className="flex justify-center mb-4">
+                      <div className="w-14 h-14 rounded-xl bg-brand-primary/10 text-brand-primary flex items-center justify-center group-hover:bg-brand-primary/20 transition-colors">
+                        {(() => {
+                          const IconComponent = p.icon;
+                          return <IconComponent className="w-7 h-7" />;
+                        })()}
+                      </div>
+                    </div>
                     <h3 className="text-xl font-bold text-slate-900 mb-3">{p.title}</h3>
                     <p className="text-slate-600 leading-relaxed">{p.desc}</p>
                   </div>

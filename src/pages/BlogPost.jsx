@@ -1,5 +1,6 @@
 import { Helmet } from 'react-helmet-async';
 import { Link, useParams } from 'react-router-dom';
+import VideoHero from '../components/VideoHero.jsx';
 import { motion } from 'framer-motion';
 import { useInView } from 'framer-motion';
 import { useRef } from 'react';
@@ -502,9 +503,7 @@ export default function BlogPost() {
       </Helmet>
 
       {/* Hero Section */}
-      <section className="relative h-[60vh] sm:h-[70vh] lg:h-[80vh] overflow-hidden">
-        <img src={encodeImagePath(post.img)} alt={post.title} className="w-full h-full object-cover" loading="eager" />
-        <div className="absolute inset-0 bg-gradient-to-b from-black/70 via-black/60 to-black/80"></div>
+      <VideoHero className="h-[60vh] sm:h-[70vh] lg:h-[80vh]">
         <div className="absolute inset-0 flex items-center">
           <div className="container-default w-full">
             <div className="max-w-4xl">
@@ -537,7 +536,7 @@ export default function BlogPost() {
             </div>
           </div>
         </div>
-      </section>
+      </VideoHero>
 
       {/* Breadcrumb */}
       <AnimatedSection className="py-4 bg-slate-50 border-b border-slate-200">

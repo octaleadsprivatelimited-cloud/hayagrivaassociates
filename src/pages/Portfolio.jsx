@@ -2,6 +2,7 @@ import { Helmet } from 'react-helmet-async';
 import { motion } from 'framer-motion';
 import { useInView } from 'framer-motion';
 import { useRef } from 'react';
+import VideoHero from '../components/VideoHero.jsx';
 
 const fadeInUp = {
   hidden: { opacity: 0, y: 30 },
@@ -100,8 +101,7 @@ export default function Portfolio() {
       </Helmet>
 
       {/* Hero Section */}
-      <section className="relative h-[40vh] sm:h-[45vh] lg:h-[50vh] overflow-hidden bg-gradient-to-br from-brand-primary via-brand-primary/95 to-slate-800">
-        <div className="absolute inset-0 bg-gradient-to-b from-black/60 via-black/50 to-black/70"></div>
+      <VideoHero className="h-[40vh] sm:h-[45vh] lg:h-[50vh]">
         <div className="absolute inset-0 flex items-center">
           <div className="container-default w-full">
             <div className="max-w-4xl mx-auto text-center">
@@ -117,7 +117,7 @@ export default function Portfolio() {
             </div>
           </div>
         </div>
-      </section>
+      </VideoHero>
 
       {/* Stats Section */}
       <AnimatedSection className="py-16 sm:py-20 bg-white">

@@ -1,5 +1,6 @@
 import { Helmet } from 'react-helmet-async';
 import { Link } from 'react-router-dom';
+import VideoHero from '../components/VideoHero.jsx';
 
 export default function Services() {
   const encodeImagePath = (path) => {
@@ -14,7 +15,7 @@ export default function Services() {
     return encoded;
   };
 
-  const services = [
+  const landSurveyServices = [
     { 
       to: '/services/dgps-land-survey', 
       title: 'DGPS Land Survey', 
@@ -59,6 +60,59 @@ export default function Services() {
     },
   ];
 
+  const permissionsServices = [
+    { 
+      to: '/services/municipal-grampanchayat', 
+      title: 'Municipal & Grampanchayat Building Permission', 
+      img: '/images/service-1.jpeg',
+      desc: 'Complete assistance for obtaining building permissions from Municipal and Grampanchayat authorities.'
+    },
+    { 
+      to: '/services/ts-ipass', 
+      title: 'TS iPASS Approvals', 
+      img: '/images/service-2.jpeg',
+      desc: 'Streamlined approval process through Telangana Industrial Policy Approval System.'
+    },
+  ];
+
+  const designServices = [
+    { 
+      to: '/services/vastu-plans', 
+      title: 'Vastu Plans / Working Plans', 
+      img: '/images/service-3.jpeg',
+      desc: 'Architectural plans designed according to Vastu principles and working drawings for construction.'
+    },
+    { 
+      to: '/services/building-elevation', 
+      title: 'Building Elevation Designs', 
+      img: '/images/service-4.jpeg',
+      desc: 'Professional elevation designs that enhance the aesthetic appeal and functionality of buildings.'
+    },
+  ];
+
+  const otherServices = [
+    { 
+      to: '/services/estimation-costing', 
+      title: 'Estimation Costing', 
+      img: '/images/service-5.jpeg',
+      desc: 'Accurate cost estimation and budgeting for construction and development projects.'
+    },
+    { 
+      to: '/services/property-valuations', 
+      title: 'Property Valuations', 
+      img: '/images/DTCP Layouts.webp',
+      desc: 'Professional property valuation services for sale, purchase, and legal purposes.'
+    },
+    { 
+      to: '/services/home-loans', 
+      title: 'Home Loans', 
+      img: '/images/DTCP Layouts.webp',
+      desc: 'Assistance with home loan applications and processing for residential properties.'
+    },
+  ];
+
+  const allServices = [...landSurveyServices, ...permissionsServices, ...designServices, ...otherServices];
+
   return (
     <>
       <Helmet>
@@ -67,19 +121,21 @@ export default function Services() {
       </Helmet>
 
       {/* Hero Section */}
-      <section className="bg-gradient-to-br from-brand-primary via-brand-primary/95 to-slate-800 text-white py-16 sm:py-20">
-        <div className="container-default">
-          <div className="max-w-3xl mx-auto text-center">
-            <h1 className="text-3xl sm:text-4xl lg:text-5xl font-bold leading-tight mb-4">
+      <VideoHero className="h-[50vh] sm:h-[60vh]">
+        <div className="absolute inset-0 flex items-center">
+          <div className="container-default w-full">
+            <div className="max-w-3xl mx-auto text-center">
+            <h1 className="text-3xl sm:text-4xl lg:text-5xl font-bold text-white leading-tight mb-4">
               Our Survey Services
             </h1>
             <p className="text-base sm:text-lg text-white/90 leading-relaxed">
               Comprehensive land surveying solutions with professional reports and legal compliance. 
               We provide accurate, reliable, and efficient surveying services across Telangana.
             </p>
+            </div>
           </div>
         </div>
-      </section>
+      </VideoHero>
 
       {/* Services Grid */}
       <section className="py-16 sm:py-20 bg-white">
@@ -87,46 +143,169 @@ export default function Services() {
           <div className="text-center mb-12">
             <h2 className="text-3xl sm:text-4xl font-bold text-slate-900 mb-4">All Services</h2>
             <p className="text-lg text-slate-600 max-w-2xl mx-auto">
-              Professional land surveying services tailored to your needs
+              Comprehensive land surveying, design, and related services tailored to your needs
             </p>
             <div className="w-20 h-1 bg-brand-primary mx-auto mt-4"></div>
           </div>
           
-          <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-6 max-w-6xl mx-auto">
-            {services.map((service) => (
-              <Link
-                key={service.to}
-                to={service.to}
-                className="group border-2 border-slate-200 rounded-xl p-0 bg-white hover:shadow-xl hover:-translate-y-1 hover:border-brand-primary/50 transition-all duration-300 block overflow-hidden"
-              >
-                <div className="relative h-48 overflow-hidden bg-slate-100">
-                  <img
-                    src={encodeImagePath(service.img)}
-                    alt={service.title}
-                    loading="lazy"
-                    className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500"
-                    onError={(e) => {
-                      console.error('Failed to load image:', service.img);
-                      // Try direct path as fallback
-                      e.target.src = service.img;
-                    }}
-                  />
-                  <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
-                </div>
-                <div className="p-6">
-                  <h3 className="font-semibold text-lg text-slate-900 group-hover:text-brand-primary transition-colors mb-3">
-                    {service.title}
-                  </h3>
-                  <p className="text-sm text-slate-600 leading-relaxed mb-4">
-                    {service.desc}
-                  </p>
-                  <span className="inline-flex items-center text-brand-primary text-sm font-medium group-hover:gap-2 gap-1 transition-all">
-                    Learn More 
-                    <span className="group-hover:translate-x-1 transition-transform">→</span>
-                  </span>
-                </div>
-              </Link>
-            ))}
+          {/* Land Survey Services */}
+          <div className="mb-16">
+            <h3 className="text-2xl font-bold text-slate-900 mb-6">Land Survey Services</h3>
+            <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-6">
+              {landSurveyServices.map((service) => (
+                <Link
+                  key={service.to}
+                  to={service.to}
+                  className="group border-2 border-slate-200 rounded-xl p-0 bg-white hover:shadow-xl hover:-translate-y-1 hover:border-brand-primary/50 transition-all duration-300 block overflow-hidden"
+                >
+                  <div className="relative h-48 overflow-hidden bg-slate-100">
+                    <img
+                      src={encodeImagePath(service.img)}
+                      alt={service.title}
+                      loading="lazy"
+                      className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500"
+                      onError={(e) => {
+                        console.error('Failed to load image:', service.img);
+                        e.target.src = service.img;
+                      }}
+                    />
+                    <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
+                  </div>
+                  <div className="p-6">
+                    <h4 className="font-semibold text-lg text-slate-900 group-hover:text-brand-primary transition-colors mb-3">
+                      {service.title}
+                    </h4>
+                    <p className="text-sm text-slate-600 leading-relaxed mb-4">
+                      {service.desc}
+                    </p>
+                    <span className="inline-flex items-center text-brand-primary text-sm font-medium group-hover:gap-2 gap-1 transition-all">
+                      Learn More 
+                      <span className="group-hover:translate-x-1 transition-transform">→</span>
+                    </span>
+                  </div>
+                </Link>
+              ))}
+            </div>
+          </div>
+
+          {/* Permissions Services */}
+          <div className="mb-16">
+            <h3 className="text-2xl font-bold text-slate-900 mb-6">Permissions & Approvals</h3>
+            <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-6">
+              {permissionsServices.map((service) => (
+                <Link
+                  key={service.to}
+                  to={service.to}
+                  className="group border-2 border-slate-200 rounded-xl p-0 bg-white hover:shadow-xl hover:-translate-y-1 hover:border-brand-primary/50 transition-all duration-300 block overflow-hidden"
+                >
+                  <div className="relative h-48 overflow-hidden bg-slate-100">
+                    <img
+                      src={encodeImagePath(service.img)}
+                      alt={service.title}
+                      loading="lazy"
+                      className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500"
+                      onError={(e) => {
+                        console.error('Failed to load image:', service.img);
+                        e.target.src = service.img;
+                      }}
+                    />
+                    <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
+                  </div>
+                  <div className="p-6">
+                    <h4 className="font-semibold text-lg text-slate-900 group-hover:text-brand-primary transition-colors mb-3">
+                      {service.title}
+                    </h4>
+                    <p className="text-sm text-slate-600 leading-relaxed mb-4">
+                      {service.desc}
+                    </p>
+                    <span className="inline-flex items-center text-brand-primary text-sm font-medium group-hover:gap-2 gap-1 transition-all">
+                      Learn More 
+                      <span className="group-hover:translate-x-1 transition-transform">→</span>
+                    </span>
+                  </div>
+                </Link>
+              ))}
+            </div>
+          </div>
+
+          {/* Design Services */}
+          <div className="mb-16">
+            <h3 className="text-2xl font-bold text-slate-900 mb-6">Design Services</h3>
+            <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-6">
+              {designServices.map((service) => (
+                <Link
+                  key={service.to}
+                  to={service.to}
+                  className="group border-2 border-slate-200 rounded-xl p-0 bg-white hover:shadow-xl hover:-translate-y-1 hover:border-brand-primary/50 transition-all duration-300 block overflow-hidden"
+                >
+                  <div className="relative h-48 overflow-hidden bg-slate-100">
+                    <img
+                      src={encodeImagePath(service.img)}
+                      alt={service.title}
+                      loading="lazy"
+                      className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500"
+                      onError={(e) => {
+                        console.error('Failed to load image:', service.img);
+                        e.target.src = service.img;
+                      }}
+                    />
+                    <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
+                  </div>
+                  <div className="p-6">
+                    <h4 className="font-semibold text-lg text-slate-900 group-hover:text-brand-primary transition-colors mb-3">
+                      {service.title}
+                    </h4>
+                    <p className="text-sm text-slate-600 leading-relaxed mb-4">
+                      {service.desc}
+                    </p>
+                    <span className="inline-flex items-center text-brand-primary text-sm font-medium group-hover:gap-2 gap-1 transition-all">
+                      Learn More 
+                      <span className="group-hover:translate-x-1 transition-transform">→</span>
+                    </span>
+                  </div>
+                </Link>
+              ))}
+            </div>
+          </div>
+
+          {/* Other Services */}
+          <div className="mb-16">
+            <h3 className="text-2xl font-bold text-slate-900 mb-6">Other Services</h3>
+            <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-6">
+              {otherServices.map((service) => (
+                <Link
+                  key={service.to}
+                  to={service.to}
+                  className="group border-2 border-slate-200 rounded-xl p-0 bg-white hover:shadow-xl hover:-translate-y-1 hover:border-brand-primary/50 transition-all duration-300 block overflow-hidden"
+                >
+                  <div className="relative h-48 overflow-hidden bg-slate-100">
+                    <img
+                      src={encodeImagePath(service.img)}
+                      alt={service.title}
+                      loading="lazy"
+                      className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500"
+                      onError={(e) => {
+                        console.error('Failed to load image:', service.img);
+                        e.target.src = service.img;
+                      }}
+                    />
+                    <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
+                  </div>
+                  <div className="p-6">
+                    <h4 className="font-semibold text-lg text-slate-900 group-hover:text-brand-primary transition-colors mb-3">
+                      {service.title}
+                    </h4>
+                    <p className="text-sm text-slate-600 leading-relaxed mb-4">
+                      {service.desc}
+                    </p>
+                    <span className="inline-flex items-center text-brand-primary text-sm font-medium group-hover:gap-2 gap-1 transition-all">
+                      Learn More 
+                      <span className="group-hover:translate-x-1 transition-transform">→</span>
+                    </span>
+                  </div>
+                </Link>
+              ))}
+            </div>
           </div>
         </div>
       </section>

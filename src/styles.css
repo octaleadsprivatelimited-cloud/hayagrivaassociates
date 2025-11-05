@@ -19,12 +19,12 @@
 
 /* Swiper pagination - Green theme */
 .swiper-pagination-bullet {
-  background-color: #023020 !important;
+  background-color: #2c5f2d !important;
   opacity: 0.5;
 }
 
 .swiper-pagination-bullet-active {
-  background-color: #023020 !important;
+  background-color: #2c5f2d !important;
   opacity: 1;
 }
 
@@ -60,5 +60,33 @@
 
 .blog-content strong {
   @apply font-semibold text-slate-900;
+}
+
+/* Animated background gradients */
+@keyframes gradientShift {
+  0%, 100% {
+    background-position: 0% 50%;
+  }
+  50% {
+    background-position: 100% 50%;
+  }
+}
+
+@keyframes shimmer {
+  0% {
+    transform: translateX(-100%);
+  }
+  100% {
+    transform: translateX(100%);
+  }
+}
+
+.animated-gradient {
+  background-size: 200% 200%;
+  animation: gradientShift 10s ease infinite;
+}
+
+.animated-shimmer {
+  animation: shimmer 3s ease-in-out infinite;
 }
 

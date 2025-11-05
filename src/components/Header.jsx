@@ -22,9 +22,16 @@ const services = [
 ];
 
 const permissions = [
-  { to: '/services/municipal', label: 'Municipal' },
-  { to: '/services/grampanchayat', label: 'Grampanchayat' },
+  { to: '/services/municipal-grampanchayat', label: 'Municipal & Grampanchayat Building Permission' },
   { to: '/services/ts-ipass', label: 'TS iPASS Approvals' },
+];
+
+const designAndOtherServices = [
+  { to: '/services/vastu-plans', label: 'Vastu Plans / Working Plans' },
+  { to: '/services/building-elevation', label: 'Building Elevation Designs' },
+  { to: '/services/estimation-costing', label: 'Estimation Costing' },
+  { to: '/services/property-valuations', label: 'Property Valuations' },
+  { to: '/services/home-loans', label: 'Home Loans' },
 ];
 
 export default function Header() {
@@ -33,6 +40,8 @@ export default function Header() {
   const [mobileServicesOpen, setMobileServicesOpen] = useState(false);
   const [permissionsOpen, setPermissionsOpen] = useState(false);
   const [mobilePermissionsOpen, setMobilePermissionsOpen] = useState(false);
+  const [designAndOtherServicesOpen, setDesignAndOtherServicesOpen] = useState(false);
+  const [mobileDesignAndOtherServicesOpen, setMobileDesignAndOtherServicesOpen] = useState(false);
 
   return (
     <header className="sticky top-0 z-50 bg-white/80 backdrop-blur border-b border-slate-100">
@@ -149,7 +158,7 @@ export default function Header() {
                   animate={{ opacity: 1, y: 0 }}
                   exit={{ opacity: 0, y: -10 }}
                   transition={{ duration: 0.2 }}
-                  className="absolute top-full left-0 mt-2 w-64 bg-white rounded-lg shadow-xl border-2 border-slate-200 overflow-hidden"
+                  className="absolute top-full left-0 mt-2 w-80 bg-white rounded-lg shadow-xl border-2 border-slate-200 overflow-hidden"
                 >
                   <div className="py-2">
                     {permissions.map((permission) => (
@@ -160,6 +169,52 @@ export default function Header() {
                         onClick={() => setPermissionsOpen(false)}
                       >
                         {permission.label}
+                      </Link>
+                    ))}
+                  </div>
+                </motion.div>
+              )}
+            </AnimatePresence>
+          </div>
+          
+          {/* Design & Other Services Dropdown */}
+          <div 
+            className="relative"
+            onMouseEnter={() => setDesignAndOtherServicesOpen(true)}
+            onMouseLeave={() => setDesignAndOtherServicesOpen(false)}
+          >
+            <div className="hover:text-brand-primary flex items-center gap-1 cursor-pointer">
+              Design & Other Services
+              <svg 
+                xmlns="http://www.w3.org/2000/svg" 
+                fill="none" 
+                viewBox="0 0 24 24" 
+                strokeWidth={2} 
+                stroke="currentColor" 
+                className={`w-4 h-4 transition-transform ${designAndOtherServicesOpen ? 'rotate-180' : ''}`}
+              >
+                <path strokeLinecap="round" strokeLinejoin="round" d="M19.5 8.25l-7.5 7.5-7.5-7.5" />
+              </svg>
+            </div>
+            
+            <AnimatePresence>
+              {designAndOtherServicesOpen && (
+                <motion.div
+                  initial={{ opacity: 0, y: -10 }}
+                  animate={{ opacity: 1, y: 0 }}
+                  exit={{ opacity: 0, y: -10 }}
+                  transition={{ duration: 0.2 }}
+                  className="absolute top-full left-0 mt-2 w-72 bg-white rounded-lg shadow-xl border-2 border-slate-200 overflow-hidden"
+                >
+                  <div className="py-2">
+                    {designAndOtherServices.map((service) => (
+                      <Link
+                        key={service.to}
+                        to={service.to}
+                        className="block px-4 py-2.5 text-sm text-slate-700 hover:bg-brand-primary/10 hover:text-brand-primary transition-colors"
+                        onClick={() => setDesignAndOtherServicesOpen(false)}
+                      >
+                        {service.label}
                       </Link>
                     ))}
                   </div>
@@ -303,6 +358,53 @@ export default function Header() {
                             className="block py-2 text-sm text-white/80 hover:text-white pl-2"
                           >
                             {permission.label}
+                          </Link>
+                        ))}
+                      </div>
+                    </motion.div>
+                  )}
+                </AnimatePresence>
+              </div>
+              
+              {/* Mobile Design & Other Services Dropdown */}
+              <div>
+                <button
+                  onClick={() => setMobileDesignAndOtherServicesOpen(!mobileDesignAndOtherServicesOpen)}
+                  className="w-full flex items-center justify-between py-2 text-sm text-white"
+                >
+                  <span>Design & Other Services</span>
+                  <svg 
+                    xmlns="http://www.w3.org/2000/svg" 
+                    fill="none" 
+                    viewBox="0 0 24 24" 
+                    strokeWidth={2} 
+                    stroke="currentColor" 
+                    className={`w-4 h-4 transition-transform ${mobileDesignAndOtherServicesOpen ? 'rotate-180' : ''}`}
+                  >
+                    <path strokeLinecap="round" strokeLinejoin="round" d="M19.5 8.25l-7.5 7.5-7.5-7.5" />
+                  </svg>
+                </button>
+                <AnimatePresence>
+                  {mobileDesignAndOtherServicesOpen && (
+                    <motion.div
+                      initial={{ height: 0, opacity: 0 }}
+                      animate={{ height: 'auto', opacity: 1 }}
+                      exit={{ height: 0, opacity: 0 }}
+                      transition={{ duration: 0.2 }}
+                      className="overflow-hidden"
+                    >
+                      <div className="pl-4 pt-2 space-y-1">
+                        {designAndOtherServices.map((service) => (
+                          <Link
+                            key={service.to}
+                            to={service.to}
+                            onClick={() => {
+                              setOpen(false);
+                              setMobileDesignAndOtherServicesOpen(false);
+                            }}
+                            className="block py-2 text-sm text-white/80 hover:text-white pl-2"
+                          >
+                            {service.label}
                           </Link>
                         ))}
                       </div>

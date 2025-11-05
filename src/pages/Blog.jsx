@@ -1,5 +1,6 @@
 import { Helmet } from 'react-helmet-async';
 import { Link } from 'react-router-dom';
+import VideoHero from '../components/VideoHero.jsx';
 
 export default function Blog() {
   const encodeImagePath = (path) => {
@@ -74,19 +75,21 @@ export default function Blog() {
       </Helmet>
 
       {/* Hero Section */}
-      <section className="bg-gradient-to-br from-brand-primary via-brand-primary/95 to-slate-800 text-white py-16 sm:py-20">
-        <div className="container-default">
-          <div className="max-w-3xl mx-auto text-center">
-            <h1 className="text-3xl sm:text-4xl lg:text-5xl font-bold leading-tight mb-4">
+      <VideoHero className="h-[50vh] sm:h-[60vh]">
+        <div className="absolute inset-0 flex items-center">
+          <div className="container-default w-full">
+            <div className="max-w-3xl mx-auto text-center">
+            <h1 className="text-3xl sm:text-4xl lg:text-5xl font-bold text-white leading-tight mb-4">
               Our Blog
             </h1>
             <p className="text-base sm:text-lg text-white/90 leading-relaxed">
               Stay informed with the latest insights on land surveying, property boundaries, 
               legal requirements, and industry best practices.
             </p>
+            </div>
           </div>
         </div>
-      </section>
+      </VideoHero>
 
       {/* Blog Posts Grid */}
       <section className="py-16 sm:py-20 bg-white">

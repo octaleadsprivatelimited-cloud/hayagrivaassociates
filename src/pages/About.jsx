@@ -12,6 +12,7 @@ import {
 } from '@heroicons/react/24/solid';
 import { useInView } from 'framer-motion';
 import { useRef } from 'react';
+import VideoHero from '../components/VideoHero.jsx';
 
 // Animation variants
 const fadeInUp = {
@@ -134,18 +135,20 @@ export default function About() {
       </Helmet>
 
       {/* Hero Section */}
-      <section className="bg-gradient-to-br from-brand-primary via-brand-primary/95 to-slate-800 text-white py-12 sm:py-16">
-        <div className="container-default">
-          <div className="max-w-3xl mx-auto text-center">
-            <h1 className="text-3xl sm:text-4xl lg:text-5xl font-bold leading-tight mb-4">
+      <VideoHero className="h-[40vh] sm:h-[50vh]">
+        <div className="absolute inset-0 flex items-center">
+          <div className="container-default w-full">
+            <div className="max-w-3xl mx-auto text-center">
+            <h1 className="text-3xl sm:text-4xl lg:text-5xl font-bold text-white leading-tight mb-4">
               About Hayagriva Associates
             </h1>
             <p className="text-base sm:text-lg text-white/90 leading-relaxed">
               Your Trusted Partner in Digital Land Surveying. We save your time and money with precise, professional land surveying services backed by official permissions and licenses.
             </p>
+            </div>
           </div>
         </div>
-      </section>
+      </VideoHero>
 
       {/* Company Introduction */}
       <AnimatedSection className="py-16 sm:py-20 bg-white">
@@ -215,11 +218,11 @@ export default function About() {
                   
                   <div className="grid grid-cols-2 gap-4 pt-6 border-t border-slate-200">
                     <div className="text-center">
-                      <div className="text-3xl font-bold text-brand-primary mb-1">500+</div>
+                      <div className="text-3xl font-bold text-brand-primary mb-1">5000+</div>
                       <div className="text-sm text-slate-600">Projects Completed</div>
                     </div>
                     <div className="text-center">
-                      <div className="text-3xl font-bold text-brand-primary mb-1">15+</div>
+                      <div className="text-3xl font-bold text-brand-primary mb-1">10+</div>
                       <div className="text-sm text-slate-600">Years Experience</div>
                     </div>
                   </div>

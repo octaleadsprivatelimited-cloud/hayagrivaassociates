@@ -35,6 +35,7 @@ export default function ContactForm({ compact = false }) {
   };
 
   const services = [
+    // Land Survey Services
     'DGPS Land Survey',
     'Digital Land Survey',
     'DTCP Layouts',
@@ -42,6 +43,16 @@ export default function ContactForm({ compact = false }) {
     'Sub-division',
     'Survey Number Demarcation',
     'Registration Plans & Location Sketch',
+    // Permissions & Approvals
+    'Municipal & Grampanchayat Building Permission',
+    'TS iPASS Approvals',
+    // Design Services
+    'Vastu Plans / Working Plans',
+    'Building Elevation Designs',
+    // Other Services
+    'Estimation Costing',
+    'Property Valuations',
+    'Home Loans',
     'Other'
   ];
 

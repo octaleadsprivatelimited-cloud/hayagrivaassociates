@@ -26,9 +26,13 @@ const EnjoymentSurvey = lazy(() => import('./pages/services/EnjoymentSurvey.jsx'
 const SubDivision = lazy(() => import('./pages/services/SubDivision.jsx'));
 const SurveyNumberDemarcation = lazy(() => import('./pages/services/SurveyNumberDemarcation.jsx'));
 const RegistrationPlansLocationSketch = lazy(() => import('./pages/services/RegistrationPlansLocationSketch.jsx'));
-const Municipal = lazy(() => import('./pages/services/Municipal.jsx'));
-const Grampanchayat = lazy(() => import('./pages/services/Grampanchayat.jsx'));
+const MunicipalGrampanchayat = lazy(() => import('./pages/services/MunicipalGrampanchayat.jsx'));
 const TSiPASS = lazy(() => import('./pages/services/TSiPASS.jsx'));
+const VastuPlans = lazy(() => import('./pages/services/VastuPlans.jsx'));
+const BuildingElevation = lazy(() => import('./pages/services/BuildingElevation.jsx'));
+const EstimationCosting = lazy(() => import('./pages/services/EstimationCosting.jsx'));
+const PropertyValuations = lazy(() => import('./pages/services/PropertyValuations.jsx'));
+const HomeLoans = lazy(() => import('./pages/services/HomeLoans.jsx'));
 
 // Additional landing pages (5)
 const LandingLandSurveying = lazy(() => import('./pages/landing/LandSurveyingLanding.jsx'));
@@ -68,9 +72,13 @@ export default function App() {
             <Route path="/services/sub-division" element={<SubDivision />} />
             <Route path="/services/survey-number-demarcation" element={<SurveyNumberDemarcation />} />
             <Route path="/services/registration-plans-location-sketch" element={<RegistrationPlansLocationSketch />} />
-            <Route path="/services/municipal" element={<Municipal />} />
-            <Route path="/services/grampanchayat" element={<Grampanchayat />} />
+            <Route path="/services/municipal-grampanchayat" element={<MunicipalGrampanchayat />} />
             <Route path="/services/ts-ipass" element={<TSiPASS />} />
+            <Route path="/services/vastu-plans" element={<VastuPlans />} />
+            <Route path="/services/building-elevation" element={<BuildingElevation />} />
+            <Route path="/services/estimation-costing" element={<EstimationCosting />} />
+            <Route path="/services/property-valuations" element={<PropertyValuations />} />
+            <Route path="/services/home-loans" element={<HomeLoans />} />
 
             <Route path="/land-surveying" element={<LandingLandSurveying />} />
             <Route path="/boundary-surveying" element={<LandingBoundarySurveying />} />

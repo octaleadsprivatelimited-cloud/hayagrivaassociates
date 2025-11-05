@@ -15,8 +15,20 @@ function Section({ title, children }) {
 
 export default function Footer() {
   return (
-    <footer className="bg-brand-primary text-white mt-16">
-      <div className="container-default py-12 grid lg:grid-cols-4 gap-8">
+    <footer className="relative text-white mt-16 overflow-hidden">
+      {/* Background Image */}
+      <div 
+        className="absolute inset-0 bg-cover bg-center bg-no-repeat"
+        style={{
+          backgroundImage: 'url(/images/footer-background.jpeg)'
+        }}
+      ></div>
+      
+      {/* Dark overlay for text readability */}
+      <div className="absolute inset-0 bg-gradient-to-b from-black/70 via-black/60 to-black/80"></div>
+      
+      {/* Content */}
+      <div className="container-default py-12 grid lg:grid-cols-4 gap-8 relative z-10">
         <div>
           <div className="flex items-center gap-2 text-lg font-semibold">
             <span className="w-8 h-8 rounded bg-white inline-block" />
@@ -46,7 +58,7 @@ export default function Footer() {
           </ul>
         </Section>
       </div>
-      <div className="border-t border-white/20">
+      <div className="border-t border-white/20 relative z-10">
         <div className="container-default py-4 text-xs flex flex-col sm:flex-row items-center justify-between gap-2 text-white/80">
           <span>© {new Date().getFullYear()} Hayagriva Associates. All rights reserved.</span>
           <span>Designed and developed by <a href="https://www.octaleads.com/" className="underline hover:text-white">Octaleads Pvt Ltd.</a></span>

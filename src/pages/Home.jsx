@@ -3,6 +3,7 @@ import { Link } from 'react-router-dom';
 import { motion } from 'framer-motion';
 import { useInView } from 'framer-motion';
 import { useRef } from 'react';
+import { MapPinIcon, ChartBarIcon, ClipboardDocumentCheckIcon } from '@heroicons/react/24/outline';
 import Hero from '../components/Hero.jsx';
 // Removed: ClientsStrip, TestimonialsWide, CTASection per request
 
@@ -120,51 +121,62 @@ export default function Home() {
             <h2 className="text-3xl sm:text-4xl font-bold text-slate-900">Our Survey Services</h2>
             <p className="mt-4 text-lg text-slate-600 max-w-2xl mx-auto">We provide comprehensive land surveying services with professional reports and legal compliance.</p>
           </div>
-          <div className="grid sm:grid-cols-2 gap-4 mb-8 max-w-2xl mx-auto">
-            <div className="rounded-xl border-2 border-brand-primary/20 bg-gradient-to-br from-brand-primary/5 to-white p-5">
-              <div className="text-xs uppercase tracking-wide text-brand-primary font-semibold">Survey Services</div>
-              <div className="mt-2 text-base font-semibold text-slate-900">Professional & Accurate</div>
-            </div>
-            <div className="rounded-xl border-2 border-brand-primary/20 bg-gradient-to-br from-brand-primary/5 to-white p-5">
-              <div className="text-xs uppercase tracking-wide text-brand-primary font-semibold">Company Profile</div>
-              <div className="mt-2 text-base font-semibold text-slate-900">Trusted Surveyors</div>
-            </div>
-          </div>
-          <AnimatedContainer className="grid sm:grid-cols-2 lg:grid-cols-3 gap-6">
+          
+          {/* Three Featured Service Cards */}
+          <div className="grid sm:grid-cols-3 gap-6 mb-10">
             {[
-              { title: 'DGPS Land Survey', to: '/services/dgps-land-survey', img: '/images/DGPS Land Survey.webp', desc: 'High-precision positioning using DGPS instruments for accurate control and mapping.' },
-              { title: 'Digital Land Survey', to: '/services/digital-land-survey', img: '/images/Digital Land Survey.avif', desc: 'Modern digital workflows with CAD deliverables and GIS-ready data.' },
-              { title: 'DTCP Layouts', to: '/services/dtcp-layouts', img: '/images/DTCP Layouts.webp', desc: 'Layouts prepared as per DTCP norms and approvals.' },
-              { title: 'Enjoyment Survey', to: '/services/enjoyment-survey', img: '/images/Enjoyment Survey.avif', desc: 'Assessment of actual land usage on ground versus records.' },
-              { title: 'Sub-division', to: '/services/sub-division', img: '/images/Sub-division.webp', desc: 'Land subdivision into plots with accurate measurements and markers.' },
-              { title: 'Survey Number Demarcation', to: '/services/survey-number-demarcation', img: '/images/Survey Number Demarcation.jpg', desc: 'On-ground demarcation of survey numbers as per revenue records.' },
-              { title: 'Registration Plans & Location Sketch', to: '/services/registration-plans-location-sketch', img: '/images/Registration Plans & Location Sketch.avif', desc: 'Preparation of registration plans and location sketches for legal processes.' },
-            ].map((s) => (
-              <motion.div key={s.title} variants={itemFadeInUp}>
-                <Link to={s.to} className="group border rounded-xl p-0 bg-white hover:shadow-xl hover:-translate-y-1 transition-all duration-300 block overflow-hidden">
-                  <img 
-                    src={encodeImagePath(s.img)} 
-                    alt={s.title} 
-                    loading="lazy" 
-                    className="h-40 w-full object-cover bg-slate-100"
-                    onError={(e) => {
-                      console.error('Failed to load image:', s.img);
-                      // Try direct path as fallback
-                      e.target.src = s.img;
-                    }}
-                  />
-                  <div className="p-6">
-                    <h3 className="font-semibold text-lg text-slate-900 group-hover:text-brand-primary transition-colors">{s.title}</h3>
-                    <p className="text-sm text-slate-600 mt-3 leading-relaxed">{s.desc}</p>
-                    <span className="mt-4 inline-flex items-center text-brand-primary text-sm font-medium group-hover:gap-2 gap-1 transition-all">Read More <span className="group-hover:translate-x-1 transition-transform">→</span></span>
-                  </div>
-                </Link>
-              </motion.div>
-            ))}
-          </AnimatedContainer>
-          <div className="mt-8 text-center">
-            <Link to="/services" className="inline-flex items-center gap-2 px-6 py-3 bg-brand-primary text-white font-semibold rounded-lg hover:bg-brand-primary/90 hover:gap-3 transition-all shadow-lg hover:shadow-xl">
-              View All Services <span>→</span>
+              { 
+                title: 'DGPS Land Survey', 
+                icon: MapPinIcon, 
+                description: 'High-precision positioning using DGPS instruments for accurate control and mapping.',
+                to: '/services/dgps-land-survey'
+              },
+              { 
+                title: 'Digital Land Survey', 
+                icon: ChartBarIcon, 
+                description: 'Modern digital workflows with CAD deliverables and GIS-ready data.',
+                to: '/services/digital-land-survey'
+              },
+              { 
+                title: 'DTCP Layouts', 
+                icon: ClipboardDocumentCheckIcon, 
+                description: 'Layouts prepared as per DTCP norms and approvals.',
+                to: '/services/dtcp-layouts'
+              },
+            ].map((service, index) => {
+              const IconComponent = service.icon;
+              return (
+                <motion.div
+                  key={service.title}
+                  variants={itemFadeInUp}
+                  initial="hidden"
+                  whileInView="visible"
+                  viewport={{ once: true }}
+                  transition={{ delay: index * 0.1 }}
+                >
+                  <Link 
+                    to={service.to}
+                    className="block bg-white rounded-xl p-6 shadow-sm border border-slate-200 hover:shadow-lg hover:-translate-y-1 transition-all duration-300 h-full group"
+                  >
+                    <div className="w-12 h-12 rounded-lg bg-brand-primary/10 flex items-center justify-center mb-4 group-hover:bg-brand-primary/20 transition-colors">
+                      <IconComponent className="w-6 h-6 text-brand-primary" />
+                    </div>
+                    <h3 className="text-xl font-semibold text-slate-900 mb-2 group-hover:text-brand-primary transition-colors">{service.title}</h3>
+                    <p className="text-slate-600 text-sm leading-relaxed">{service.description}</p>
+                  </Link>
+                </motion.div>
+              );
+            })}
+          </div>
+
+          {/* Call-to-Action */}
+          <div className="text-center">
+            <Link 
+              to="/services" 
+              className="inline-flex items-center gap-2 px-8 py-3 bg-brand-primary text-white font-semibold rounded-lg hover:bg-brand-primary/90 hover:gap-3 transition-all duration-300 shadow-md hover:shadow-lg"
+            >
+              View All Services
+              <span className="transition-transform">→</span>
             </Link>
           </div>
         </div>
@@ -208,7 +220,7 @@ export default function Home() {
           </div>
           <AnimatedContainer className="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-6 gap-4">
             {[
-              { label: 'All Projects', value: '50+' },
+              { label: 'All Projects', value: '5000+' },
               { label: 'Boundary Survey', value: '25' },
               { label: 'Topographic', value: '18' },
               { label: 'Subdivision', value: '12' },
