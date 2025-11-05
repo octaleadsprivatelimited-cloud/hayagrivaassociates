@@ -6,12 +6,12 @@ import { useRef } from 'react';
 import VideoHero from '../../components/VideoHero.jsx';
 import { 
   ClipboardDocumentCheckIcon, 
-  RoadIcon, 
+  MapIcon, 
   Squares2X2Icon, 
   CheckCircleIcon,
   ChartBarIcon,
   DocumentTextIcon,
-  TargetIcon
+  CheckBadgeIcon
 } from '@heroicons/react/24/solid';
 
 const fadeInUp = {
@@ -70,7 +70,7 @@ export default function DTCPLayouts() {
       color: 'from-blue-500 to-blue-600'
     },
     {
-      icon: RoadIcon,
+      icon: MapIcon,
       title: 'Infrastructure Planning',
       desc: 'Roads, utilities, parks, and open spaces as per DTCP requirements',
       color: 'from-purple-500 to-purple-600'
@@ -103,7 +103,7 @@ export default function DTCPLayouts() {
     { step: '2', title: 'Layout Design', desc: 'DTCP-compliant plot layout planning', icon: Squares2X2Icon },
     { step: '3', title: 'Documentation', desc: 'Preparation of submission drawings', icon: DocumentTextIcon },
     { step: '4', title: 'Approval Process', desc: 'Filing and coordination with DTCP', icon: CheckCircleIcon },
-    { step: '5', title: 'Final Layout', desc: 'Approved layout with demarcation', icon: TargetIcon }
+    { step: '5', title: 'Final Layout', desc: 'Approved layout with demarcation', icon: CheckBadgeIcon }
   ];
 
   return (

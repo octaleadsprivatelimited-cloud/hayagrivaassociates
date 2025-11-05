@@ -10,7 +10,7 @@ import {
   ClipboardDocumentListIcon, 
   CheckCircleIcon,
   DocumentTextIcon,
-  RulerIcon
+  AdjustmentsHorizontalIcon
 } from '@heroicons/react/24/solid';
 
 const fadeInUp = {
@@ -90,7 +90,7 @@ export default function Municipal() {
 
   const process = [
     { step: '1', title: 'Documentation Review', desc: 'Review municipal requirements and existing documents', icon: DocumentTextIcon },
-    { step: '2', title: 'Site Survey', desc: 'Conduct comprehensive site survey', icon: RulerIcon },
+    { step: '2', title: 'Site Survey', desc: 'Conduct comprehensive site survey', icon: AdjustmentsHorizontalIcon },
     { step: '3', title: 'Plan Preparation', desc: 'Prepare plans as per municipal standards', icon: Squares2X2Icon },
     { step: '4', title: 'Submission Support', desc: 'Assist with municipal submission process', icon: ClipboardDocumentListIcon },
     { step: '5', title: 'Approval Follow-up', desc: 'Follow up and coordinate for approvals', icon: CheckCircleIcon }

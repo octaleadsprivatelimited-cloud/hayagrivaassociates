@@ -5,7 +5,7 @@ import { useInView } from 'framer-motion';
 import { useRef } from 'react';
 import VideoHero from '../../components/VideoHero.jsx';
 import { 
-  TargetIcon, 
+  CheckBadgeIcon, 
   SignalIcon, 
   MapIcon, 
   BoltIcon,
@@ -65,7 +65,7 @@ export default function DGPSLandSurvey() {
 
   const features = [
     {
-      icon: TargetIcon,
+      icon: CheckBadgeIcon,
       title: 'High Precision',
       desc: 'Sub-centimeter accuracy using DGPS technology for critical control points',
       color: 'from-blue-500 to-blue-600'

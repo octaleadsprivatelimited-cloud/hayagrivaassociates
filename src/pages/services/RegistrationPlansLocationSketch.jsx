@@ -8,9 +8,9 @@ import {
   ClipboardDocumentListIcon, 
   MapPinIcon, 
   CheckCircleIcon, 
-  BookmarkIcon,
+  TagIcon,
   DocumentTextIcon,
-  RulerIcon,
+  AdjustmentsHorizontalIcon,
   Squares2X2Icon,
   MapIcon,
   DocumentCheckIcon
@@ -84,7 +84,7 @@ export default function RegistrationPlansLocationSketch() {
       color: 'from-green-500 to-green-600'
     },
     {
-      icon: BookmarkIcon,
+      icon: TagIcon,
       title: 'Stamping Support',
       desc: 'Assistance with stamping and sign-off procedures',
       color: 'from-orange-500 to-orange-600'
@@ -111,7 +111,7 @@ export default function RegistrationPlansLocationSketch() {
 
   const process = [
     { step: '1', title: 'Document Review', desc: 'Analysis of property documents', icon: DocumentTextIcon },
-    { step: '2', title: 'Site Survey', desc: 'On-ground measurement and verification', icon: RulerIcon },
+    { step: '2', title: 'Site Survey', desc: 'On-ground measurement and verification', icon: AdjustmentsHorizontalIcon },
     { step: '3', title: 'Plan Preparation', desc: 'Drawing registration plans', icon: Squares2X2Icon },
     { step: '4', title: 'Location Sketch', desc: 'Location reference preparation', icon: MapIcon },
     { step: '5', title: 'Finalization', desc: 'Stamping and sign-off support', icon: DocumentCheckIcon }

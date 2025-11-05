@@ -5,7 +5,7 @@ import { useInView } from 'framer-motion';
 import { useRef } from 'react';
 import VideoHero from '../../components/VideoHero.jsx';
 import { 
-  RulerIcon, 
+  AdjustmentsHorizontalIcon, 
   MapIcon, 
   MapPinIcon, 
   DocumentTextIcon,
@@ -64,7 +64,7 @@ export default function SubDivision() {
 
   const features = [
     {
-      icon: RulerIcon,
+      icon: AdjustmentsHorizontalIcon,
       title: 'Precise Measurements',
       desc: 'Accurate plot sizing and boundary measurements',
       color: 'from-blue-500 to-blue-600'

@@ -6,11 +6,11 @@ import { useRef } from 'react';
 import VideoHero from '../../components/VideoHero.jsx';
 import { 
   BuildingOffice2Icon, 
-  PaintBrushIcon, 
+  PencilIcon, 
   Squares2X2Icon, 
   CheckCircleIcon,
   ClipboardDocumentListIcon,
-  TargetIcon
+  CheckBadgeIcon
 } from '@heroicons/react/24/solid';
 
 const fadeInUp = {
@@ -60,7 +60,7 @@ export default function BuildingElevation() {
       color: 'from-blue-500 to-blue-600'
     },
     {
-      icon: PaintBrushIcon,
+      icon: PencilIcon,
       title: 'Custom Solutions',
       desc: 'Tailored elevation designs to match your preferences',
       color: 'from-purple-500 to-purple-600'
@@ -92,10 +92,10 @@ export default function BuildingElevation() {
 
   const process = [
     { step: '1', title: 'Requirements', desc: 'Understand your design preferences and requirements', icon: ClipboardDocumentListIcon },
-    { step: '2', title: 'Concept Design', desc: 'Create initial elevation concept designs', icon: PaintBrushIcon },
+    { step: '2', title: 'Concept Design', desc: 'Create initial elevation concept designs', icon: PencilIcon },
     { step: '3', title: '3D Visualization', desc: 'Prepare 3D renderings for approval', icon: Squares2X2Icon },
     { step: '4', title: 'Review & Revise', desc: 'Review with client and make revisions', icon: CheckCircleIcon },
-    { step: '5', title: 'Final Design', desc: 'Deliver final elevation designs ready for approval', icon: TargetIcon }
+    { step: '5', title: 'Final Design', desc: 'Deliver final elevation designs ready for approval', icon: CheckBadgeIcon }
   ];
 
   return (

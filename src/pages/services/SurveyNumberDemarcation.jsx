@@ -10,7 +10,7 @@ import {
   Squares2X2Icon, 
   DocumentTextIcon,
   BookOpenIcon,
-  RulerIcon,
+  AdjustmentsHorizontalIcon,
   MagnifyingGlassIcon,
   ChartBarIcon
 } from '@heroicons/react/24/solid';
@@ -101,7 +101,7 @@ export default function SurveyNumberDemarcation() {
 
   const process = [
     { step: '1', title: 'Record Study', desc: 'Review revenue maps and records', icon: BookOpenIcon },
-    { step: '2', title: 'Field Survey', desc: 'On-ground measurement and identification', icon: RulerIcon },
+    { step: '2', title: 'Field Survey', desc: 'On-ground measurement and identification', icon: AdjustmentsHorizontalIcon },
     { step: '3', title: 'Demarcation', desc: 'Marking boundaries with pegs', icon: MapPinIcon },
     { step: '4', title: 'Verification', desc: 'Cross-check with records', icon: MagnifyingGlassIcon },
     { step: '5', title: 'Report', desc: 'Demarcation sketch and documentation', icon: ChartBarIcon }

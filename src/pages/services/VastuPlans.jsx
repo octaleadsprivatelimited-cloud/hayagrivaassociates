@@ -11,7 +11,7 @@ import {
   CheckCircleIcon,
   ChartBarIcon,
   DocumentTextIcon,
-  TargetIcon
+  CheckBadgeIcon
 } from '@heroicons/react/24/solid';
 
 const fadeInUp = {
@@ -96,7 +96,7 @@ export default function VastuPlans() {
     { step: '2', title: 'Plan Design', desc: 'Design Vastu-compliant floor plans', icon: Squares2X2Icon },
     { step: '3', title: 'Working Drawings', desc: 'Prepare detailed working plans', icon: DocumentTextIcon },
     { step: '4', title: 'Review & Approval', desc: 'Review and prepare for approval submission', icon: CheckCircleIcon },
-    { step: '5', title: 'Final Delivery', desc: 'Deliver complete plan set ready for construction', icon: TargetIcon }
+    { step: '5', title: 'Final Delivery', desc: 'Deliver complete plan set ready for construction', icon: CheckBadgeIcon }
   ];
 
   return (

@@ -10,7 +10,7 @@ import {
   ClipboardDocumentListIcon, 
   CheckCircleIcon,
   BookOpenIcon,
-  RulerIcon,
+  AdjustmentsHorizontalIcon,
   DocumentTextIcon
 } from '@heroicons/react/24/solid';
 
@@ -91,7 +91,7 @@ export default function Grampanchayat() {
 
   const process = [
     { step: '1', title: 'Record Review', desc: 'Review Grampanchayat records and requirements', icon: BookOpenIcon },
-    { step: '2', title: 'Field Survey', desc: 'Conduct on-ground survey and measurement', icon: RulerIcon },
+    { step: '2', title: 'Field Survey', desc: 'Conduct on-ground survey and measurement', icon: AdjustmentsHorizontalIcon },
     { step: '3', title: 'Documentation', desc: 'Prepare documents as per Grampanchayat norms', icon: DocumentTextIcon },
     { step: '4', title: 'Submission', desc: 'Submit to Grampanchayat for approval', icon: ClipboardDocumentListIcon },
     { step: '5', title: 'Follow-up', desc: 'Coordinate and follow up for approvals', icon: CheckCircleIcon }

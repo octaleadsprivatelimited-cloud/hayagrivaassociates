@@ -10,7 +10,7 @@ import {
   Squares2X2Icon, 
   CheckCircleIcon,
   DocumentTextIcon,
-  RulerIcon,
+  AdjustmentsHorizontalIcon,
   ClipboardDocumentListIcon
 } from '@heroicons/react/24/solid';
 
@@ -94,7 +94,7 @@ export default function MunicipalGrampanchayat() {
 
   const process = [
     { step: '1', title: 'Documentation Review', desc: 'Review requirements for both Municipal and Grampanchayat authorities', icon: DocumentTextIcon },
-    { step: '2', title: 'Site Survey', desc: 'Conduct comprehensive site survey and measurements', icon: RulerIcon },
+    { step: '2', title: 'Site Survey', desc: 'Conduct comprehensive site survey and measurements', icon: AdjustmentsHorizontalIcon },
     { step: '3', title: 'Plan Preparation', desc: 'Prepare plans as per Municipal/Grampanchayat standards', icon: Squares2X2Icon },
     { step: '4', title: 'Submission Support', desc: 'Assist with submission to appropriate authorities', icon: ClipboardDocumentListIcon },
     { step: '5', title: 'Approval Follow-up', desc: 'Follow up and coordinate for timely approvals', icon: CheckCircleIcon }

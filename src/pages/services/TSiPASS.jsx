@@ -10,9 +10,9 @@ import {
   CheckCircleIcon, 
   BuildingOfficeIcon,
   ChartBarIcon,
-  RulerIcon,
+  AdjustmentsHorizontalIcon,
   DocumentTextIcon,
-  RocketLaunchIcon
+  ArrowTrendingUpIcon
 } from '@heroicons/react/24/solid';
 
 const fadeInUp = {
@@ -92,10 +92,10 @@ export default function TSiPASS() {
 
   const process = [
     { step: '1', title: 'Project Assessment', desc: 'Review TS iPASS project requirements', icon: ChartBarIcon },
-    { step: '2', title: 'Site Survey', desc: 'Conduct comprehensive industrial site survey', icon: RulerIcon },
+    { step: '2', title: 'Site Survey', desc: 'Conduct comprehensive industrial site survey', icon: AdjustmentsHorizontalIcon },
     { step: '3', title: 'Documentation', desc: 'Prepare TS iPASS compliant documents', icon: DocumentTextIcon },
     { step: '4', title: 'Certification Support', desc: 'Assist with self-certification process', icon: CheckCircleIcon },
-    { step: '5', title: 'Approval Coordination', desc: 'Coordinate for fast-track approvals', icon: RocketLaunchIcon }
+    { step: '5', title: 'Approval Coordination', desc: 'Coordinate for fast-track approvals', icon: ArrowTrendingUpIcon }
   ];
 
   return (

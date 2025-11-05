@@ -10,7 +10,7 @@ import {
   ExclamationTriangleIcon, 
   ClipboardDocumentListIcon,
   DocumentTextIcon,
-  RulerIcon,
+  Bars3Icon,
   MagnifyingGlassCircleIcon,
   CheckCircleIcon
 } from '@heroicons/react/24/solid';
@@ -101,7 +101,7 @@ export default function EnjoymentSurvey() {
 
   const process = [
     { step: '1', title: 'Document Review', desc: 'Analysis of records and title documents', icon: DocumentTextIcon },
-    { step: '2', title: 'Field Survey', desc: 'On-ground measurement and verification', icon: RulerIcon },
+    { step: '2', title: 'Field Survey', desc: 'On-ground measurement and verification', icon: Bars3Icon },
     { step: '3', title: 'Comparison', desc: 'Matching ground reality with records', icon: MagnifyingGlassCircleIcon },
     { step: '4', title: 'Report Preparation', desc: 'Detailed findings and discrepancies', icon: ChartBarIcon },
     { step: '5', title: 'Delivery', desc: 'Comprehensive report with recommendations', icon: CheckCircleIcon }
