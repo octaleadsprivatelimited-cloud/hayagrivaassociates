@@ -8,7 +8,7 @@ export default function CTASection() {
         </div>
         <div className="flex gap-3">
           <a href="/contact" className="bg-white text-brand-primary px-4 py-2 rounded">Let’s Talk</a>
-          <a href="tel:+919966139588" className="bg-white/10 hover:bg-white/20 px-4 py-2 rounded text-white">Call Us</a>
+          <a href="tel:+919177887049" className="bg-white/10 hover:bg-white/20 px-4 py-2 rounded text-white">Call Us</a>
         </div>
       </div>
     </section>

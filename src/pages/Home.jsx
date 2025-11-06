@@ -321,10 +321,10 @@ export default function Home() {
             <div className="flex flex-col sm:flex-row items-start sm:items-center justify-between gap-6">
               <div className="flex-1">
                 <h3 className="text-2xl sm:text-3xl font-bold mb-3">For Urgent Survey Needs</h3>
-                <p className="text-white/90 text-lg">Call us: +91 9966139588 or request a quote now.</p>
+                <p className="text-white/90 text-lg">Call us: +91 9966139588, +91 9177887049 or request a quote now.</p>
               </div>
               <div className="flex gap-3 flex-shrink-0">
-                <a href="tel:+919966139588" className="bg-white/10 hover:bg-white/20 backdrop-blur px-6 py-3 rounded-lg text-white font-semibold transition-colors border border-white/20">Call Now</a>
+                <a href="tel:+919177887049" className="bg-white/10 hover:bg-white/20 backdrop-blur px-6 py-3 rounded-lg text-white font-semibold transition-colors border border-white/20">Call Now</a>
                 <Link to="/contact" className="bg-white text-brand-primary px-6 py-3 rounded-lg font-semibold hover:bg-slate-100 transition-colors">Request Quote</Link>
               </div>
             </div>

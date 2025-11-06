@@ -1,37 +1,41 @@
-import { useEffect } from 'react';
+import { useEffect, useRef } from 'react';
 import { useLocation } from 'react-router-dom';
 
 export default function ScrollRestoration() {
   const location = useLocation();
+  const previousPathname = useRef(location.pathname);
+  const isInitialMount = useRef(true);
 
   useEffect(() => {
-    // Save current scroll position before navigation
-    const saveScrollPosition = () => {
-      const scrollY = window.scrollY;
-      if (scrollY > 0) {
-        sessionStorage.setItem(`scrollPos_${location.pathname}`, scrollY.toString());
-      }
-    };
-
-    // Restore scroll position after navigation
-    const restoreScrollPosition = () => {
+    // On initial mount, check if we're coming from a page reload
+    if (isInitialMount.current) {
+      isInitialMount.current = false;
+      // Check if there's a saved scroll position for this page (from reload)
       const savedPosition = sessionStorage.getItem(`scrollPos_${location.pathname}`);
       if (savedPosition) {
-        // Use requestAnimationFrame for smooth restoration
-        requestAnimationFrame(() => {
+        // Use a small delay to ensure content is loaded
+        setTimeout(() => {
           window.scrollTo({
             top: parseInt(savedPosition, 10),
-            behavior: 'auto' // Instant scroll to avoid animation
+            behavior: 'auto'
           });
-        });
+        }, 50);
       } else {
-        // Scroll to top if no saved position
-        window.scrollTo({
-          top: 0,
-          behavior: 'auto'
-        });
+        // Scroll to top on initial load
+        window.scrollTo({ top: 0, behavior: 'auto' });
       }
-    };
+      return;
+    }
+
+    // Check if pathname actually changed
+    if (previousPathname.current !== location.pathname) {
+      // Pathname changed - this is a new page navigation
+      // Always scroll to top immediately when navigating to a different page
+      window.scrollTo({ top: 0, behavior: 'auto' });
+      
+      // Update previous pathname
+      previousPathname.current = location.pathname;
+    }
 
     // Save scroll position on scroll (debounced)
     let scrollTimeout;
@@ -42,10 +46,10 @@ export default function ScrollRestoration() {
         if (scrollY > 0) {
           sessionStorage.setItem(`scrollPos_${location.pathname}`, scrollY.toString());
         }
-      }, 100); // Debounce to avoid too many writes
+      }, 100);
     };
 
-    // Save scroll position before page unload
+    // Save scroll position before page unload (for page reload)
     const handleBeforeUnload = () => {
       const scrollY = window.scrollY;
       if (scrollY > 0) {
@@ -53,26 +57,17 @@ export default function ScrollRestoration() {
       }
     };
 
-    // Restore scroll position when location changes
-    // Delay to ensure content is loaded
-    const restoreTimeout = setTimeout(() => {
-      restoreScrollPosition();
-    }, 100);
-
     // Add scroll listener to save position
     window.addEventListener('scroll', handleScroll, { passive: true });
     
-    // Add beforeunload listener
+    // Add beforeunload listener for page reload
     window.addEventListener('beforeunload', handleBeforeUnload);
 
     // Cleanup
     return () => {
       clearTimeout(scrollTimeout);
-      clearTimeout(restoreTimeout);
       window.removeEventListener('scroll', handleScroll);
       window.removeEventListener('beforeunload', handleBeforeUnload);
-      // Save scroll position before leaving
-      saveScrollPosition();
     };
   }, [location.pathname]);
 

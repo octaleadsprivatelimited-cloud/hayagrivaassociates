@@ -191,7 +191,7 @@ export default function FAQ() {
                 Contact Us
               </Link>
               <a
-                href="tel:+919966139588"
+                href="tel:+919177887049"
                 className="inline-flex items-center justify-center gap-2 px-8 py-3 bg-white border-2 border-brand-primary text-brand-primary rounded-lg font-semibold hover:bg-brand-primary/5 transition-colors"
               >
                 Call Now

@@ -40,7 +40,7 @@ export default function Footer() {
         <Section title="Contact">
           <p>Address: H.No 18-44/1, Vyshya Bhavan Back Side, Mancherial-504208, Telangana</p>
           <p>Email: hayagrivaassociatesmncl@gmail.com</p>
-          <p>Phone: +91 9966139588</p>
+          <p>Phone: +91 9966139588, +91 9177887049</p>
         </Section>
         <Section title="Services">
           <ul className="space-y-1">
