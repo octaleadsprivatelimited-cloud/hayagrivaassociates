@@ -78,9 +78,14 @@ export default function Header() {
 
       {/* Main nav */}
       <div className="container-default py-1.5 flex items-center justify-between">
-        <Link to="/" className="flex items-center gap-2 text-lg font-semibold">
-          <span className="w-8 h-8 rounded bg-brand-primary inline-block" />
-          Hayagriva Associates
+        <Link to="/" className="flex items-center gap-3">
+          <img
+            src="/images/hayagriva-logo.png"
+            alt="Hayagriva Associates logo"
+            className="h-12 w-auto object-contain"
+            loading="lazy"
+          />
+          <span className="sr-only">Hayagriva Associates</span>
         </Link>
         <nav className="hidden lg:flex items-center gap-6">
           <NavLink to="/" className={({ isActive }) => `hover:text-brand-primary ${isActive ? 'text-brand-primary' : ''}`}>
@@ -259,7 +264,15 @@ export default function Header() {
             className="fixed inset-0 bg-white z-50"
           >
             <div className="container-default py-4 flex items-center justify-between border-b">
-              <Link to="/" onClick={() => setOpen(false)} className="text-lg font-semibold">Hayagriva Associates</Link>
+              <Link to="/" onClick={() => setOpen(false)} className="text-lg font-semibold flex items-center gap-3">
+                <img
+                  src="/images/hayagriva-logo.png"
+                  alt="Hayagriva Associates logo"
+                  className="h-10 w-auto object-contain"
+                  loading="lazy"
+                />
+                <span className="sr-only">Hayagriva Associates</span>
+              </Link>
               <button className="p-2" onClick={() => setOpen(false)} aria-label="Close menu">
                 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" strokeWidth="1.5" stroke="currentColor" className="w-7 h-7"><path strokeLinecap="round" strokeLinejoin="round" d="M6 18L18 6M6 6l12 12"/></svg>
               </button>

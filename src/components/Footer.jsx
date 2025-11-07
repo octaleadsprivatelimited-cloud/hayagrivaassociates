@@ -31,9 +31,14 @@ export default function Footer() {
       {/* Content */}
       <div className="container-default py-12 grid lg:grid-cols-4 gap-8 relative z-10">
         <div>
-          <div className="flex items-center gap-2 text-lg font-semibold">
-            <span className="w-8 h-8 rounded bg-white inline-block" />
-            Hayagriva Associates
+          <div className="flex items-center gap-3 text-lg font-semibold">
+            <img
+              src="/images/hayagriva-logo.png"
+              alt="Hayagriva Associates logo"
+              className="h-12 w-auto object-contain"
+              loading="lazy"
+            />
+            <span className="sr-only">Hayagriva Associates</span>
           </div>
           <p className="mt-4 text-white/90 text-sm">Professional land surveying, boundary surveys, plot demarcation, and topographic services. Accurate mapping and reliable site surveys for your projects.</p>
         </div>
