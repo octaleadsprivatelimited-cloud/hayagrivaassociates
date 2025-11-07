@@ -41,6 +41,13 @@ export default function Footer() {
           <p>Address: H.No 18-44/1, Vyshya Bhavan Back Side, Mancherial-504208, Telangana</p>
           <p>Email: hayagrivaassociatesmncl@gmail.com</p>
           <p>Phone: +91 9966139588, +91 9177887049</p>
+          <a href="https://maps.app.goo.gl/f2x3Sahz2g7agmRSA" target="_blank" rel="noreferrer" className="inline-flex items-center gap-2 text-sm text-white/80 hover:text-white transition-colors mt-2">
+            <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth={1.8} stroke="currentColor" className="w-4 h-4">
+              <path strokeLinecap="round" strokeLinejoin="round" d="M17.813 8.25A5.813 5.813 0 116 8.25c0 3.785 4.524 8.813 5.767 10.078a1.125 1.125 0 001.626 0C13.476 17.063 18 12.035 18 8.25z" />
+              <path strokeLinecap="round" strokeLinejoin="round" d="M12 10.125a1.875 1.875 0 100-3.75 1.875 1.875 0 000 3.75z" />
+            </svg>
+            View on Google Maps
+          </a>
         </Section>
         <Section title="Services">
           <ul className="space-y-1">

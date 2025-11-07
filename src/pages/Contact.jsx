@@ -136,6 +136,18 @@ export default function Contact() {
                         H.No 18-44/1, Vyshya Bhavan Back Side,<br />
                         Mancherial-504208, Telangana
                       </p>
+                      <a
+                        href="https://maps.app.goo.gl/f2x3Sahz2g7agmRSA"
+                        target="_blank"
+                        rel="noreferrer"
+                        className="inline-flex items-center gap-1 text-brand-primary hover:text-brand-primary/80 text-sm font-semibold mt-2"
+                      >
+                        <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth={1.8} stroke="currentColor" className="w-4 h-4">
+                          <path strokeLinecap="round" strokeLinejoin="round" d="M17.813 8.25A5.813 5.813 0 116 8.25c0 3.785 4.524 8.813 5.767 10.078a1.125 1.125 0 001.626 0C13.476 17.063 18 12.035 18 8.25z" />
+                          <path strokeLinecap="round" strokeLinejoin="round" d="M12 10.125a1.875 1.875 0 100-3.75 1.875 1.875 0 000 3.75z" />
+                        </svg>
+                        View on Google Maps
+                      </a>
                     </div>
                   </div>
                   <div className="flex items-start gap-4">
@@ -181,8 +193,22 @@ export default function Contact() {
                     className="w-full h-64"
                     loading="lazy"
                     referrerPolicy="no-referrer-when-downgrade"
-                    src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3806.8345!2d79.4455!3d18.8767!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x0!2zMTjCsDUyJzM2LjEiTiA3OcKwMjYnNDMuOCJF!5e0!3m2!1sen!2sin!4v1234567890123!5m2!1sen!2sin"
+                    src="https://www.google.com/maps?q=H.No+18-44/1,+Vyshya+Bhavan+Back+Side,+Mancherial-504208,+Telangana&output=embed"
                   />
+                </div>
+                <div className="flex justify-end mt-4">
+                  <a
+                    href="https://maps.app.goo.gl/f2x3Sahz2g7agmRSA"
+                    target="_blank"
+                    rel="noreferrer"
+                    className="inline-flex items-center gap-2 px-4 py-2 bg-brand-primary text-white rounded-lg font-semibold hover:bg-brand-primary/90 transition-colors"
+                  >
+                    <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth={1.8} stroke="currentColor" className="w-5 h-5">
+                      <path strokeLinecap="round" strokeLinejoin="round" d="M12 21.75c4.694 0 8.5-3.806 8.5-8.5s-3.806-8.5-8.5-8.5-8.5 3.806-8.5 8.5 3.806 8.5 8.5 8.5z" />
+                      <path strokeLinecap="round" strokeLinejoin="round" d="M12 6.75v6l3 3" />
+                    </svg>
+                    Open in Google Maps
+                  </a>
                 </div>
               </div>
             </div>

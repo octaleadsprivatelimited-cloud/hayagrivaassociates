@@ -50,7 +50,14 @@ export default function Header() {
         <div className="container-default flex items-center justify-center sm:justify-between py-1">
           <div className="hidden sm:flex items-center gap-4">
             <span>Opening Hours: Mon - Sat: 9am–6pm • Sun: Closed</span>
-            <span className="hidden md:inline">Mancherial, Telangana</span>
+            <a
+              href="https://maps.app.goo.gl/f2x3Sahz2g7agmRSA"
+              target="_blank"
+              rel="noreferrer"
+              className="hidden md:inline underline-offset-4 decoration-transparent hover:decoration-current transition-colors"
+            >
+              Mancherial, Telangana
+            </a>
           </div>
           <div className="flex items-center gap-4">
             <a href="tel:+919966139588" className="flex items-center gap-2 hover:opacity-90">
