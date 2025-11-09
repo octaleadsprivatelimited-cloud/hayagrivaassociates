@@ -446,6 +446,47 @@ export default function Header() {
                   {item.label}
                 </NavLink>
               ))}
+
+              <div className="mt-6 rounded-2xl bg-white/10 border border-white/20 p-4 text-white/90 space-y-3">
+                <h3 className="text-sm font-semibold uppercase tracking-wide text-white">Contact Details</h3>
+                <div className="space-y-2 text-sm">
+                  <a href="tel:+919966139588" className="flex items-center gap-2 hover:text-white transition-colors">
+                    <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth={1.8} stroke="currentColor" className="w-4 h-4">
+                      <path strokeLinecap="round" strokeLinejoin="round" d="M2.25 6.75c0 8.284 6.716 15 15 15h2.25a2.25 2.25 0 002.25-2.25v-1.372c0-.516-.351-.966-.852-1.091l-4.423-1.106c-.44-.11-.902.055-1.173.417l-.97 1.293c-.282.376-.769.542-1.21.38a12.035 12.035 0 01-7.143-7.143c-.162-.441.004-.928.38-1.21l1.293-.97c.363-.271.527-.734.417-1.173L6.963 3.102a1.125 1.125 0 00-1.091-.852H4.5A2.25 2.25 0 002.25 4.5v2.25z" />
+                    </svg>
+                    +91 9966139588
+                  </a>
+                  <a href="tel:+919177887049" className="flex items-center gap-2 hover:text-white transition-colors">
+                    <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth={1.8} stroke="currentColor" className="w-4 h-4">
+                      <path strokeLinecap="round" strokeLinejoin="round" d="M2.25 6.75c0 8.284 6.716 15 15 15h2.25a2.25 2.25 0 002.25-2.25v-1.372c0-.516-.351-.966-.852-1.091l-4.423-1.106c-.44-.11-.902.055-1.173.417l-.97 1.293c-.282.376-.769.542-1.21.38a12.035 12.035 0 01-7.143-7.143c-.162-.441.004-.928.38-1.21l1.293-.97c.363-.271.527-.734.417-1.173L6.963 3.102a1.125 1.125 0 00-1.091-.852H4.5A2.25 2.25 0 002.25 4.5v2.25z" />
+                    </svg>
+                    +91 9177887049
+                  </a>
+                  <a href="mailto:hayagrivaassociatesmncl@gmail.com" className="flex items-center gap-2 hover:text-white transition-colors">
+                    <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth={1.8} stroke="currentColor" className="w-4 h-4">
+                      <path strokeLinecap="round" strokeLinejoin="round" d="M3 8l7.89 5.26a3 3 0 003.22 0L22 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z" />
+                    </svg>
+                    hayagrivaassociatesmncl@gmail.com
+                  </a>
+                  <a
+                    href="https://maps.app.goo.gl/f2x3Sahz2g7agmRSA"
+                    target="_blank"
+                    rel="noreferrer"
+                    className="flex items-start gap-2 hover:text-white transition-colors"
+                  >
+                    <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth={1.8} stroke="currentColor" className="w-4 h-4 mt-0.5">
+                      <path strokeLinecap="round" strokeLinejoin="round" d="M17.813 8.25A5.813 5.813 0 116 8.25c0 3.785 4.524 8.813 5.767 10.078a1.125 1.125 0 001.626 0C13.476 17.063 18 12.035 18 8.25z" />
+                      <path strokeLinecap="round" strokeLinejoin="round" d="M12 10.125a1.875 1.875 0 100-3.75 1.875 1.875 0 000 3.75z" />
+                    </svg>
+                    H.No 18-44/1, Vyshya Bhavan Back Side, Mancherial-504208, Telangana
+                  </a>
+                </div>
+                <div className="pt-2">
+                  <a href="tel:+919177887049" className="inline-flex w-full items-center justify-center gap-2 px-3 py-2 bg-white text-brand-primary font-semibold rounded-lg shadow-sm hover:bg-slate-100 transition-colors">
+                    Call Now
+                  </a>
+                </div>
+              </div>
             </motion.nav>
           </motion.div>
         )}
