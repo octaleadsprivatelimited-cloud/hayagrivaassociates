@@ -16,7 +16,7 @@ function Section({ title, children }) {
 
 export default function Footer() {
   return (
-    <footer className="relative text-white mt-16 overflow-hidden">
+    <footer className="relative text-white overflow-hidden">
       {/* Background Image */}
       <div 
         className="absolute inset-0 bg-cover bg-center bg-no-repeat"

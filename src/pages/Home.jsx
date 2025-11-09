@@ -221,11 +221,20 @@ export default function Home() {
       {/* Removed: Get Updates, Clients strip, Why Choose Us features, Wide Testimonials, and CTA */}
 
       {/* Completed Projects */}
-      <AnimatedSection className="bg-slate-50 py-16 sm:py-20">
-        <div className="container-default">
+      <AnimatedSection className="relative py-16 sm:py-20 overflow-hidden">
+        <div className="absolute inset-0">
+          <img
+            src="https://images.unsplash.com/photo-1503387762-592deb58ef4e?auto=format&fit=crop&w=1600&q=80"
+            alt="Completed projects background"
+            className="w-full h-full object-cover"
+            loading="lazy"
+          />
+          <div className="absolute inset-0 bg-gradient-to-b from-slate-950/20 via-slate-950/60 to-slate-950/75" />
+        </div>
+        <div className="relative container-default">
           <div className="text-center mb-12">
-            <h2 className="text-3xl sm:text-4xl font-bold text-slate-900">Completed Projects</h2>
-            <p className="mt-4 text-lg text-slate-600">Our track record speaks for itself</p>
+            <h2 className="text-3xl sm:text-4xl font-bold text-white">Completed Projects</h2>
+            <p className="mt-4 text-lg text-white/85">Our track record speaks for itself</p>
           </div>
           <AnimatedContainer className="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-6 gap-4">
             {[
@@ -236,9 +245,9 @@ export default function Home() {
               { label: 'Construction', value: '15' },
               { label: 'Plot Demarcation', value: '20' },
             ].map((stat) => (
-              <motion.div key={stat.label} variants={itemFadeInUp} className="border-2 border-slate-200 rounded-xl p-6 bg-white hover:border-brand-primary/50 hover:shadow-lg transition-all text-center">
+              <motion.div key={stat.label} variants={itemFadeInUp} className="border border-white/30 rounded-xl p-6 bg-white/90 backdrop-blur-sm hover:border-brand-primary/60 hover:shadow-xl transition-all text-center">
                 <div className="text-3xl sm:text-4xl font-bold text-brand-primary">{stat.value}</div>
-                <div className="text-xs sm:text-sm text-slate-600 mt-2 font-medium">{stat.label}</div>
+                <div className="text-xs sm:text-sm text-slate-700 mt-2 font-medium">{stat.label}</div>
               </motion.div>
             ))}
           </AnimatedContainer>
