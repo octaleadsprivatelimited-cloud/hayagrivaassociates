@@ -15,7 +15,7 @@ export default function Hero() {
 
   return (
     <section className="relative">
-      <div className="h-[60vh] sm:h-[72vh] relative overflow-hidden">
+      <div className="h-[75vh] sm:h-[85vh] lg:h-screen relative overflow-hidden">
         {/* Video Background */}
         <video
           ref={videoRef}

@@ -115,11 +115,20 @@ export default function Home() {
       </Helmet>
       <Hero />
       {/* Services Overview */}
-      <AnimatedSection className="bg-slate-50 py-16 sm:py-20">
-        <div className="container-default">
+      <AnimatedSection className="relative py-16 sm:py-20 overflow-hidden">
+        <div className="absolute inset-0">
+          <img
+            src="/images/service-1.jpeg"
+            alt="Survey services background"
+            className="w-full h-full object-cover"
+            loading="lazy"
+          />
+          <div className="absolute inset-0 bg-gradient-to-b from-slate-950/20 via-slate-950/45 to-slate-950/60" />
+        </div>
+        <div className="relative container-default">
           <div className="text-center mb-12">
-            <h2 className="text-3xl sm:text-4xl font-bold text-slate-900">Our Survey Services</h2>
-            <p className="mt-4 text-lg text-slate-600 max-w-2xl mx-auto">We provide comprehensive land surveying services with professional reports and legal compliance.</p>
+            <h2 className="text-3xl sm:text-4xl font-bold text-white">Our Survey Services</h2>
+            <p className="mt-4 text-lg text-white/90 max-w-2xl mx-auto">We provide comprehensive land surveying services with professional reports and legal compliance.</p>
           </div>
           
           {/* Three Featured Service Cards */}
@@ -261,24 +270,58 @@ export default function Home() {
       </AnimatedSection>
 
       {/* Testimonials */}
-      <AnimatedSection className="bg-slate-50 py-16 sm:py-20">
-        <div className="container-default">
+      <AnimatedSection className="relative py-16 sm:py-20 overflow-hidden">
+        <div className="absolute inset-0">
+          <img
+            src="/images/service-3.jpeg"
+            alt="Client testimonials background"
+            className="w-full h-full object-cover"
+            style={{ objectPosition: 'center 20%' }}
+            loading="lazy"
+          />
+          <div className="absolute inset-0 bg-gradient-to-b from-slate-950/20 via-slate-950/45 to-slate-950/60" />
+        </div>
+
+        <div className="relative container-default">
           <div className="text-center mb-12">
-            <h2 className="text-3xl sm:text-4xl font-bold text-slate-900">Client Testimonials</h2>
-            <p className="mt-4 text-lg text-slate-600">What our clients say about us</p>
+            <h2 className="text-3xl sm:text-4xl font-bold text-white drop-shadow">Client Testimonials</h2>
+            <p className="mt-4 text-lg text-white/90">What our clients say about us</p>
           </div>
           <AnimatedContainer className="grid sm:grid-cols-2 lg:grid-cols-3 gap-6">
             {[
-              { name: 'Rajesh Kumar', place: 'Mancherial', text: 'Accurate and professional boundary survey. Delivered on time!' },
-              { name: 'Priya Sharma', place: 'Mancherial', text: 'Detailed topographic survey with comprehensive documentation.' },
-              { name: 'Arun R', place: 'Telangana', text: 'Quick turnaround and reliable reports for our project.' },
+              { 
+                name: 'Rajesh Kumar', 
+                place: 'Mancherial', 
+                text: 'Accurate and professional boundary survey. Delivered on time!', 
+                img: 'https://images.unsplash.com/photo-1524504388940-b1c1722653e1?auto=format&fit=crop&w=160&h=160&q=80'
+              },
+              { 
+                name: 'Priya Sharma', 
+                place: 'Mancherial', 
+                text: 'Detailed topographic survey with comprehensive documentation.', 
+                img: 'https://images.unsplash.com/photo-1544723795-3fb6469f5b39?auto=format&fit=crop&w=160&h=160&q=80'
+              },
+              { 
+                name: 'Arun R', 
+                place: 'Telangana', 
+                text: 'Quick turnaround and reliable reports for our project.', 
+                img: 'https://images.unsplash.com/photo-1500648767791-00dcc994a43e?auto=format&fit=crop&w=160&h=160&q=80'
+              },
             ].map((t, i) => (
-              <motion.div key={i} variants={itemFadeInUp} className="border-2 border-slate-200 rounded-2xl p-6 bg-white hover:border-brand-primary/50 hover:shadow-xl transition-all">
+              <motion.div key={i} variants={itemFadeInUp} className="border-2 border-slate-200 rounded-2xl p-6 bg-white/95 backdrop-blur-sm hover:border-brand-primary/50 hover:shadow-xl transition-all">
                 <div className="text-4xl text-brand-primary/20 mb-4">"</div>
                 <p className="text-slate-700 leading-relaxed">"{t.text}"</p>
-                <div className="mt-4 pt-4 border-t border-slate-100">
-                  <p className="font-semibold text-slate-900">{t.name}</p>
-                  <p className="text-sm text-slate-500">{t.place}</p>
+                <div className="mt-4 pt-4 border-t border-slate-100 flex items-center gap-3">
+                  <img 
+                    src={t.img} 
+                    alt={`${t.name} portrait`} 
+                    className="w-12 h-12 rounded-full object-cover border border-white/60 shadow-sm" 
+                    loading="lazy" 
+                  />
+                  <div>
+                    <p className="font-semibold text-slate-900">{t.name}</p>
+                    <p className="text-sm text-slate-500">{t.place}</p>
+                  </div>
                 </div>
               </motion.div>
             ))}
