@@ -1,4 +1,5 @@
 import { Helmet } from 'react-helmet-async';
+import { createKeywords, defaultLocation } from '../seo/config.js';
 
 export default function Testimonials() {
   const items = [
@@ -9,8 +10,20 @@ export default function Testimonials() {
   return (
     <div className="container-default py-12">
       <Helmet>
-        <title>Testimonials - Hayagriva Associates</title>
-        <meta name="description" content="What clients say about our land surveying and boundary services." />
+        <title>Client Testimonials | Hayagriva Associates Land Surveyors Mancherial</title>
+        <meta
+          name="description"
+          content="Hear from Hayagriva Associates clients about boundary surveys, DGPS mapping and land development support delivered across Mancherial, Telangana."
+        />
+        <meta
+          name="keywords"
+          content={createKeywords(
+            'land survey testimonials',
+            'client reviews Mancherial surveyors',
+            'DGPS service feedback',
+            `survey company reputation in ${defaultLocation}`
+          )}
+        />
       </Helmet>
       <h1 className="text-3xl font-semibold">Testimonials</h1>
       <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-6 mt-6">

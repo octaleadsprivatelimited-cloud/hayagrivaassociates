@@ -4,6 +4,7 @@ import { motion } from 'framer-motion';
 import { useInView } from 'framer-motion';
 import { useRef } from 'react';
 import VideoHero from '../../components/VideoHero.jsx';
+import { createKeywords, defaultLocation } from '../../seo/config.js';
 import { 
   BuildingOffice2Icon, 
   PencilIcon, 
@@ -101,8 +102,20 @@ export default function BuildingElevation() {
   return (
     <>
       <Helmet>
-        <title>Building Elevation Designs - Hayagriva Associates</title>
-        <meta name="description" content="Professional building elevation designs that enhance aesthetic appeal and functionality. 3D visualization and approval-ready designs." />
+        <title>Building Elevation Designs | Hayagriva Associates, Mancherial</title>
+        <meta
+          name="description"
+          content="Hayagriva Associates crafts custom building elevation designs with 3D visualization and approval-ready documentation for projects across Mancherial, Telangana."
+        />
+        <meta
+          name="keywords"
+          content={createKeywords(
+            'building elevation design Mancherial',
+            '3D elevation rendering',
+            'architectural elevation Telangana',
+            `elevation approval drawings in ${defaultLocation}`
+          )}
+        />
       </Helmet>
 
       {/* Hero Section */}

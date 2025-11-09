@@ -5,6 +5,7 @@ import { useInView } from 'framer-motion';
 import { useRef } from 'react';
 import { MapPinIcon, ChartBarIcon, ClipboardDocumentCheckIcon } from '@heroicons/react/24/outline';
 import Hero from '../components/Hero.jsx';
+import { createKeywords, defaultLocation } from '../seo/config.js';
 // Removed: ClientsStrip, TestimonialsWide, CTASection per request
 
 // Animation variants
@@ -109,8 +110,21 @@ export default function Home() {
   return (
     <div>
       <Helmet>
-        <title>Professional Land Survey Services in Mancherial | Hayagriva Associates</title>
-        <meta name="description" content="Accurate boundary surveys, DGPS & digital land surveys, DTCP layouts, plot demarcation, construction surveys, and subdivision in Mancherial, Telangana." />
+        <title>Hayagriva Associates | Licensed Land Surveyors in Mancherial, Telangana</title>
+        <meta
+          name="description"
+          content="Licensed land surveyors delivering boundary, DGPS, digital and construction surveys across Mancherial, Telangana. Get precise reports, approvals and layout documentation from Hayagriva Associates."
+        />
+        <meta
+          name="keywords"
+          content={createKeywords(
+            'land survey company in Mancherial',
+            'Telangana DGPS survey experts',
+            'plot demarcation services',
+            'construction layout surveying',
+            `surveying solutions in ${defaultLocation}`
+          )}
+        />
         <script type="application/ld+json">{JSON.stringify(orgSchema)}</script>
       </Helmet>
       <Hero />

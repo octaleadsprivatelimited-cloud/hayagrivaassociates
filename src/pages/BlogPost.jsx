@@ -4,6 +4,7 @@ import VideoHero from '../components/VideoHero.jsx';
 import { motion } from 'framer-motion';
 import { useInView } from 'framer-motion';
 import { useRef } from 'react';
+import { createKeywords, defaultLocation } from '../seo/config.js';
 
 const fadeInUp = {
   hidden: { opacity: 0, y: 30 },
@@ -495,11 +496,21 @@ export default function BlogPost() {
     );
   }
 
+  const keywordContent = createKeywords(
+    post.title,
+    `${post.category} surveying guidance`,
+    `Hayagriva Associates blog ${defaultLocation}`
+  );
+
   return (
     <>
       <Helmet>
         <title>{post.title} - Hayagriva Associates Blog</title>
-        <meta name="description" content={post.excerpt} />
+        <meta
+          name="description"
+          content={`${post.excerpt} Discover how Hayagriva Associates supports projects throughout ${defaultLocation}.`}
+        />
+        <meta name="keywords" content={keywordContent} />
       </Helmet>
 
       {/* Hero Section */}

@@ -4,6 +4,7 @@ import { motion } from 'framer-motion';
 import { useInView } from 'framer-motion';
 import { useRef } from 'react';
 import VideoHero from '../../components/VideoHero.jsx';
+import { createKeywords, defaultLocation } from '../../seo/config.js';
 import { 
   CheckBadgeIcon, 
   SignalIcon, 
@@ -110,8 +111,20 @@ export default function DGPSLandSurvey() {
   return (
     <>
       <Helmet>
-        <title>DGPS Land Survey - Hayagriva Associates | High-Precision GPS Surveying</title>
-        <meta name="description" content="Professional DGPS land surveys with sub-centimeter accuracy. Control networks, boundary surveys, and mapping services in Mancherial, Telangana." />
+        <title>DGPS Land Survey Services in Mancherial | Hayagriva Associates</title>
+        <meta
+          name="description"
+          content="Hayagriva Associates delivers high-precision DGPS land surveys, control networks and mapping support for projects across Mancherial, Telangana with sub-centimeter accuracy."
+        />
+        <meta
+          name="keywords"
+          content={createKeywords(
+            'DGPS land survey Mancherial',
+            'high precision GPS surveying',
+            'control network establishment Telangana',
+            `DGPS specialists in ${defaultLocation}`
+          )}
+        />
       </Helmet>
 
       {/* Hero Section */}

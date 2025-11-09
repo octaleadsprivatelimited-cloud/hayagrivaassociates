@@ -4,6 +4,7 @@ import { motion } from 'framer-motion';
 import { useInView } from 'framer-motion';
 import { useRef } from 'react';
 import VideoHero from '../../components/VideoHero.jsx';
+import { createKeywords, defaultLocation } from '../../seo/config.js';
 import { 
   ClipboardDocumentCheckIcon, 
   MapIcon, 
@@ -109,8 +110,20 @@ export default function DTCPLayouts() {
   return (
     <>
       <Helmet>
-        <title>DTCP Layouts - Hayagriva Associates | DTCP-Compliant Layout Services</title>
-        <meta name="description" content="Professional DTCP layout preparation and approval assistance. Compliant layouts for residential and commercial projects in Telangana." />
+        <title>DTCP Layout Services in Telangana | Hayagriva Associates</title>
+        <meta
+          name="description"
+          content="Hayagriva Associates designs DTCP-compliant layouts, prepares documentation and coordinates approvals for residential and commercial developments across Mancherial, Telangana."
+        />
+        <meta
+          name="keywords"
+          content={createKeywords(
+            'DTCP layout services Telangana',
+            'layout approval assistance',
+            'municipal development planning',
+            `DTCP consultants in ${defaultLocation}`
+          )}
+        />
       </Helmet>
 
       {/* Hero Section */}

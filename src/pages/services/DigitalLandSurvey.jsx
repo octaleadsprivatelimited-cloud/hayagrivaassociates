@@ -4,6 +4,7 @@ import { motion } from 'framer-motion';
 import { useInView } from 'framer-motion';
 import { useRef } from 'react';
 import VideoHero from '../../components/VideoHero.jsx';
+import { createKeywords, defaultLocation } from '../../seo/config.js';
 import { 
   ComputerDesktopIcon, 
   Squares2X2Icon, 
@@ -107,8 +108,20 @@ export default function DigitalLandSurvey() {
   return (
     <>
       <Helmet>
-        <title>Digital Land Survey - Hayagriva Associates | Modern Digital Surveying Services</title>
-        <meta name="description" content="Professional digital land surveying with CAD deliverables, GIS data, and modern workflows. Accurate surveys in Mancherial, Telangana." />
+        <title>Digital Land Survey Services | Hayagriva Associates Mancherial</title>
+        <meta
+          name="description"
+          content="Modern digital land surveys with CAD drawings, GIS data and BIM-ready deliverables from Hayagriva Associates for projects across Mancherial, Telangana."
+        />
+        <meta
+          name="keywords"
+          content={createKeywords(
+            'digital land survey Mancherial',
+            'CAD survey deliverables',
+            'GIS mapping services Telangana',
+            `digital surveying workflows in ${defaultLocation}`
+          )}
+        />
       </Helmet>
 
       {/* Hero Section */}

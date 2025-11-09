@@ -1,6 +1,7 @@
 import { Helmet } from 'react-helmet-async';
 import { Link } from 'react-router-dom';
 import VideoHero from '../components/VideoHero.jsx';
+import { createKeywords, defaultLocation } from '../seo/config.js';
 
 export default function Services() {
   const encodeImagePath = (path) => {
@@ -116,8 +117,21 @@ export default function Services() {
   return (
     <>
       <Helmet>
-        <title>Services - Hayagriva Associates | Professional Land Surveying Services</title>
-        <meta name="description" content="Explore our comprehensive land surveying services: DGPS surveys, digital land surveys, DTCP layouts, enjoyment surveys, sub-division, survey number demarcation, and registration plans." />
+        <title>Land Surveying & Approval Services | Hayagriva Associates Mancherial</title>
+        <meta
+          name="description"
+          content="Browse Hayagriva Associates services including DGPS land survey, digital surveying, DTCP layouts, municipal permissions, TS iPASS approvals, Vastu plans, property valuations and more across Mancherial, Telangana."
+        />
+        <meta
+          name="keywords"
+          content={createKeywords(
+            'DGPS survey services',
+            'digital land survey Mancherial',
+            'DTCP layout preparation Telangana',
+            'TS iPASS approval support',
+            `surveying and permissions in ${defaultLocation}`
+          )}
+        />
       </Helmet>
 
       {/* Hero Section */}

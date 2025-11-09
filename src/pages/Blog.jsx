@@ -1,6 +1,7 @@
 import { Helmet } from 'react-helmet-async';
 import { Link } from 'react-router-dom';
 import VideoHero from '../components/VideoHero.jsx';
+import { createKeywords, defaultLocation } from '../seo/config.js';
 
 export default function Blog() {
   const encodeImagePath = (path) => {
@@ -70,8 +71,21 @@ export default function Blog() {
   return (
     <>
       <Helmet>
-        <title>Blog - Hayagriva Associates | Land Surveying Insights & News</title>
-        <meta name="description" content="Insights on land surveying, boundary disputes, demarcation, DTCP layouts, and industry news from Hayagriva Associates." />
+        <title>Land Surveying Blog | Hayagriva Associates Insights from Mancherial</title>
+        <meta
+          name="description"
+          content="Read the Hayagriva Associates blog for expert advice on land surveying, boundary demarcation, DTCP approvals, DGPS technology and property development in Mancherial, Telangana."
+        />
+        <meta
+          name="keywords"
+          content={createKeywords(
+            'land surveying blog',
+            'surveying tips Telangana',
+            'DTCP approval guidance',
+            'boundary dispute insights',
+            `surveying news ${defaultLocation}`
+          )}
+        />
       </Helmet>
 
       {/* Hero Section */}

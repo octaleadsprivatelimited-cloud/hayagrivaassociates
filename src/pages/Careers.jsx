@@ -1,4 +1,5 @@
 import { Helmet } from 'react-helmet-async';
+import { createKeywords, defaultLocation } from '../seo/config.js';
 
 export default function Careers() {
   const roles = [
@@ -8,8 +9,20 @@ export default function Careers() {
   return (
     <div className="container-default py-12">
       <Helmet>
-        <title>Careers - Hayagriva Associates</title>
-        <meta name="description" content="Open positions at Hayagriva Associates for professional surveyors and support staff." />
+        <title>Careers at Hayagriva Associates | Land Surveying Jobs in Mancherial</title>
+        <meta
+          name="description"
+          content="Explore career opportunities with Hayagriva Associates in Mancherial, Telangana. Join our licensed land surveying team for DGPS, CAD drafting, and site documentation roles."
+        />
+        <meta
+          name="keywords"
+          content={createKeywords(
+            'land surveying jobs Mancherial',
+            'DGPS survey careers Telangana',
+            'CAD drafting roles',
+            `survey employment in ${defaultLocation}`
+          )}
+        />
       </Helmet>
       <h1 className="text-3xl font-semibold">Careers</h1>
       <div className="mt-6 space-y-4">

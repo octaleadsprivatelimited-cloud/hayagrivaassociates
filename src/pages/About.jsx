@@ -13,6 +13,7 @@ import {
 import { useInView } from 'framer-motion';
 import { useRef } from 'react';
 import VideoHero from '../components/VideoHero.jsx';
+import { createKeywords, defaultLocation } from '../seo/config.js';
 
 // Animation variants
 const fadeInUp = {
@@ -130,8 +131,21 @@ export default function About() {
   return (
     <>
       <Helmet>
-        <title>About Us - Hayagriva Associates | Licensed Land Surveyors in Mancherial</title>
-        <meta name="description" content="Hayagriva Associates: Licensed land surveyors with Municipal, Grampanchayat, and TS iPASS approvals. Professional DGPS, digital surveys, DTCP layouts, and more in Mancherial." />
+        <title>About Hayagriva Associates | Licensed Land Survey Experts in Mancherial, Telangana</title>
+        <meta
+          name="description"
+          content="Discover Hayagriva Associates, a licensed land surveying firm in Mancherial, Telangana delivering DGPS surveys, municipal approvals, DTCP layouts, TS iPASS support and end-to-end documentation."
+        />
+        <meta
+          name="keywords"
+          content={createKeywords(
+            'about Hayagriva Associates',
+            'licensed land surveyors Mancherial',
+            'DGPS survey experts Telangana',
+            'Municipal and TS iPASS approvals',
+            `professional surveying team ${defaultLocation}`
+          )}
+        />
       </Helmet>
 
       {/* Hero Section */}

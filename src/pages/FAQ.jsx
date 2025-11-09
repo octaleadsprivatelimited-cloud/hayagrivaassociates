@@ -2,6 +2,7 @@ import { useState } from 'react';
 import { Helmet } from 'react-helmet-async';
 import VideoHero from '../components/VideoHero.jsx';
 import { Link } from 'react-router-dom';
+import { createKeywords, defaultLocation } from '../seo/config.js';
 
 const faqs = [
   {
@@ -93,8 +94,20 @@ export default function FAQ() {
   return (
     <>
       <Helmet>
-        <title>FAQ - Hayagriva Associates | Frequently Asked Questions</title>
-        <meta name="description" content="Frequently asked questions about land surveying services, timelines, costs, documentation, and processes at Hayagriva Associates." />
+        <title>FAQ | Land Surveying Questions Answered by Hayagriva Associates</title>
+        <meta
+          name="description"
+          content="Find answers to common questions about land surveying costs, timelines, documentation, DGPS surveys and approvals from Hayagriva Associates serving Mancherial, Telangana."
+        />
+        <meta
+          name="keywords"
+          content={createKeywords(
+            'land surveying FAQ',
+            'survey cost questions',
+            'survey documentation Telangana',
+            `survey support in ${defaultLocation}`
+          )}
+        />
       </Helmet>
 
       {/* Hero Section */}

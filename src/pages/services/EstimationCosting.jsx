@@ -4,6 +4,7 @@ import { motion } from 'framer-motion';
 import { useInView } from 'framer-motion';
 import { useRef } from 'react';
 import VideoHero from '../../components/VideoHero.jsx';
+import { createKeywords, defaultLocation } from '../../seo/config.js';
 import { 
   BanknotesIcon, 
   ChartBarIcon, 
@@ -101,8 +102,20 @@ export default function EstimationCosting() {
   return (
     <>
       <Helmet>
-        <title>Estimation Costing - Hayagriva Associates</title>
-        <meta name="description" content="Accurate cost estimation and budgeting for construction and development projects. Professional estimation services." />
+        <title>Construction Cost Estimation | Hayagriva Associates Telangana</title>
+        <meta
+          name="description"
+          content="Hayagriva Associates delivers detailed construction cost estimation, budgeting and quantity takeoffs for projects throughout Mancherial, Telangana."
+        />
+        <meta
+          name="keywords"
+          content={createKeywords(
+            'construction cost estimation Mancherial',
+            'quantity takeoff services',
+            'project budgeting Telangana',
+            `cost planning in ${defaultLocation}`
+          )}
+        />
       </Helmet>
 
       {/* Hero Section */}

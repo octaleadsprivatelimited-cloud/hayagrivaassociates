@@ -4,6 +4,7 @@ import { motion } from 'framer-motion';
 import { useInView } from 'framer-motion';
 import { useRef } from 'react';
 import VideoHero from '../../components/VideoHero.jsx';
+import { createKeywords, defaultLocation } from '../../seo/config.js';
 import { 
   MagnifyingGlassIcon, 
   ChartBarIcon, 
@@ -110,8 +111,20 @@ export default function EnjoymentSurvey() {
   return (
     <>
       <Helmet>
-        <title>Enjoyment Survey - Hayagriva Associates | Land Possession & Usage Verification</title>
-        <meta name="description" content="Professional enjoyment surveys to verify actual land usage versus records. Encroachment identification and dispute resolution in Telangana." />
+        <title>Enjoyment Survey Services | Hayagriva Associates Mancherial</title>
+        <meta
+          name="description"
+          content="Hayagriva Associates conducts enjoyment surveys to compare ground reality with land records, identify encroachments and support legal cases across Mancherial, Telangana."
+        />
+        <meta
+          name="keywords"
+          content={createKeywords(
+            'enjoyment survey Mancherial',
+            'land possession verification',
+            'encroachment identification Telangana',
+            `property dispute survey in ${defaultLocation}`
+          )}
+        />
       </Helmet>
 
       {/* Hero Section */}

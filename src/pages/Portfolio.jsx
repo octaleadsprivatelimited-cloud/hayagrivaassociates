@@ -3,6 +3,7 @@ import { motion } from 'framer-motion';
 import { useInView } from 'framer-motion';
 import { useRef } from 'react';
 import VideoHero from '../components/VideoHero.jsx';
+import { createKeywords, defaultLocation } from '../seo/config.js';
 
 const fadeInUp = {
   hidden: { opacity: 0, y: 30 },
@@ -96,8 +97,20 @@ export default function Portfolio() {
   return (
     <>
       <Helmet>
-        <title>Portfolio - Hayagriva Associates | Our Surveying Projects & Case Studies</title>
-        <meta name="description" content="Explore our portfolio of successful surveying projects: boundary resolution, plot demarcation, topographic mapping, DTCP layouts, and site surveys across Telangana." />
+        <title>Surveying Portfolio | Hayagriva Associates Projects in Mancherial & Telangana</title>
+        <meta
+          name="description"
+          content="View Hayagriva Associates portfolio of boundary surveys, DGPS mapping, topographic studies, DTCP layouts and subdivision projects delivered across Mancherial and Telangana."
+        />
+        <meta
+          name="keywords"
+          content={createKeywords(
+            'surveying project portfolio',
+            'DGPS project case studies',
+            'Telangana surveying success stories',
+            `Mancherial land survey projects ${defaultLocation}`
+          )}
+        />
       </Helmet>
 
       {/* Hero Section */}

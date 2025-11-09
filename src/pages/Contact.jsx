@@ -1,6 +1,7 @@
 import { Helmet } from 'react-helmet-async';
 import ContactForm from '../components/forms/ContactForm.jsx';
 import VideoHero from '../components/VideoHero.jsx';
+import { createKeywords, defaultLocation } from '../seo/config.js';
 
 export default function Contact() {
   const contactInfo = [
@@ -50,8 +51,20 @@ export default function Contact() {
   return (
     <>
       <Helmet>
-        <title>Contact Us - Hayagriva Associates | Get in Touch for Land Surveying Services</title>
-        <meta name="description" content="Contact Hayagriva Associates for professional land surveying, boundary surveys, plot demarcation, and DTCP layouts. Located in Mancherial, Telangana." />
+        <title>Contact Hayagriva Associates | Land Surveyors in Mancherial, Telangana</title>
+        <meta
+          name="description"
+          content="Reach Hayagriva Associates for boundary surveys, DGPS mapping, plot demarcation and construction layouts across Mancherial, Telangana. Request a quote or schedule a licensed surveyor today."
+        />
+        <meta
+          name="keywords"
+          content={createKeywords(
+            'contact land surveyor Mancherial',
+            'book DGPS survey Telangana',
+            'plot demarcation enquiry',
+            `survey quoting in ${defaultLocation}`
+          )}
+        />
       </Helmet>
 
       {/* Hero Section */}
