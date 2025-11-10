@@ -4,6 +4,7 @@ import { motion } from 'framer-motion';
 import { useInView } from 'framer-motion';
 import { useRef } from 'react';
 import VideoHero from '../../components/VideoHero.jsx';
+import ProcessTimeline from '../../components/ProcessTimeline.jsx';
 import { createKeywords, defaultLocation } from '../../seo/config.js';
 import { 
   BanknotesIcon, 
@@ -254,32 +255,7 @@ export default function EstimationCosting() {
             </p>
             <div className="w-24 h-1 bg-brand-primary mx-auto mt-6"></div>
           </div>
-          <div className="max-w-6xl mx-auto">
-            <AnimatedContainer className="grid sm:grid-cols-2 lg:grid-cols-5 gap-6">
-              {process.map((p, i) => (
-                <motion.div key={p.step} variants={itemFadeInUp} className="relative">
-                  {i < process.length - 1 && (
-                    <div className="hidden lg:block absolute top-16 left-full w-full h-0.5 bg-gradient-to-r from-brand-primary/50 to-transparent" style={{ width: 'calc(100% - 3rem)', transform: 'translateX(1.5rem)' }}></div>
-                  )}
-                  <div className="bg-white rounded-2xl p-8 border-2 border-slate-200 hover:border-brand-primary/50 hover:shadow-xl transition-all text-center h-full">
-                    <div className="w-20 h-20 rounded-full bg-gradient-to-br from-brand-primary to-brand-primary/80 text-white flex items-center justify-center text-3xl font-bold mx-auto mb-6 shadow-lg">
-                      {p.step}
-                    </div>
-                    <div className="flex justify-center mb-4">
-                      <div className="w-14 h-14 rounded-xl bg-brand-primary/10 text-brand-primary flex items-center justify-center group-hover:bg-brand-primary/20 transition-colors">
-                        {(() => {
-                          const IconComponent = p.icon;
-                          return <IconComponent className="w-7 h-7" />;
-                        })()}
-                      </div>
-                    </div>
-                    <h3 className="text-xl font-bold text-slate-900 mb-3">{p.title}</h3>
-                    <p className="text-slate-600 leading-relaxed">{p.desc}</p>
-                  </div>
-                </motion.div>
-              ))}
-            </AnimatedContainer>
-          </div>
+          <ProcessTimeline steps={process} />
         </div>
       </AnimatedSection>
 
