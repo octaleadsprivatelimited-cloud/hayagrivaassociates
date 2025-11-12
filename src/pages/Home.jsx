@@ -293,19 +293,8 @@ export default function Home() {
       </AnimatedSection>
 
       {/* Testimonials */}
-      <AnimatedSection className="relative py-16 sm:py-20 overflow-hidden">
-        <div className="absolute inset-0">
-          <img
-            src="/images/service-3.jpeg"
-            alt="Client testimonials background"
-            className="w-full h-full object-cover"
-            style={{ objectPosition: 'center 20%' }}
-            loading="lazy"
-          />
-          <div className="absolute inset-0 bg-gradient-to-b from-slate-950/20 via-slate-950/45 to-slate-950/60" />
-        </div>
-
-        <div className="relative container-default">
+      <AnimatedSection className="bg-gradient-to-b from-slate-900 via-slate-950 to-slate-900 py-16 sm:py-20">
+        <div className="container-default">
           <div className="text-center mb-12">
             <h2 className="text-3xl sm:text-4xl font-bold text-white drop-shadow">Client Testimonials</h2>
             <p className="mt-4 text-lg text-white/90">What our clients say about us</p>
@@ -331,20 +320,12 @@ export default function Home() {
                 img: 'https://images.unsplash.com/photo-1500648767791-00dcc994a43e?auto=format&fit=crop&w=160&h=160&q=80'
               },
             ].map((t, i) => (
-              <motion.div key={i} variants={itemFadeInUp} className="border-2 border-slate-200 rounded-2xl p-6 bg-white/95 backdrop-blur-sm hover:border-brand-primary/50 hover:shadow-xl transition-all">
+              <motion.div key={i} variants={itemFadeInUp} className="border-2 border-slate-200 rounded-2xl p-6 bg-white hover:border-brand-primary/50 hover:shadow-xl transition-all">
                 <div className="text-4xl text-brand-primary/20 mb-4">"</div>
                 <p className="text-slate-700 leading-relaxed">"{t.text}"</p>
-                <div className="mt-4 pt-4 border-t border-slate-100 flex items-center gap-3">
-                  <img 
-                    src={t.img} 
-                    alt={`${t.name} portrait`} 
-                    className="w-12 h-12 rounded-full object-cover border border-white/60 shadow-sm" 
-                    loading="lazy" 
-                  />
-                  <div>
-                    <p className="font-semibold text-slate-900">{t.name}</p>
-                    <p className="text-sm text-slate-500">{t.place}</p>
-                  </div>
+                <div className="mt-4 pt-4 border-t border-slate-100">
+                  <p className="font-semibold text-slate-900">{t.name}</p>
+                  <p className="text-sm text-slate-500">{t.place}</p>
                 </div>
               </motion.div>
             ))}
