@@ -10,75 +10,108 @@ const faqs = [
     items: [
       {
         q: 'What services does Hayagriva Associates offer?',
-        a: 'We offer comprehensive land surveying services including DGPS land surveys, digital land surveys, DTCP layouts, enjoyment surveys, sub-division, survey number demarcation, and registration plans & location sketches. All our services comply with legal requirements and are backed by official permissions.'
+        a: 'We provide end-to-end support for land and infrastructure projects, including DGPS and digital land surveys, boundary and topographic surveys, road and highway surveys, DTCP layouts, municipal and TS iPASS approvals, Vastu and working plans, building elevation designs, estimation & costing, property valuations, and home loan assistance.'
       },
       {
         q: 'Which areas do you serve?',
-        a: 'We are based in Mancherial, Telangana, and provide land surveying services across Telangana. We serve individuals, businesses, and government projects throughout the state.'
+        a: 'We are headquartered in Mancherial, Telangana and deploy teams across the state for residential, commercial, agricultural, and infrastructure assignments. We also collaborate with partners for projects in neighboring states on request.'
       },
       {
         q: 'Are you licensed and authorized?',
-        a: 'Yes, we are fully licensed and authorized with Municipal, Grampanchayat, and TS iPASS approvals, making us qualified to handle a wide range of surveying projects across different jurisdictions.'
+        a: 'Yes. Our surveyors are licensed and our firm holds the necessary Municipal, Grampanchayat, and TS iPASS registrations required to execute surveys, permissions, and documentation with full legal validity.'
       }
     ]
   },
   {
-    category: 'Survey Process',
+    category: 'Land Survey Services',
     items: [
       {
-        q: 'How long does a boundary survey take?',
-        a: 'Typically, a boundary survey takes 3-7 days depending on the property size, complexity, accessibility, and documentation requirements. We assess each project individually and provide accurate timelines during consultation.'
+        q: 'How long does a boundary survey or plot demarcation take?',
+        a: 'Most boundary and demarcation surveys are completed within 3–7 days, depending on plot size, terrain, encroachments, and record availability. We confirm the exact schedule after a site assessment and document review.'
       },
       {
-        q: 'What information do I need to provide for a survey?',
-        a: 'You should provide property documents (pattas, sale deeds, revenue records), location details, any existing survey maps, and specifics about the purpose of the survey. Our team will guide you on exact requirements during the initial consultation.'
+        q: 'What information do I need to start a survey?',
+        a: 'Please share title documents (sale deed, pattadar passbook, 1B, Pahani), any existing survey sketches, site location details, and the purpose of the survey. We review these upfront and brief you on any additional requirements.'
       },
       {
-        q: 'Do you provide digital copies of survey reports?',
-        a: 'Yes, we provide both printed and digital copies of all survey reports. Our digital deliverables include CAD drawings, GIS-ready data, and PDF reports that can be easily shared and stored.'
+        q: 'What deliverables are included in a road survey?',
+        a: 'Our road and highway surveys cover alignment control, profiles and cross-sections, terrain and ROW mapping, utility inventories, and earthwork quantities. We issue CAD drawings, coordinate lists, quantity sheets, and supporting reports that integrate with DPR and construction teams.'
+      },
+      {
+        q: 'Do you provide digital outputs for DGPS and digital land surveys?',
+        a: 'Yes. Every survey includes both hard copy and digital deliverables such as CAD/DWG drawings, DXF files, GIS shapefiles, KML/KMZ, PDF reports, and coordinate spreadsheets so you can share data with architects, engineers, or authorities.'
       }
     ]
   },
   {
-    category: 'Documentation & Legal',
+    category: 'Approvals & Permissions',
     items: [
       {
-        q: 'Do you provide legal boundary documentation?',
-        a: 'Yes, we provide signed reports, drawings, and documentation that meet legal requirements. Our reports are prepared in compliance with DTCP norms, revenue records, and applicable regulations for use in legal proceedings and approvals.'
+        q: 'Can you assist with Municipal and Grampanchayat building permissions?',
+        a: 'We prepare drawings, documentation, and application files required by Municipal and Grampanchayat offices, submit them on your behalf, and coordinate until approvals are issued. Our team tracks objections and provides revisions when needed.'
       },
       {
-        q: 'Can your survey reports be used for property registration?',
-        a: 'Absolutely. We prepare registration plans and location sketches specifically designed for property registration, mutations, and legal processes. Our documentation is accepted by registration offices and revenue departments.'
+        q: 'What support do you provide for TS iPASS approvals?',
+        a: 'We guide you through the TS iPASS application, compile survey data, compliance certificates, and layout drawings, and liaise with departments for inspections and clearances so your industrial project moves forward without delays.'
       },
       {
-        q: 'What is the difference between an enjoyment survey and a boundary survey?',
-        a: 'A boundary survey identifies and marks property boundaries based on official records. An enjoyment survey assesses the actual land usage on the ground versus what is recorded in official documents, helping identify any discrepancies or encroachments.'
+        q: 'Do you coordinate with government departments during approvals?',
+        a: 'Yes. We interact with municipal engineers, revenue officials, and TS iPASS officers, respond to queries, and attend site visits or joint measurements to ensure documentation is accepted on the first submission.'
       }
     ]
   },
   {
-    category: 'Costs & Pricing',
+    category: 'Design & Documentation Services',
     items: [
       {
-        q: 'How much does a land survey cost?',
-        a: 'Survey costs vary based on property size, survey type, location, and complexity. We provide detailed, transparent quotes after assessing your specific requirements. Contact us for a free consultation and quote.'
+        q: 'What is included in your Vastu plans and working drawings?',
+        a: 'We deliver concept layouts aligned with Vastu principles, detailed working drawings (floor plans, elevations, sections), schedules, and sanction-ready documentation tailored to your plot dimensions and authority norms.'
       },
       {
-        q: 'Do you offer payment plans?',
-        a: 'We offer flexible payment terms based on project size and duration. Typically, we require an advance payment with the balance due upon completion. Please discuss payment options during your consultation.'
+        q: 'Do you provide building elevation and facade designs?',
+        a: 'Yes. Our design team produces 2D and 3D elevation concepts, material palettes, and render-ready visuals that complement your architectural plans and reflect local approval guidelines.'
+      },
+      {
+        q: 'Can you prepare registration plans and location sketches?',
+        a: 'Absolutely. We create registration plans, location sketches, and supporting documentation accepted by sub-registrar offices, revenue departments, and lending institutions for mutations, loan processing, and legal submissions.'
       }
     ]
   },
   {
-    category: 'Technology & Equipment',
+    category: 'Costs, Valuations & Financing',
     items: [
       {
-        q: 'What technology do you use for surveys?',
-        a: 'We use state-of-the-art DGPS (Differential GPS) equipment, total stations, and digital surveying instruments for precise measurements. Our workflows include modern CAD and GIS software for accurate mapping and documentation.'
+        q: 'How much does a land or road survey cost?',
+        a: 'Pricing depends on survey type, area, accessibility, and deliverables. We share a transparent proposal after understanding your scope. Complex road or infrastructure surveys are quoted with phase-wise milestones.'
       },
       {
-        q: 'How accurate are your surveys?',
-        a: 'Our surveys meet or exceed industry standards for accuracy. We use high-precision instruments and follow established surveying protocols to ensure reliable results suitable for legal and construction purposes.'
+        q: 'Do you offer estimation costing and property valuation services?',
+        a: 'Yes. Our engineers prepare detailed estimation and costing reports for construction projects, while certified valuers assess property market value for sale, purchase, banking, or legal needs.'
+      },
+      {
+        q: 'Can you help arrange financing or home loans?',
+        a: 'We partner with leading banks and NBFCs to assist with housing loan documentation, technical reports, and valuations, ensuring your financing process is smooth and compliant.'
+      },
+      {
+        q: 'Do you provide both printed and digital reports?',
+        a: 'Every project includes duly signed hard copies and comprehensive digital packages. You will receive PDFs, CAD files, coordinate spreadsheets, and photographs for your records and submissions.'
+      }
+    ]
+  },
+  {
+    category: 'Project Logistics & Support',
+    items: [
+      {
+        q: 'How far in advance should I schedule a survey or approval service?',
+        a: 'We recommend booking 5–7 days ahead for standard surveys and at least two weeks in advance for large infrastructure or approval projects so we can allocate the right team and equipment.'
+      },
+      {
+        q: 'Do you work with architects, contractors, and legal advisors?',
+        a: 'Yes. We regularly collaborate with architects, civil contractors, government engineers, and legal professionals to align survey outputs, permissions, and designs with broader project goals.'
+      },
+      {
+        q: 'What support do you offer after delivering the reports?',
+        a: 'Our engagement continues even after delivery. We explain drawings, attend clarification meetings, update documentation if authorities request changes, and remain available for follow-up site visits.'
       }
     ]
   }
@@ -97,14 +130,15 @@ export default function FAQ() {
         <title>FAQ | Land Surveying Questions Answered by Hayagriva Associates</title>
         <meta
           name="description"
-          content="Find answers to common questions about land surveying costs, timelines, documentation, DGPS surveys and approvals from Hayagriva Associates serving Mancherial, Telangana."
+          content="Find answers about land, road, and digital surveys, municipal and TS iPASS approvals, Vastu plans, valuations, and financing from Hayagriva Associates in Telangana."
         />
         <meta
           name="keywords"
           content={createKeywords(
             'land surveying FAQ',
-            'survey cost questions',
-            'survey documentation Telangana',
+            'road survey questions',
+            'TS iPASS approval help',
+            'Vastu plan FAQs',
             `survey support in ${defaultLocation}`
           )}
         />
@@ -204,7 +238,7 @@ export default function FAQ() {
                 Contact Us
               </Link>
               <a
-                href="tel:+919177887049"
+                href="tel:+919966139588"
                 className="inline-flex items-center justify-center gap-2 px-8 py-3 bg-white border-2 border-brand-primary text-brand-primary rounded-lg font-semibold hover:bg-brand-primary/5 transition-colors"
               >
                 Call Now

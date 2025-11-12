@@ -33,7 +33,7 @@ app.post('/api/contact', async (req, res) => {
       }
     });
 
-    const toEmail = process.env.CONTACT_TO || 'info@hayagriva.com';
+    const toEmail = process.env.CONTACT_TO || 'hayagrivaassociatesmncl@gmail.com';
     await transporter.sendMail({
       from: `Hayagriva Website <no-reply@hayagriva.com>`,
       to: toEmail,

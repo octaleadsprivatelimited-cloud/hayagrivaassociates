@@ -177,7 +177,7 @@ export default function About() {
                 <div className="relative overflow-hidden rounded-3xl border-4 border-brand-primary/30 shadow-2xl">
                   <img
                     src="/images/arun.png"
-                    alt="Arun, Founder of Hayagriva Associates"
+                    alt="Ankam Arun Kumar, Founder of Hayagriva Associates"
                     className="w-full h-full object-cover"
                     loading="lazy"
                   />
@@ -186,13 +186,13 @@ export default function About() {
               <motion.div variants={itemFadeInUp} className="lg:col-span-3 text-white/90 space-y-4">
                 <div>
                   <p className="text-sm font-semibold uppercase tracking-[0.3em] text-brand-primary/80">Founder & Principal Surveyor</p>
-                  <h3 className="text-3xl sm:text-4xl font-bold text-white mt-2">Arun R</h3>
+                  <h3 className="text-3xl sm:text-4xl font-bold text-white mt-2">ANKAM ARUN KUMAR</h3>
                 </div>
                 <p className="text-lg leading-relaxed">
-                  Arun established Hayagriva Associates with a clear mission: make professional land surveying accessible, transparent, and legally reliable for every client in Telangana. With over a decade of hands-on experience handling municipal approvals, revenue records, and high-stakes infrastructure projects, he brings both technical mastery and practical insight to every assignment.
+                  ANKAM ARUN KUMAR established Hayagriva Associates with a clear mission: make professional land surveying accessible, transparent, and legally reliable for every client in Telangana. With over a decade of hands-on experience handling municipal approvals, revenue records, and high-stakes infrastructure projects, he brings both technical mastery and practical insight to every assignment.
                 </p>
                 <p className="leading-relaxed">
-                  Known for his methodical approach in the field and his collaborative style with architects, developers, and government officials, Arun ensures that each survey delivers actionable documentation. He personally oversees quality control, invests in advanced DGPS and total-station technologies, and mentors the team to maintain the firm’s reputation for accuracy and integrity.
+                  Known for his methodical approach in the field and his collaborative style with architects, developers, and government officials, ANKAM ARUN KUMAR ensures that each survey delivers actionable documentation. He personally oversees quality control, invests in advanced DGPS and total-station technologies, and mentors the team to maintain the firm’s reputation for accuracy and integrity.
                 </p>
                 <div className="grid sm:grid-cols-2 gap-4 text-sm text-white/80">
                   <div className="bg-white/5 rounded-xl p-4 border border-white/10">
@@ -209,7 +209,7 @@ export default function About() {
                     to="/contact"
                     className="inline-flex items-center gap-2 px-6 py-3 bg-brand-primary hover:bg-brand-primary/90 text-white font-semibold rounded-lg transition-colors"
                   >
-                    Consult with Arun
+                    Consult with Arun Kumar
                     <span>→</span>
                   </Link>
                 </div>

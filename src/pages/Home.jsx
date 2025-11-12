@@ -155,16 +155,16 @@ export default function Home() {
                 to: '/services/dgps-land-survey'
               },
               { 
-                title: 'Digital Land Survey', 
+                title: 'Vastu Plans / Working Plans', 
                 icon: ChartBarIcon, 
-                description: 'Modern digital workflows with CAD deliverables and GIS-ready data.',
-                to: '/services/digital-land-survey'
+                description: 'Custom plans aligned with Vastu principles and approval-ready working drawings.',
+                to: '/services/vastu-plans'
               },
               { 
-                title: 'DTCP Layouts', 
+                title: 'Elevation & Estimation', 
                 icon: ClipboardDocumentCheckIcon, 
-                description: 'Layouts prepared as per DTCP norms and approvals.',
-                to: '/services/dtcp-layouts'
+                description: 'Professional elevation concepts with detailed estimation and costing support.',
+                to: '/services/estimation-costing'
               },
             ].map((service, index) => {
               const IconComponent = service.icon;
@@ -253,11 +253,11 @@ export default function Home() {
           <AnimatedContainer className="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-6 gap-4">
             {[
               { label: 'All Projects', value: '5000+' },
-              { label: 'Boundary Survey', value: '25' },
-              { label: 'Topographic', value: '18' },
-              { label: 'Subdivision', value: '12' },
-              { label: 'Construction', value: '15' },
-              { label: 'Plot Demarcation', value: '20' },
+              { label: 'Boundary Survey', value: '1000+' },
+              { label: 'Topographic', value: '1000+' },
+              { label: 'Subdivision', value: '1000+' },
+              { label: 'Construction', value: '1000+' },
+              { label: 'Plot Demarcation', value: '1000+' },
             ].map((stat) => (
               <motion.div key={stat.label} variants={itemFadeInUp} className="border border-white/30 rounded-xl p-6 bg-white/90 backdrop-blur-sm hover:border-brand-primary/60 hover:shadow-xl transition-all text-center">
                 <div className="text-3xl sm:text-4xl font-bold text-brand-primary">{stat.value}</div>
@@ -325,7 +325,7 @@ export default function Home() {
                 img: 'https://images.unsplash.com/photo-1544723795-3fb6469f5b39?auto=format&fit=crop&w=160&h=160&q=80'
               },
               { 
-                name: 'Arun R', 
+                name: 'ANKAM ARUN KUMAR', 
                 place: 'Telangana', 
                 text: 'Quick turnaround and reliable reports for our project.', 
                 img: 'https://images.unsplash.com/photo-1500648767791-00dcc994a43e?auto=format&fit=crop&w=160&h=160&q=80'
@@ -387,10 +387,10 @@ export default function Home() {
             <div className="flex flex-col sm:flex-row items-start sm:items-center justify-between gap-6">
               <div className="flex-1">
                 <h3 className="text-2xl sm:text-3xl font-bold mb-3">For Urgent Survey Needs</h3>
-                <p className="text-white/90 text-lg">Call us: +91 9966139588, +91 9177887049 or request a quote now.</p>
+                <p className="text-white/90 text-lg">Call us: +91 9966139588 or request a quote now.</p>
               </div>
               <div className="flex gap-3 flex-shrink-0">
-                <a href="tel:+919177887049" className="bg-white/10 hover:bg-white/20 backdrop-blur px-6 py-3 rounded-lg text-white font-semibold transition-colors border border-white/20">Call Now</a>
+                <a href="tel:+919966139588" className="bg-white/10 hover:bg-white/20 backdrop-blur px-6 py-3 rounded-lg text-white font-semibold transition-colors border border-white/20">Call Now</a>
                 <Link to="/contact" className="bg-white text-brand-primary px-6 py-3 rounded-lg font-semibold hover:bg-slate-100 transition-colors">Request Quote</Link>
               </div>
             </div>

@@ -23,8 +23,8 @@ export default function Contact() {
         </svg>
       ),
       title: 'Phone',
-      content: '+91 9966139588, +91 9177887049',
-      link: 'tel:+919177887049'
+      content: '+91 9966139588',
+      link: 'tel:+919966139588'
     },
     {
       icon: (
@@ -175,8 +175,8 @@ export default function Contact() {
                         <a href="tel:+919966139588" className="text-slate-600 hover:text-brand-primary transition-colors text-sm">
                           +91 9966139588
                         </a>
-                        <a href="tel:+919177887049" className="text-slate-600 hover:text-brand-primary transition-colors text-sm">
-                          +91 9177887049
+                        <a href="tel:+919966139588" className="text-slate-600 hover:text-brand-primary transition-colors text-sm">
+                          +91 9966139588
                         </a>
                       </div>
                     </div>

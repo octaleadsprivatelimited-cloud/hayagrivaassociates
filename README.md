@@ -16,7 +16,7 @@ SMTP_HOST=smtp.example.com
 SMTP_PORT=587
 SMTP_USER=your-user
 SMTP_PASS=your-pass
-CONTACT_TO=info@hayagriva.com
+CONTACT_TO=hayagrivaassociatesmncl@gmail.com
 SITE_URL=https://your-domain.com
 ```
 

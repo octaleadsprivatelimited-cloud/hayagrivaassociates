@@ -54,6 +54,12 @@ export default function Services() {
       desc: 'On-ground demarcation of survey numbers as per revenue records.'
     },
     { 
+      to: '/services/road-survey', 
+      title: 'Road Survey', 
+      img: '/images/Construction Surveys.webp',
+      desc: 'Detailed road alignment, profile, and ROW surveys for infrastructure projects.'
+    },
+    { 
       to: '/services/registration-plans-location-sketch', 
       title: 'Registration Plans & Location Sketch', 
       img: '/images/Registration Plans & Location Sketch.avif',

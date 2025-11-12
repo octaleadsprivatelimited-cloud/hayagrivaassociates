@@ -26,6 +26,7 @@ const EnjoymentSurvey = lazy(() => import('./pages/services/EnjoymentSurvey.jsx'
 const SubDivision = lazy(() => import('./pages/services/SubDivision.jsx'));
 const SurveyNumberDemarcation = lazy(() => import('./pages/services/SurveyNumberDemarcation.jsx'));
 const RegistrationPlansLocationSketch = lazy(() => import('./pages/services/RegistrationPlansLocationSketch.jsx'));
+const RoadSurvey = lazy(() => import('./pages/services/RoadSurvey.jsx'));
 const MunicipalGrampanchayat = lazy(() => import('./pages/services/MunicipalGrampanchayat.jsx'));
 const TSiPASS = lazy(() => import('./pages/services/TSiPASS.jsx'));
 const VastuPlans = lazy(() => import('./pages/services/VastuPlans.jsx'));
@@ -72,6 +73,7 @@ export default function App() {
             <Route path="/services/sub-division" element={<SubDivision />} />
             <Route path="/services/survey-number-demarcation" element={<SurveyNumberDemarcation />} />
             <Route path="/services/registration-plans-location-sketch" element={<RegistrationPlansLocationSketch />} />
+            <Route path="/services/road-survey" element={<RoadSurvey />} />
             <Route path="/services/municipal-grampanchayat" element={<MunicipalGrampanchayat />} />
             <Route path="/services/ts-ipass" element={<TSiPASS />} />
             <Route path="/services/vastu-plans" element={<VastuPlans />} />

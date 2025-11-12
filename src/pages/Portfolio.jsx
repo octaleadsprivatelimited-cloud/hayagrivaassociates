@@ -142,12 +142,12 @@ export default function Portfolio() {
           </div>
           <AnimatedContainer className="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-6 gap-6">
             {[
-              { label: 'Topographic Survey', value: '18' },
-              { label: 'Boundary Survey', value: '25' },
-              { label: 'Setting-Out Survey', value: '15' },
-              { label: 'Subdivision & Layout', value: '12' },
-              { label: 'Earthwork Volume', value: '9' },
-              { label: 'As-Built Survey', value: '7' },
+              { label: 'Topographic Survey', value: '1000+' },
+              { label: 'Boundary Survey', value: '1000+' },
+              { label: 'Setting-Out Survey', value: '1000+' },
+              { label: 'Subdivision & Layout', value: '1000+' },
+              { label: 'Earthwork Volume', value: '1000+' },
+              { label: 'As-Built Survey', value: '1000+' },
             ].map((stat, i) => (
               <motion.div key={stat.label} variants={itemFadeInUp} className="border-2 border-slate-200 rounded-xl p-6 bg-white hover:border-brand-primary/50 hover:shadow-lg transition-all text-center">
                 <div className="text-3xl sm:text-4xl font-bold text-brand-primary mb-2">{stat.value}</div>
