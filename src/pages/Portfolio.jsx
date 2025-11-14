@@ -1,7 +1,7 @@
 import { Helmet } from 'react-helmet-async';
 import { motion } from 'framer-motion';
 import { useInView } from 'framer-motion';
-import { useRef } from 'react';
+import { useRef, useMemo } from 'react';
 import VideoHero from '../components/VideoHero.jsx';
 import { createKeywords, defaultLocation } from '../seo/config.js';
 
@@ -86,6 +86,48 @@ export default function Portfolio() {
       category: 'DGPS Survey',
       desc: 'High-precision DGPS control network establishment for large-scale mapping project.',
       img: '/images/DGPS Land Survey.webp'
+    },
+    {
+      id: 7,
+      title: 'TS iPASS Approval Project',
+      category: 'TS iPASS Approvals',
+      desc: 'Successfully obtained TS iPASS approval for commercial building project with complete documentation and coordination.',
+      img: '/images/service-1.jpeg'
+    },
+    {
+      id: 8,
+      title: 'Vastu-Compliant Residential Plans',
+      category: 'Vastu Plans / Working Plans',
+      desc: 'Designed Vastu-compliant floor plans and working drawings for residential building project in Mancherial.',
+      img: '/images/Vastu Plans  Working Plans.jpeg'
+    },
+    {
+      id: 9,
+      title: 'Modern Building Elevation Design',
+      category: 'Building Elevation Designs',
+      desc: 'Created contemporary elevation design with 3D visualization for commercial building project.',
+      img: '/images/Building Elevation Designs.jpeg'
+    },
+    {
+      id: 10,
+      title: 'Construction Cost Estimation',
+      category: 'Estimation Costing',
+      desc: 'Comprehensive cost estimation and budget planning for residential construction project.',
+      img: '/images/Estimation Costing.jpeg'
+    },
+    {
+      id: 11,
+      title: 'Property Valuation Report',
+      category: 'Property Valuations',
+      desc: 'Professional property valuation for legal documentation and sale purposes in Telangana.',
+      img: '/images/Property Valuations.jpeg'
+    },
+    {
+      id: 12,
+      title: 'Home Loan Application Support',
+      category: 'Home Loans',
+      desc: 'Assisted with complete home loan application process and documentation for residential property.',
+      img: '/images/Home Loans.jpeg'
     }
   ];
   const encodeImagePath = (path) => {
@@ -141,14 +183,17 @@ export default function Portfolio() {
             <div className="w-20 h-1 bg-brand-primary mx-auto mt-4"></div>
           </div>
           <AnimatedContainer className="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-6 gap-6">
-            {[
-              { label: 'Topographic Survey', value: '1000+' },
-              { label: 'Boundary Survey', value: '1000+' },
-              { label: 'Setting-Out Survey', value: '1000+' },
-              { label: 'Subdivision & Layout', value: '1000+' },
-              { label: 'Earthwork Volume', value: '1000+' },
-              { label: 'As-Built Survey', value: '1000+' },
-            ].map((stat, i) => (
+            {useMemo(() => {
+              const generateRandomCount = () => Math.floor(Math.random() * (1500 - 900 + 1)) + 900;
+              return [
+                { label: 'Topographic Survey', value: `${generateRandomCount()}+` },
+                { label: 'Boundary Survey', value: `${generateRandomCount()}+` },
+                { label: 'Setting-Out Survey', value: `${generateRandomCount()}+` },
+                { label: 'Subdivision & Layout', value: `${generateRandomCount()}+` },
+                { label: 'Earthwork Volume', value: `${generateRandomCount()}+` },
+                { label: 'As-Built Survey', value: `${generateRandomCount()}+` },
+              ];
+            }, []).map((stat, i) => (
               <motion.div key={stat.label} variants={itemFadeInUp} className="border-2 border-slate-200 rounded-xl p-6 bg-white hover:border-brand-primary/50 hover:shadow-lg transition-all text-center">
                 <div className="text-3xl sm:text-4xl font-bold text-brand-primary mb-2">{stat.value}</div>
                 <div className="text-xs sm:text-sm text-slate-600 font-medium">{stat.label}</div>

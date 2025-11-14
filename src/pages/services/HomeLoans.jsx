@@ -3,7 +3,6 @@ import { Link } from 'react-router-dom';
 import { motion } from 'framer-motion';
 import { useInView } from 'framer-motion';
 import { useRef } from 'react';
-import VideoHero from '../../components/VideoHero.jsx';
 import ProcessTimeline from '../../components/ProcessTimeline.jsx';
 import { 
   BuildingLibraryIcon, 
@@ -108,17 +107,31 @@ export default function HomeLoans() {
       </Helmet>
 
       {/* Hero Section */}
-      <VideoHero>
+      <section className="relative h-[50vh] sm:h-[60vh] lg:h-[70vh] overflow-hidden">
+        {/* Image Background */}
+        <div className="absolute inset-0">
+          <img
+            src="/images/Home Loans.jpeg"
+            alt="Home Loans"
+            className="w-full h-full object-cover"
+            loading="eager"
+          />
+        </div>
+        
+        {/* Overlay */}
+        <div className="absolute inset-0 bg-gradient-to-b from-black/50 via-black/40 to-black/60"></div>
+        
+        {/* Content */}
         <div className="absolute inset-0 flex items-center">
           <div className="container-default w-full">
             <div className="max-w-3xl">
-              <div className="inline-block px-4 py-2 bg-brand-primary/90 backdrop-blur-sm rounded-full text-white text-sm font-semibold mb-6">
+              <div className="inline-block px-4 py-2 bg-brand-primary/90 backdrop-blur-sm rounded-full text-white text-sm font-semibold mb-6 drop-shadow-lg">
                 Other Services
               </div>
-              <h1 className="text-4xl sm:text-5xl lg:text-6xl font-bold text-white leading-tight mb-6">
+              <h1 className="text-4xl sm:text-5xl lg:text-6xl font-bold text-white leading-tight mb-6 drop-shadow-2xl">
                 Home Loans
               </h1>
-              <p className="text-xl sm:text-2xl text-white/95 leading-relaxed mb-8">
+              <p className="text-xl sm:text-2xl text-white drop-shadow-lg leading-relaxed mb-8">
                 Assistance with home loan applications and processing for residential properties
               </p>
               <div className="flex flex-wrap gap-4">
@@ -132,7 +145,7 @@ export default function HomeLoans() {
             </div>
           </div>
         </div>
-      </VideoHero>
+      </section>
 
       {/* Overview Section */}
       <AnimatedSection className="py-20 sm:py-24 bg-white">

@@ -472,6 +472,535 @@ const blogPosts = {
       <h2>Conclusion</h2>
       <p>Successful land subdivision requires careful planning, professional surveying, and proper documentation. By working with experienced surveyors like Hayagriva Associates, you can ensure a smooth subdivision process that meets all legal requirements and maximizes the value of your land.</p>
     `
+  },
+  7: {
+    id: 7,
+    date: '3 Jan 2025',
+    category: 'Approvals',
+    title: 'TS iPASS Approvals: Complete Guide',
+    excerpt: 'Understanding the TS iPASS approval process for industrial and commercial projects in Telangana.',
+    img: '/images/service-1.jpeg',
+    readTime: '7 min read',
+    author: 'Hayagriva Associates',
+    content: `
+      <p>TS iPASS (Telangana State Industrial Project Approval and Self-Certification System) is a streamlined approval system for industrial and commercial projects in Telangana. Understanding this process is crucial for successful project execution.</p>
+      
+      <h2>What is TS iPASS?</h2>
+      <p>TS iPASS is an online single-window clearance system that simplifies the approval process for industrial and commercial projects. It aims to reduce approval time and make the process more transparent and efficient.</p>
+      
+      <h2>Benefits of TS iPASS</h2>
+      <ul>
+        <li>Faster approval process</li>
+        <li>Single-window clearance</li>
+        <li>Online application and tracking</li>
+        <li>Transparent process</li>
+        <li>Reduced paperwork</li>
+        <li>Self-certification options</li>
+      </ul>
+      
+      <h2>Who Needs TS iPASS Approval?</h2>
+      <p>TS iPASS approval is required for:</p>
+      <ul>
+        <li>Industrial projects</li>
+        <li>Commercial developments</li>
+        <li>Large-scale construction projects</li>
+        <li>Infrastructure projects</li>
+        <li>Projects requiring multiple clearances</li>
+      </ul>
+      
+      <h2>The Approval Process</h2>
+      <ol>
+        <li><strong>Application Submission:</strong> Submit online application with required documents</li>
+        <li><strong>Document Verification:</strong> Authorities verify submitted documents</li>
+        <li><strong>Site Inspection:</strong> Physical inspection of the project site</li>
+        <li><strong>Clearances:</strong> Obtaining various departmental clearances</li>
+        <li><strong>Approval:</strong> Final approval and issuance of certificates</li>
+      </ol>
+      
+      <h2>Required Documents</h2>
+      <ul>
+        <li>Project proposal and plans</li>
+        <li>Land ownership documents</li>
+        <li>Survey plans and layouts</li>
+        <li>Environmental clearances</li>
+        <li>Building plans and elevations</li>
+        <li>NOC from various departments</li>
+      </ul>
+      
+      <h2>How Professional Services Help</h2>
+      <p>At Hayagriva Associates, we provide:</p>
+      <ul>
+        <li>Complete documentation support</li>
+        <li>Application preparation and submission</li>
+        <li>Coordination with authorities</li>
+        <li>Follow-up and status tracking</li>
+        <li>Resolution of queries and issues</li>
+      </ul>
+      
+      <h2>Common Challenges</h2>
+      <ul>
+        <li>Documentation requirements</li>
+        <li>Multiple department clearances</li>
+        <li>Compliance with regulations</li>
+        <li>Timeline management</li>
+      </ul>
+      
+      <h2>Conclusion</h2>
+      <p>TS iPASS approval is essential for industrial and commercial projects in Telangana. With professional assistance, you can navigate the process efficiently and obtain approvals in a timely manner.</p>
+    `
+  },
+  8: {
+    id: 8,
+    date: '25 Dec 2024',
+    category: 'Design',
+    title: 'Vastu-Compliant Plans: Benefits and Process',
+    excerpt: 'Learn how Vastu-compliant architectural plans can enhance your property and the process of creating them.',
+    img: '/images/Vastu Plans  Working Plans.jpeg',
+    readTime: '6 min read',
+    author: 'Hayagriva Associates',
+    content: `
+      <p>Vastu-compliant architectural plans combine traditional Vastu Shastra principles with modern construction practices. These plans are designed to create harmonious living and working spaces while meeting contemporary needs.</p>
+      
+      <h2>What are Vastu-Compliant Plans?</h2>
+      <p>Vastu-compliant plans are architectural designs that follow Vastu Shastra principles, which focus on the orientation, placement, and layout of spaces to create positive energy flow and harmony.</p>
+      
+      <h2>Benefits of Vastu-Compliant Design</h2>
+      <ul>
+        <li>Enhanced positive energy flow</li>
+        <li>Better space utilization</li>
+        <li>Improved health and well-being</li>
+        <li>Increased property value</li>
+        <li>Peaceful living environment</li>
+        <li>Traditional and modern balance</li>
+      </ul>
+      
+      <h2>Key Vastu Principles</h2>
+      <h3>Orientation</h3>
+      <ul>
+        <li>Proper building orientation</li>
+        <li>Directional alignment</li>
+        <li>Entrance placement</li>
+      </ul>
+      
+      <h3>Room Placement</h3>
+      <ul>
+        <li>Optimal room locations</li>
+        <li>Function-based placement</li>
+        <li>Energy flow considerations</li>
+      </ul>
+      
+      <h3>Design Elements</h3>
+      <ul>
+        <li>Proportions and measurements</li>
+        <li>Open spaces and ventilation</li>
+        <li>Natural light integration</li>
+      </ul>
+      
+      <h2>The Design Process</h2>
+      <ol>
+        <li><strong>Site Analysis:</strong> Evaluating site orientation and Vastu requirements</li>
+        <li><strong>Concept Design:</strong> Creating initial Vastu-compliant layouts</li>
+        <li><strong>Detailed Plans:</strong> Developing working drawings</li>
+        <li><strong>Review and Revision:</strong> Refining designs based on feedback</li>
+        <li><strong>Final Plans:</strong> Delivering complete plan sets</li>
+      </ol>
+      
+      <h2>Working Plans</h2>
+      <p>In addition to Vastu compliance, working plans include:</p>
+      <ul>
+        <li>Detailed floor plans</li>
+        <li>Structural drawings</li>
+        <li>Electrical and plumbing layouts</li>
+        <li>Elevation drawings</li>
+        <li>Section drawings</li>
+        <li>Specification details</li>
+      </ul>
+      
+      <h2>Professional Services</h2>
+      <p>At Hayagriva Associates, we provide:</p>
+      <ul>
+        <li>Vastu consultation</li>
+        <li>Architectural plan design</li>
+        <li>Working drawing preparation</li>
+        <li>Approval-ready documentation</li>
+        <li>Design revisions as needed</li>
+      </ul>
+      
+      <h2>Conclusion</h2>
+      <p>Vastu-compliant plans offer a perfect blend of traditional wisdom and modern functionality. With professional design services, you can create spaces that are both Vastu-compliant and practical for contemporary living.</p>
+    `
+  },
+  9: {
+    id: 9,
+    date: '18 Dec 2024',
+    category: 'Design',
+    title: 'Building Elevation Design: Modern Trends',
+    excerpt: 'Explore contemporary building elevation design trends and how they enhance property aesthetics and value.',
+    img: '/images/Building Elevation Designs.jpeg',
+    readTime: '5 min read',
+    author: 'Hayagriva Associates',
+    content: `
+      <p>Building elevation design plays a crucial role in defining the aesthetic appeal and character of a building. Modern elevation designs combine functionality with visual appeal to create striking architectural statements.</p>
+      
+      <h2>Importance of Elevation Design</h2>
+      <p>Building elevation design is the external face of your property. It:</p>
+      <ul>
+        <li>Creates first impressions</li>
+        <li>Enhances property value</li>
+        <li>Reflects architectural style</li>
+        <li>Improves curb appeal</li>
+        <li>Sets your property apart</li>
+      </ul>
+      
+      <h2>Modern Design Trends</h2>
+      <h3>Contemporary Minimalism</h3>
+      <ul>
+        <li>Clean lines and simple forms</li>
+        <li>Minimal ornamentation</li>
+        <li>Focus on functionality</li>
+        <li>Neutral color palettes</li>
+      </ul>
+      
+      <h3>Material Innovation</h3>
+      <ul>
+        <li>Mix of traditional and modern materials</li>
+        <li>Textured finishes</li>
+        <li>Sustainable materials</li>
+        <li>Innovative cladding options</li>
+      </ul>
+      
+      <h3>3D Visualization</h3>
+      <ul>
+        <li>Realistic 3D renderings</li>
+        <li>Virtual walkthroughs</li>
+        <li>Material visualization</li>
+        <li>Lighting studies</li>
+      </ul>
+      
+      <h2>Design Elements</h2>
+      <ul>
+        <li><strong>Facades:</strong> Front, side, and rear elevations</li>
+        <li><strong>Materials:</strong> Stone, brick, tiles, paint combinations</li>
+        <li><strong>Colors:</strong> Harmonious color schemes</li>
+        <li><strong>Openings:</strong> Windows, doors, balconies</li>
+        <li><strong>Features:</strong> Projections, recesses, decorative elements</li>
+      </ul>
+      
+      <h2>The Design Process</h2>
+      <ol>
+        <li><strong>Requirements:</strong> Understanding client preferences and needs</li>
+        <li><strong>Concept Design:</strong> Creating initial elevation concepts</li>
+        <li><strong>3D Visualization:</strong> Preparing realistic renderings</li>
+        <li><strong>Review and Revision:</strong> Refining based on feedback</li>
+        <li><strong>Final Design:</strong> Approval-ready elevation drawings</li>
+      </ol>
+      
+      <h2>Approval Requirements</h2>
+      <p>Elevation designs must comply with:</p>
+      <ul>
+        <li>Local building regulations</li>
+        <li>Zoning requirements</li>
+        <li>Municipal guidelines</li>
+        <li>Approval authority standards</li>
+      </ul>
+      
+      <h2>Professional Services</h2>
+      <p>At Hayagriva Associates, we offer:</p>
+      <ul>
+        <li>Custom elevation design</li>
+        <li>3D visualization</li>
+        <li>Material selection guidance</li>
+        <li>Approval documentation</li>
+        <li>Design revisions</li>
+      </ul>
+      
+      <h2>Conclusion</h2>
+      <p>Modern building elevation design combines aesthetics, functionality, and compliance. Professional elevation design services help create visually appealing buildings that enhance property value and meet approval requirements.</p>
+    `
+  },
+  10: {
+    id: 10,
+    date: '10 Dec 2024',
+    category: 'Construction',
+    title: 'Construction Cost Estimation: Key Factors',
+    excerpt: 'Understanding the essential factors that influence construction cost estimation and budget planning.',
+    img: '/images/Estimation Costing.jpeg',
+    readTime: '6 min read',
+    author: 'Hayagriva Associates',
+    content: `
+      <p>Accurate construction cost estimation is essential for successful project planning and budget management. Understanding the key factors that influence costs helps in creating realistic budgets and avoiding financial surprises.</p>
+      
+      <h2>What is Cost Estimation?</h2>
+      <p>Construction cost estimation involves calculating the total cost of a construction project, including materials, labor, equipment, overhead, and other expenses. It provides a detailed breakdown of project costs for budgeting and planning purposes.</p>
+      
+      <h2>Key Factors Affecting Construction Costs</h2>
+      <h3>Material Costs</h3>
+      <ul>
+        <li>Type and quality of materials</li>
+        <li>Market prices and availability</li>
+        <li>Transportation costs</li>
+        <li>Quantity requirements</li>
+      </ul>
+      
+      <h3>Labor Costs</h3>
+      <ul>
+        <li>Skilled and unskilled labor rates</li>
+        <li>Project duration</li>
+        <li>Labor productivity</li>
+        <li>Location-based wage rates</li>
+      </ul>
+      
+      <h3>Project Scope</h3>
+      <ul>
+        <li>Project size and complexity</li>
+        <li>Design specifications</li>
+        <li>Site conditions</li>
+        <li>Quality requirements</li>
+      </ul>
+      
+      <h3>Location Factors</h3>
+      <ul>
+        <li>Site accessibility</li>
+        <li>Local regulations</li>
+        <li>Climate considerations</li>
+        <li>Infrastructure availability</li>
+      </ul>
+      
+      <h2>Estimation Methods</h2>
+      <ul>
+        <li><strong>Quantity Takeoff:</strong> Detailed calculation of material quantities</li>
+        <li><strong>Unit Cost Method:</strong> Cost per unit of work</li>
+        <li><strong>Square Foot Method:</strong> Cost per square foot</li>
+        <li><strong>Parametric Estimation:</strong> Based on project parameters</li>
+      </ul>
+      
+      <h2>Cost Breakdown</h2>
+      <p>A comprehensive cost estimate includes:</p>
+      <ul>
+        <li>Material costs</li>
+        <li>Labor costs</li>
+        <li>Equipment costs</li>
+        <li>Overhead and profit</li>
+        <li>Contingency allowance</li>
+        <li>Taxes and permits</li>
+      </ul>
+      
+      <h2>Benefits of Professional Estimation</h2>
+      <ul>
+        <li>Accurate budget planning</li>
+        <li>Cost control and management</li>
+        <li>Informed decision making</li>
+        <li>Risk mitigation</li>
+        <li>Project feasibility assessment</li>
+      </ul>
+      
+      <h2>Professional Services</h2>
+      <p>At Hayagriva Associates, we provide:</p>
+      <ul>
+        <li>Detailed cost estimation</li>
+        <li>Material cost analysis</li>
+        <li>Labor cost calculation</li>
+        <li>Budget planning support</li>
+        <li>Cost tracking assistance</li>
+      </ul>
+      
+      <h2>Conclusion</h2>
+      <p>Accurate construction cost estimation is crucial for project success. Professional estimation services help you plan budgets effectively, control costs, and make informed decisions throughout your construction project.</p>
+    `
+  },
+  11: {
+    id: 11,
+    date: '2 Dec 2024',
+    category: 'Property',
+    title: 'Property Valuation: When and Why You Need It',
+    excerpt: 'Discover when property valuation is required and how it helps in property transactions and legal matters.',
+    img: '/images/Property Valuations.jpeg',
+    readTime: '5 min read',
+    author: 'Hayagriva Associates',
+    content: `
+      <p>Property valuation is the process of determining the fair market value of a property. It is essential for various purposes including sales, purchases, loans, legal matters, and insurance.</p>
+      
+      <h2>What is Property Valuation?</h2>
+      <p>Property valuation is a professional assessment of a property's market value based on various factors including location, condition, size, comparable sales, and market trends. It provides an objective estimate of what a property is worth.</p>
+      
+      <h2>When is Property Valuation Required?</h2>
+      <h3>Property Transactions</h3>
+      <ul>
+        <li>Buying or selling property</li>
+        <li>Property investment decisions</li>
+        <li>Negotiating sale prices</li>
+        <li>Market analysis</li>
+      </ul>
+      
+      <h3>Financial Purposes</h3>
+      <ul>
+        <li>Home loan applications</li>
+        <li>Refinancing</li>
+        <li>Investment analysis</li>
+        <li>Portfolio valuation</li>
+      </ul>
+      
+      <h3>Legal Requirements</h3>
+      <ul>
+        <li>Property disputes</li>
+        <li>Divorce settlements</li>
+        <li>Estate planning</li>
+        <li>Tax assessment</li>
+        <li>Insurance claims</li>
+      </ul>
+      
+      <h2>Valuation Methods</h2>
+      <h3>Sales Comparison Approach</h3>
+      <p>Comparing the property with similar recently sold properties in the area.</p>
+      
+      <h3>Cost Approach</h3>
+      <p>Estimating the cost to replace or reproduce the property.</p>
+      
+      <h3>Income Approach</h3>
+      <p>For rental properties, based on income potential.</p>
+      
+      <h2>Factors Affecting Property Value</h2>
+      <ul>
+        <li><strong>Location:</strong> Neighborhood, accessibility, amenities</li>
+        <li><strong>Property Condition:</strong> Age, maintenance, renovations</li>
+        <li><strong>Size and Layout:</strong> Square footage, room count, design</li>
+        <li><strong>Market Conditions:</strong> Supply and demand, economic factors</li>
+        <li><strong>Comparable Sales:</strong> Recent sales of similar properties</li>
+        <li><strong>Future Potential:</strong> Development plans, infrastructure</li>
+      </ul>
+      
+      <h2>The Valuation Process</h2>
+      <ol>
+        <li><strong>Property Inspection:</strong> Physical inspection of the property</li>
+        <li><strong>Market Analysis:</strong> Researching local market trends</li>
+        <li><strong>Comparable Analysis:</strong> Comparing with similar properties</li>
+        <li><strong>Value Calculation:</strong> Applying appropriate valuation methods</li>
+        <li><strong>Report Preparation:</strong> Creating detailed valuation report</li>
+      </ol>
+      
+      <h2>Benefits of Professional Valuation</h2>
+      <ul>
+        <li>Accurate market value assessment</li>
+        <li>Legal compliance</li>
+        <li>Informed decision making</li>
+        <li>Negotiation support</li>
+        <li>Documentation for legal purposes</li>
+      </ul>
+      
+      <h2>Professional Services</h2>
+      <p>At Hayagriva Associates, we provide:</p>
+      <ul>
+        <li>Comprehensive property valuation</li>
+        <li>Market analysis</li>
+        <li>Detailed valuation reports</li>
+        <li>Legal documentation support</li>
+        <li>Expert testimony if needed</li>
+      </ul>
+      
+      <h2>Conclusion</h2>
+      <p>Property valuation is essential for making informed decisions in property transactions, legal matters, and financial planning. Professional valuation services provide accurate, reliable assessments that protect your interests and support your decisions.</p>
+    `
+  },
+  12: {
+    id: 12,
+    date: '28 Nov 2024',
+    category: 'Finance',
+    title: 'Home Loan Application: Documentation Guide',
+    excerpt: 'Complete guide to home loan application process and required documentation for property purchase.',
+    img: '/images/Home Loans.jpeg',
+    readTime: '7 min read',
+    author: 'Hayagriva Associates',
+    content: `
+      <p>Applying for a home loan requires careful preparation and proper documentation. Understanding the process and requirements helps ensure a smooth loan application and approval.</p>
+      
+      <h2>Understanding Home Loans</h2>
+      <p>A home loan is a financial product that helps you purchase a property by borrowing money from a bank or financial institution. The property serves as collateral, and you repay the loan over a specified period with interest.</p>
+      
+      <h2>Types of Home Loans</h2>
+      <ul>
+        <li><strong>Home Purchase Loan:</strong> For buying a new or existing property</li>
+        <li><strong>Home Construction Loan:</strong> For building a new house</li>
+        <li><strong>Home Improvement Loan:</strong> For renovating or improving property</li>
+        <li><strong>Balance Transfer:</strong> Transferring existing loan to another lender</li>
+        <li><strong>Top-up Loan:</strong> Additional loan on existing property</li>
+      </ul>
+      
+      <h2>Required Documents</h2>
+      <h3>Identity and Address Proof</h3>
+      <ul>
+        <li>Aadhaar card</li>
+        <li>PAN card</li>
+        <li>Voter ID or driving license</li>
+        <li>Passport</li>
+      </ul>
+      
+      <h3>Income Documents</h3>
+      <ul>
+        <li>Salary slips (last 3-6 months)</li>
+        <li>Form 16 or IT returns (last 2-3 years)</li>
+        <li>Bank statements (last 6 months)</li>
+        <li>Employment certificate</li>
+      </ul>
+      
+      <h3>Property Documents</h3>
+      <ul>
+        <li>Sale deed or agreement</li>
+        <li>Property registration documents</li>
+        <li>Title documents</li>
+        <li>Property tax receipts</li>
+        <li>NOC from society or builder</li>
+        <li>Property valuation report</li>
+      </ul>
+      
+      <h2>The Application Process</h2>
+      <ol>
+        <li><strong>Eligibility Check:</strong> Assessing loan eligibility based on income and credit score</li>
+        <li><strong>Documentation:</strong> Gathering and organizing all required documents</li>
+        <li><strong>Application Submission:</strong> Submitting application with documents</li>
+        <li><strong>Verification:</strong> Bank verification of documents and property</li>
+        <li><strong>Approval:</strong> Loan sanction and approval</li>
+        <li><strong>Disbursement:</strong> Loan amount disbursement</li>
+      </ol>
+      
+      <h2>Loan Eligibility Factors</h2>
+      <ul>
+        <li>Income and repayment capacity</li>
+        <li>Credit score and history</li>
+        <li>Age and employment stability</li>
+        <li>Property value and location</li>
+        <li>Existing loans and liabilities</li>
+      </ul>
+      
+      <h2>How Professional Services Help</h2>
+      <p>At Hayagriva Associates, we assist with:</p>
+      <ul>
+        <li>Documentation preparation</li>
+        <li>Application process guidance</li>
+        <li>Lender coordination</li>
+        <li>Property valuation support</li>
+        <li>Follow-up and status tracking</li>
+      </ul>
+      
+      <h2>Tips for Successful Loan Application</h2>
+      <ul>
+        <li>Maintain good credit score</li>
+        <li>Keep all documents ready</li>
+        <li>Compare loan offers from multiple lenders</li>
+        <li>Understand loan terms and conditions</li>
+        <li>Ensure property documents are clear</li>
+      </ul>
+      
+      <h2>Common Challenges</h2>
+      <ul>
+        <li>Documentation requirements</li>
+        <li>Credit score issues</li>
+        <li>Property documentation problems</li>
+        <li>Processing delays</li>
+      </ul>
+      
+      <h2>Conclusion</h2>
+      <p>Home loan application requires careful preparation and proper documentation. With professional assistance, you can navigate the process smoothly and secure the best loan terms for your property purchase.</p>
+    `
   }
 };
 

@@ -3,7 +3,6 @@ import { Link } from 'react-router-dom';
 import { motion } from 'framer-motion';
 import { useInView } from 'framer-motion';
 import { useRef } from 'react';
-import VideoHero from '../../components/VideoHero.jsx';
 import ProcessTimeline from '../../components/ProcessTimeline.jsx';
 import { 
   ClipboardDocumentListIcon, 
@@ -116,7 +115,21 @@ export default function SurveyNumberDemarcation() {
       </Helmet>
 
       {/* Hero Section */}
-      <VideoHero>
+      <section className="relative h-[50vh] sm:h-[60vh] lg:h-[70vh] overflow-hidden">
+        {/* Image Background */}
+        <div className="absolute inset-0">
+          <img
+            src="/images/Survey Number Demarcation.jpeg"
+            alt="Survey Number Demarcation"
+            className="w-full h-full object-cover"
+            loading="eager"
+          />
+        </div>
+        
+        {/* Overlay */}
+        <div className="absolute inset-0 bg-gradient-to-b from-black/60 via-black/50 to-black/70"></div>
+        
+        {/* Content */}
         <div className="absolute inset-0 flex items-center">
           <div className="container-default w-full">
             <div className="max-w-3xl">
@@ -140,7 +153,7 @@ export default function SurveyNumberDemarcation() {
             </div>
           </div>
         </div>
-      </VideoHero>
+      </section>
 
       {/* Overview Section */}
       <AnimatedSection className="py-20 sm:py-24 bg-white">

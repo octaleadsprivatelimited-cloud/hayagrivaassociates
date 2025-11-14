@@ -57,6 +57,14 @@ const faqs = [
       {
         q: 'Do you coordinate with government departments during approvals?',
         a: 'Yes. We interact with municipal engineers, revenue officials, and TS iPASS officers, respond to queries, and attend site visits or joint measurements to ensure documentation is accepted on the first submission.'
+      },
+      {
+        q: 'How long does TS iPASS approval take?',
+        a: 'TS iPASS approval timelines vary based on project type and complexity. Typically, the process takes 15-30 days for standard projects, but we work to expedite the process through proper documentation and coordination with authorities.'
+      },
+      {
+        q: 'What documents are required for TS iPASS approval?',
+        a: 'Required documents include project proposal, land ownership documents, survey plans, building plans, environmental clearances, NOCs from various departments, and compliance certificates. We help prepare and organize all necessary documentation.'
       }
     ]
   },
@@ -74,6 +82,18 @@ const faqs = [
       {
         q: 'Can you prepare registration plans and location sketches?',
         a: 'Absolutely. We create registration plans, location sketches, and supporting documentation accepted by sub-registrar offices, revenue departments, and lending institutions for mutations, loan processing, and legal submissions.'
+      },
+      {
+        q: 'How do you ensure Vastu compliance in plans?',
+        a: 'Our team follows traditional Vastu Shastra principles including proper orientation, room placement, directional alignment, and energy flow considerations while maintaining modern functionality and approval compliance.'
+      },
+      {
+        q: 'Do you provide 3D visualization for elevation designs?',
+        a: 'Yes, we create realistic 3D renderings and visualizations for building elevations, allowing you to see how your building will look before construction. This helps in material selection and design approval.'
+      },
+      {
+        q: 'Can you revise elevation designs if needed?',
+        a: 'Absolutely. We offer design revisions based on your feedback or approval authority requirements. We work with you to refine the design until it meets your vision and approval standards.'
       }
     ]
   },
@@ -95,6 +115,22 @@ const faqs = [
       {
         q: 'Do you provide both printed and digital reports?',
         a: 'Every project includes duly signed hard copies and comprehensive digital packages. You will receive PDFs, CAD files, coordinate spreadsheets, and photographs for your records and submissions.'
+      },
+      {
+        q: 'What factors are considered in construction cost estimation?',
+        a: 'Our cost estimation includes material costs, labor costs, equipment costs, overhead expenses, taxes, permits, and contingency allowances. We analyze market rates, project specifications, and site conditions to provide accurate estimates.'
+      },
+      {
+        q: 'How accurate are your property valuations?',
+        a: 'Our property valuations are based on comprehensive market analysis, comparable sales, property condition assessment, location factors, and current market trends. We follow industry standards to ensure accurate and reliable valuations.'
+      },
+      {
+        q: 'What documents are needed for home loan application?',
+        a: 'Required documents include identity proof (Aadhaar, PAN), address proof, income documents (salary slips, IT returns), bank statements, property documents (sale deed, registration), and property valuation report. We help organize all necessary documentation.'
+      },
+      {
+        q: 'Do you assist with loan processing and follow-up?',
+        a: 'Yes, we provide complete support throughout the home loan process including application preparation, documentation, lender coordination, follow-up on loan status, and assistance with any queries or additional requirements.'
       }
     ]
   },
@@ -237,12 +273,20 @@ export default function FAQ() {
               >
                 Contact Us
               </Link>
-              <a
-                href="tel:+919966139588"
-                className="inline-flex items-center justify-center gap-2 px-8 py-3 bg-white border-2 border-brand-primary text-brand-primary rounded-lg font-semibold hover:bg-brand-primary/5 transition-colors"
-              >
-                Call Now
-              </a>
+              <div className="flex flex-col gap-2">
+                <a
+                  href="tel:+919966139588"
+                  className="inline-flex items-center justify-center gap-2 px-8 py-3 bg-white border-2 border-brand-primary text-brand-primary rounded-lg font-semibold hover:bg-brand-primary/5 transition-colors"
+                >
+                  Call: +91 9966139588
+                </a>
+                <a
+                  href="tel:+919177887049"
+                  className="inline-flex items-center justify-center gap-2 px-8 py-3 bg-white border-2 border-brand-primary text-brand-primary rounded-lg font-semibold hover:bg-brand-primary/5 transition-colors"
+                >
+                  Call: +91 91778 87049
+                </a>
+              </div>
             </div>
           </div>
         </div>

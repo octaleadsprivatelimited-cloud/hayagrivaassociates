@@ -65,6 +65,60 @@ export default function Blog() {
       excerpt: 'Essential information about land subdivision processes, documentation requirements, and professional surveying services.',
       img: '/images/Sub-division.webp',
       readTime: '6 min read'
+    },
+    {
+      id: 7,
+      date: '3 Jan 2025',
+      category: 'Approvals',
+      title: 'TS iPASS Approvals: Complete Guide',
+      excerpt: 'Understanding the TS iPASS approval process for industrial and commercial projects in Telangana.',
+      img: '/images/service-1.jpeg',
+      readTime: '7 min read'
+    },
+    {
+      id: 8,
+      date: '25 Dec 2024',
+      category: 'Design',
+      title: 'Vastu-Compliant Plans: Benefits and Process',
+      excerpt: 'Learn how Vastu-compliant architectural plans can enhance your property and the process of creating them.',
+      img: '/images/Vastu Plans  Working Plans.jpeg',
+      readTime: '6 min read'
+    },
+    {
+      id: 9,
+      date: '18 Dec 2024',
+      category: 'Design',
+      title: 'Building Elevation Design: Modern Trends',
+      excerpt: 'Explore contemporary building elevation design trends and how they enhance property aesthetics and value.',
+      img: '/images/Building Elevation Designs.jpeg',
+      readTime: '5 min read'
+    },
+    {
+      id: 10,
+      date: '10 Dec 2024',
+      category: 'Construction',
+      title: 'Construction Cost Estimation: Key Factors',
+      excerpt: 'Understanding the essential factors that influence construction cost estimation and budget planning.',
+      img: '/images/Estimation Costing.jpeg',
+      readTime: '6 min read'
+    },
+    {
+      id: 11,
+      date: '2 Dec 2024',
+      category: 'Property',
+      title: 'Property Valuation: When and Why You Need It',
+      excerpt: 'Discover when property valuation is required and how it helps in property transactions and legal matters.',
+      img: '/images/Property Valuations.jpeg',
+      readTime: '5 min read'
+    },
+    {
+      id: 12,
+      date: '28 Nov 2024',
+      category: 'Finance',
+      title: 'Home Loan Application: Documentation Guide',
+      excerpt: 'Complete guide to home loan application process and required documentation for property purchase.',
+      img: '/images/Home Loans.jpeg',
+      readTime: '7 min read'
     }
   ];
 

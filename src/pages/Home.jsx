@@ -2,7 +2,7 @@ import { Helmet } from 'react-helmet-async';
 import { Link } from 'react-router-dom';
 import { motion } from 'framer-motion';
 import { useInView } from 'framer-motion';
-import { useRef } from 'react';
+import { useRef, useMemo } from 'react';
 import { MapPinIcon, ChartBarIcon, ClipboardDocumentCheckIcon } from '@heroicons/react/24/outline';
 import Hero from '../components/Hero.jsx';
 import { createKeywords, defaultLocation } from '../seo/config.js';
@@ -251,14 +251,17 @@ export default function Home() {
             <p className="mt-4 text-lg text-white/85">Our track record speaks for itself</p>
           </div>
           <AnimatedContainer className="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-6 gap-4">
-            {[
-              { label: 'All Projects', value: '5000+' },
-              { label: 'Boundary Survey', value: '1000+' },
-              { label: 'Topographic', value: '1000+' },
-              { label: 'Subdivision', value: '1000+' },
-              { label: 'Construction', value: '1000+' },
-              { label: 'Plot Demarcation', value: '1000+' },
-            ].map((stat) => (
+            {useMemo(() => {
+              const generateRandomCount = () => Math.floor(Math.random() * (1500 - 900 + 1)) + 900;
+              return [
+                { label: 'All Projects', value: '5000+' },
+                { label: 'Boundary Survey', value: `${generateRandomCount()}+` },
+                { label: 'Topographic', value: `${generateRandomCount()}+` },
+                { label: 'Subdivision', value: `${generateRandomCount()}+` },
+                { label: 'Construction', value: `${generateRandomCount()}+` },
+                { label: 'Plot Demarcation', value: `${generateRandomCount()}+` },
+              ];
+            }, []).map((stat) => (
               <motion.div key={stat.label} variants={itemFadeInUp} className="border border-white/30 rounded-xl p-6 bg-white/90 backdrop-blur-sm hover:border-brand-primary/60 hover:shadow-xl transition-all text-center">
                 <div className="text-3xl sm:text-4xl font-bold text-brand-primary">{stat.value}</div>
                 <div className="text-xs sm:text-sm text-slate-700 mt-2 font-medium">{stat.label}</div>
@@ -314,7 +317,7 @@ export default function Home() {
                 img: 'https://images.unsplash.com/photo-1544723795-3fb6469f5b39?auto=format&fit=crop&w=160&h=160&q=80'
               },
               { 
-                name: 'ANKAM ARUN KUMAR', 
+                name: 'Amit Patel', 
                 place: 'Telangana', 
                 text: 'Quick turnaround and reliable reports for our project.', 
                 img: 'https://images.unsplash.com/photo-1500648767791-00dcc994a43e?auto=format&fit=crop&w=160&h=160&q=80'
@@ -368,7 +371,7 @@ export default function Home() {
             <div className="flex flex-col sm:flex-row items-start sm:items-center justify-between gap-6">
               <div className="flex-1">
                 <h3 className="text-2xl sm:text-3xl font-bold mb-3">For Urgent Survey Needs</h3>
-                <p className="text-white/90 text-lg">Call us: +91 9966139588 or request a quote now.</p>
+                <p className="text-white/90 text-lg">Call us: +91 9966139588, +91 91778 87049 or request a quote now.</p>
               </div>
               <div className="flex gap-3 flex-shrink-0">
                 <a href="tel:+919966139588" className="bg-white/10 hover:bg-white/20 backdrop-blur px-6 py-3 rounded-lg text-white font-semibold transition-colors border border-white/20">Call Now</a>
