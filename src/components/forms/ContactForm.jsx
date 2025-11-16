@@ -1,4 +1,5 @@
 import { useState } from 'react';
+import { HIDDEN_SERVICE_NAMES } from '../../config/hiddenServices.js';
 
 export default function ContactForm({ compact = false }) {
   const [form, setForm] = useState({ name: '', email: '', phone: '', service: '', message: '' });
@@ -34,7 +35,7 @@ export default function ContactForm({ compact = false }) {
     }
   };
 
-  const services = [
+  const serviceOptions = [
     // Land Survey Services
     'DGPS Land Survey',
     'Digital Land Survey',
@@ -55,6 +56,7 @@ export default function ContactForm({ compact = false }) {
     'Home Loans',
     'Other'
   ];
+  const services = serviceOptions.filter((service) => !HIDDEN_SERVICE_NAMES.has(service));
 
   return (
     <form onSubmit={onSubmit} className="space-y-4">

@@ -123,7 +123,7 @@ export default function BuildingElevation() {
         {/* Image Background */}
         <div className="absolute inset-0">
           <img
-            src="/images/Building Elevation Designs.jpeg"
+            src="/images/Building elevations.jpeg"
             alt="Building Elevation Designs"
             className="w-full h-full object-cover"
             loading="eager"

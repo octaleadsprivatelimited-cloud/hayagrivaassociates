@@ -5,6 +5,7 @@ import { motion } from 'framer-motion';
 import { useInView } from 'framer-motion';
 import { useRef } from 'react';
 import { createKeywords, defaultLocation } from '../seo/config.js';
+import { HIDDEN_BLOG_IDS } from '../config/hiddenServices.js';
 
 const fadeInUp = {
   hidden: { opacity: 0, y: 30 },
@@ -226,7 +227,7 @@ const blogPosts = {
     category: 'Legal',
     title: 'DTCP Layouts: Understanding Approval Process',
     excerpt: 'A comprehensive guide to DTCP layouts, approval requirements, and how professional surveys facilitate the process.',
-    img: '/images/DTCP Layouts.webp',
+    img: '/images/DTCP Layouts.jpeg',
     readTime: '8 min read',
     author: 'Hayagriva Associates',
     content: `
@@ -636,7 +637,7 @@ const blogPosts = {
     category: 'Design',
     title: 'Building Elevation Design: Modern Trends',
     excerpt: 'Explore contemporary building elevation design trends and how they enhance property aesthetics and value.',
-    img: '/images/Building Elevation Designs.jpeg',
+    img: '/images/Building elevations.jpeg',
     readTime: '5 min read',
     author: 'Hayagriva Associates',
     content: `
@@ -1015,7 +1016,7 @@ export default function BlogPost() {
     return dir + '/' + encodeURIComponent(filename);
   };
 
-  if (!post) {
+  if (!post || HIDDEN_BLOG_IDS.has(post.id)) {
     return (
       <div className="container-default py-20 text-center">
         <h1 className="text-3xl font-bold text-slate-900 mb-4">Blog Post Not Found</h1>

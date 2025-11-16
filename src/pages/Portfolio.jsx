@@ -4,6 +4,7 @@ import { useInView } from 'framer-motion';
 import { useRef, useMemo } from 'react';
 import VideoHero from '../components/VideoHero.jsx';
 import { createKeywords, defaultLocation } from '../seo/config.js';
+import { HIDDEN_SERVICE_NAMES } from '../config/hiddenServices.js';
 
 const fadeInUp = {
   hidden: { opacity: 0, y: 30 },
@@ -50,7 +51,7 @@ export default function Portfolio() {
       title: 'Residential Layout Survey',
       category: 'DTCP Layouts',
       desc: 'Complete DTCP-compliant layout survey for 50-acre residential development project in Mancherial.',
-      img: '/images/DTCP Layouts.webp'
+      img: '/images/DTCP Layouts.jpeg'
     },
     {
       id: 2,
@@ -92,7 +93,7 @@ export default function Portfolio() {
       title: 'TS iPASS Approval Project',
       category: 'TS iPASS Approvals',
       desc: 'Successfully obtained TS iPASS approval for commercial building project with complete documentation and coordination.',
-      img: '/images/service-1.jpeg'
+      img: '/images/Ts I pass permissions.jpeg'
     },
     {
       id: 8,
@@ -106,7 +107,7 @@ export default function Portfolio() {
       title: 'Modern Building Elevation Design',
       category: 'Building Elevation Designs',
       desc: 'Created contemporary elevation design with 3D visualization for commercial building project.',
-      img: '/images/Building Elevation Designs.jpeg'
+      img: '/images/Building elevations.jpeg'
     },
     {
       id: 10,
@@ -130,6 +131,8 @@ export default function Portfolio() {
       img: '/images/Home Loans.jpeg'
     }
   ];
+  const visibleProjects = projects.filter((project) => !HIDDEN_SERVICE_NAMES.has(project.category));
+
   const encodeImagePath = (path) => {
     const parts = path.split('/');
     const filename = parts[parts.length - 1];
@@ -142,7 +145,7 @@ export default function Portfolio() {
         <title>Surveying Portfolio | Hayagriva Associates Projects in Mancherial & Telangana</title>
         <meta
           name="description"
-          content="View Hayagriva Associates portfolio of boundary surveys, DGPS mapping, topographic studies, DTCP layouts and subdivision projects delivered across Mancherial and Telangana."
+          content="View Hayagriva Associates portfolio of boundary surveys, DGPS mapping, topographic studies, DTCP layouts and layout planning projects delivered across Mancherial and Telangana."
         />
         <meta
           name="keywords"
@@ -189,7 +192,7 @@ export default function Portfolio() {
                 { label: 'Topographic Survey', value: `${generateRandomCount()}+` },
                 { label: 'Boundary Survey', value: `${generateRandomCount()}+` },
                 { label: 'Setting-Out Survey', value: `${generateRandomCount()}+` },
-                { label: 'Subdivision & Layout', value: `${generateRandomCount()}+` },
+                { label: 'Layout Planning', value: `${generateRandomCount()}+` },
                 { label: 'Earthwork Volume', value: `${generateRandomCount()}+` },
                 { label: 'As-Built Survey', value: `${generateRandomCount()}+` },
               ];
@@ -212,7 +215,7 @@ export default function Portfolio() {
             <div className="w-20 h-1 bg-brand-primary mx-auto mt-4"></div>
           </div>
           <AnimatedContainer className="grid sm:grid-cols-2 lg:grid-cols-3 gap-6">
-            {projects.map((project) => (
+            {visibleProjects.map((project) => (
               <motion.div key={project.id} variants={itemFadeInUp} className="group border-2 border-slate-200 rounded-2xl bg-white hover:border-brand-primary/50 hover:shadow-xl transition-all overflow-hidden">
                 <div className="relative h-48 overflow-hidden bg-slate-100">
                   <img

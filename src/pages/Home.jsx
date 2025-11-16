@@ -213,7 +213,7 @@ export default function Home() {
               <div className="hidden sm:flex w-12 h-12 rounded-xl bg-brand-primary/10 items-center justify-center text-brand-primary text-2xl">🧭</div>
               <div className="flex-1">
                 <div className="text-xs uppercase tracking-wider text-brand-primary font-semibold">Company Profile</div>
-                <h2 className="mt-2 text-3xl sm:text-4xl font-bold text-slate-900">Your Trusted Partner in Digital Land Surveying</h2>
+                <h2 className="mt-2 text-3xl sm:text-4xl font-bold text-slate-900">Your Trusted Partner in Professional Land Surveying</h2>
                 <p className="mt-2 text-lg text-brand-primary/90 font-semibold">Save your time! Save your money!</p>
                 <p className="mt-4 text-slate-700 leading-relaxed">Hayagriva Associates is comprised of seasoned experts with extensive experience in land surveying. We recognize the importance of time and accuracy, assess client needs thoroughly, and deliver precise reports and guidance efficiently and affordably.</p>
                 <ul className="mt-4 grid sm:grid-cols-2 gap-2 text-slate-700 text-sm">
@@ -257,7 +257,7 @@ export default function Home() {
                 { label: 'All Projects', value: '5000+' },
                 { label: 'Boundary Survey', value: `${generateRandomCount()}+` },
                 { label: 'Topographic', value: `${generateRandomCount()}+` },
-                { label: 'Subdivision', value: `${generateRandomCount()}+` },
+                { label: 'Layout Planning', value: `${generateRandomCount()}+` },
                 { label: 'Construction', value: `${generateRandomCount()}+` },
                 { label: 'Plot Demarcation', value: `${generateRandomCount()}+` },
               ];
@@ -331,34 +331,6 @@ export default function Home() {
                   <p className="text-sm text-slate-500">{t.place}</p>
                 </div>
               </motion.div>
-            ))}
-          </AnimatedContainer>
-        </div>
-      </AnimatedSection>
-
-      {/* Latest Updates */}
-      <AnimatedSection className="bg-white py-16 sm:py-20">
-        <div className="container-default">
-          <div className="text-center mb-12">
-            <h2 className="text-3xl sm:text-4xl font-bold text-slate-900">Latest Updates</h2>
-            <p className="mt-4 text-lg text-slate-600">Stay informed with industry insights</p>
-          </div>
-          <AnimatedContainer className="grid sm:grid-cols-2 lg:grid-cols-3 gap-6">
-            {[
-              { id: 1, date: '15 Jan', title: 'Importance of Boundary Surveys for Property', img: '/images/Boundary Survey.webp' },
-              { id: 2, date: '10 Jan', title: 'Latest Technology in Land Surveying', img: '/images/Digital Land Survey.avif' },
-              { id: 3, date: '5 Jan', title: 'When Do You Need a Topographic Survey?', img: '/images/Topographic Survey.webp' },
-            ].map((b, i) => (
-              <motion.article key={i} variants={itemFadeInUp} className="group border-2 border-slate-200 rounded-2xl bg-white hover:border-brand-primary/50 hover:shadow-xl transition-all overflow-hidden">
-                <Link to={`/blog/${b.id}`}>
-                  <img src={encodeImagePath(b.img)} alt={b.title} loading="lazy" className="h-40 w-full object-cover" />
-                  <div className="p-6">
-                    <div className="text-xs font-semibold text-brand-primary uppercase tracking-wide">{b.date}</div>
-                    <h3 className="mt-3 font-bold text-lg text-slate-900 group-hover:text-brand-primary transition-colors">{b.title}</h3>
-                    <span className="mt-4 inline-flex items-center gap-2 text-brand-primary text-sm font-medium group-hover:gap-3 transition-all">Read More <span>→</span></span>
-                  </div>
-                </Link>
-              </motion.article>
             ))}
           </AnimatedContainer>
         </div>

@@ -1,17 +1,17 @@
 import { useState } from 'react';
 import { Link, NavLink } from 'react-router-dom';
 import { motion, AnimatePresence } from 'framer-motion';
+import { HIDDEN_SERVICE_ROUTES } from '../config/hiddenServices.js';
 
 const navItems = [
   { to: '/', label: 'Home' },
   { to: '/about', label: 'About Us' },
   { to: '/portfolio', label: 'Portfolio' },
-  { to: '/blog', label: 'Blog' },
   { to: '/faq', label: 'FAQ' },
   { to: '/contact', label: 'Contact' }
 ];
 
-const services = [
+const baseServices = [
   { to: '/services/dgps-land-survey', label: 'DGPS Land Survey' },
   { to: '/services/digital-land-survey', label: 'Digital Land Survey' },
   { to: '/services/dtcp-layouts', label: 'DTCP Layouts' },
@@ -21,6 +21,7 @@ const services = [
   { to: '/services/road-survey', label: 'Road Survey' },
   { to: '/services/registration-plans-location-sketch', label: 'Registration Plans & Location Sketch' },
 ];
+const services = baseServices.filter((service) => !HIDDEN_SERVICE_ROUTES.has(service.to));
 
 const permissions = [
   { to: '/services/municipal-grampanchayat', label: 'Municipal & Grampanchayat Building Permission' },
@@ -96,31 +97,28 @@ export default function Header() {
             About Us
           </NavLink>
           
-          {/* Services Dropdown */}
+          {/* Design & Other Services Dropdown */}
           <div 
             className="relative"
-            onMouseEnter={() => setServicesOpen(true)}
-            onMouseLeave={() => setServicesOpen(false)}
+            onMouseEnter={() => setDesignAndOtherServicesOpen(true)}
+            onMouseLeave={() => setDesignAndOtherServicesOpen(false)}
           >
-            <NavLink 
-              to="/services" 
-              className={({ isActive }) => `hover:text-brand-primary flex items-center gap-1 ${isActive ? 'text-brand-primary' : ''}`}
-            >
-              Services
+            <div className="hover:text-brand-primary flex items-center gap-1 cursor-pointer">
+              Design & Other Services
               <svg 
                 xmlns="http://www.w3.org/2000/svg" 
                 fill="none" 
                 viewBox="0 0 24 24" 
                 strokeWidth={2} 
                 stroke="currentColor" 
-                className={`w-4 h-4 transition-transform ${servicesOpen ? 'rotate-180' : ''}`}
+                className={`w-4 h-4 transition-transform ${designAndOtherServicesOpen ? 'rotate-180' : ''}`}
               >
                 <path strokeLinecap="round" strokeLinejoin="round" d="M19.5 8.25l-7.5 7.5-7.5-7.5" />
               </svg>
-            </NavLink>
+            </div>
             
             <AnimatePresence>
-              {servicesOpen && (
+              {designAndOtherServicesOpen && (
                 <motion.div
                   initial={{ opacity: 0, y: -10 }}
                   animate={{ opacity: 1, y: 0 }}
@@ -129,19 +127,12 @@ export default function Header() {
                   className="absolute top-full left-0 mt-2 w-72 bg-white rounded-lg shadow-xl border-2 border-slate-200 overflow-hidden"
                 >
                   <div className="py-2">
-                    <Link 
-                      to="/services" 
-                      className="block px-4 py-2 text-sm font-semibold text-brand-primary hover:bg-brand-primary/10 border-b border-slate-100"
-                      onClick={() => setServicesOpen(false)}
-                    >
-                      View All Services
-                    </Link>
-                    {services.map((service) => (
+                    {designAndOtherServices.map((service) => (
                       <Link
                         key={service.to}
                         to={service.to}
                         className="block px-4 py-2.5 text-sm text-slate-700 hover:bg-brand-primary/10 hover:text-brand-primary transition-colors"
-                        onClick={() => setServicesOpen(false)}
+                        onClick={() => setDesignAndOtherServicesOpen(false)}
                       >
                         {service.label}
                       </Link>
@@ -151,7 +142,7 @@ export default function Header() {
               )}
             </AnimatePresence>
           </div>
-          
+
           {/* Permissions Dropdown */}
           <div 
             className="relative"
@@ -198,28 +189,31 @@ export default function Header() {
             </AnimatePresence>
           </div>
           
-          {/* Design & Other Services Dropdown */}
+          {/* Services Dropdown (renamed to Survey Services) */}
           <div 
             className="relative"
-            onMouseEnter={() => setDesignAndOtherServicesOpen(true)}
-            onMouseLeave={() => setDesignAndOtherServicesOpen(false)}
+            onMouseEnter={() => setServicesOpen(true)}
+            onMouseLeave={() => setServicesOpen(false)}
           >
-            <div className="hover:text-brand-primary flex items-center gap-1 cursor-pointer">
-              Design & Other Services
+            <NavLink 
+              to="/services" 
+              className={({ isActive }) => `hover:text-brand-primary flex items-center gap-1 ${isActive ? 'text-brand-primary' : ''}`}
+            >
+              Survey Services
               <svg 
                 xmlns="http://www.w3.org/2000/svg" 
                 fill="none" 
                 viewBox="0 0 24 24" 
                 strokeWidth={2} 
                 stroke="currentColor" 
-                className={`w-4 h-4 transition-transform ${designAndOtherServicesOpen ? 'rotate-180' : ''}`}
+                className={`w-4 h-4 transition-transform ${servicesOpen ? 'rotate-180' : ''}`}
               >
                 <path strokeLinecap="round" strokeLinejoin="round" d="M19.5 8.25l-7.5 7.5-7.5-7.5" />
               </svg>
-            </div>
+            </NavLink>
             
             <AnimatePresence>
-              {designAndOtherServicesOpen && (
+              {servicesOpen && (
                 <motion.div
                   initial={{ opacity: 0, y: -10 }}
                   animate={{ opacity: 1, y: 0 }}
@@ -228,12 +222,19 @@ export default function Header() {
                   className="absolute top-full left-0 mt-2 w-72 bg-white rounded-lg shadow-xl border-2 border-slate-200 overflow-hidden"
                 >
                   <div className="py-2">
-                    {designAndOtherServices.map((service) => (
+                    <Link 
+                      to="/services" 
+                      className="block px-4 py-2 text-sm font-semibold text-brand-primary hover:bg-brand-primary/10 border-b border-slate-100"
+                      onClick={() => setServicesOpen(false)}
+                    >
+                      View All Services
+                    </Link>
+                    {services.map((service) => (
                       <Link
                         key={service.to}
                         to={service.to}
                         className="block px-4 py-2.5 text-sm text-slate-700 hover:bg-brand-primary/10 hover:text-brand-primary transition-colors"
-                        onClick={() => setDesignAndOtherServicesOpen(false)}
+                        onClick={() => setServicesOpen(false)}
                       >
                         {service.label}
                       </Link>
@@ -292,25 +293,26 @@ export default function Header() {
               </NavLink>
               
               {/* Mobile Services Dropdown */}
+              {/* Mobile Design & Other Services Dropdown */}
               <div>
                 <button
-                  onClick={() => setMobileServicesOpen(!mobileServicesOpen)}
+                  onClick={() => setMobileDesignAndOtherServicesOpen(!mobileDesignAndOtherServicesOpen)}
                   className="w-full flex items-center justify-between py-2 text-sm text-white"
                 >
-                  <span>Services</span>
+                  <span>Design & Other Services</span>
                   <svg 
                     xmlns="http://www.w3.org/2000/svg" 
                     fill="none" 
                     viewBox="0 0 24 24" 
                     strokeWidth={2} 
                     stroke="currentColor" 
-                    className={`w-4 h-4 transition-transform ${mobileServicesOpen ? 'rotate-180' : ''}`}
+                    className={`w-4 h-4 transition-transform ${mobileDesignAndOtherServicesOpen ? 'rotate-180' : ''}`}
                   >
                     <path strokeLinecap="round" strokeLinejoin="round" d="M19.5 8.25l-7.5 7.5-7.5-7.5" />
                   </svg>
                 </button>
                 <AnimatePresence>
-                  {mobileServicesOpen && (
+                  {mobileDesignAndOtherServicesOpen && (
                     <motion.div
                       initial={{ height: 0, opacity: 0 }}
                       animate={{ height: 'auto', opacity: 1 }}
@@ -319,23 +321,13 @@ export default function Header() {
                       className="overflow-hidden"
                     >
                       <div className="pl-4 pt-2 space-y-1">
-                        <Link
-                          to="/services"
-                          onClick={() => {
-                            setOpen(false);
-                            setMobileServicesOpen(false);
-                          }}
-                          className="block py-2 text-sm text-white/90 hover:text-white font-medium"
-                        >
-                          View All Services
-                        </Link>
-                        {services.map((service) => (
+                        {designAndOtherServices.map((service) => (
                           <Link
                             key={service.to}
                             to={service.to}
                             onClick={() => {
                               setOpen(false);
-                              setMobileServicesOpen(false);
+                              setMobileDesignAndOtherServicesOpen(false);
                             }}
                             className="block py-2 text-sm text-white/80 hover:text-white pl-2"
                           >
@@ -387,6 +379,63 @@ export default function Header() {
                             className="block py-2 text-sm text-white/80 hover:text-white pl-2"
                           >
                             {permission.label}
+                          </Link>
+                        ))}
+                      </div>
+                    </motion.div>
+                  )}
+                </AnimatePresence>
+              </div>
+              
+              {/* Mobile Services Dropdown (renamed to Survey Services) */}
+              <div>
+                <button
+                  onClick={() => setMobileServicesOpen(!mobileServicesOpen)}
+                  className="w-full flex items-center justify-between py-2 text-sm text-white"
+                >
+                  <span>Survey Services</span>
+                  <svg 
+                    xmlns="http://www.w3.org/2000/svg" 
+                    fill="none" 
+                    viewBox="0 0 24 24" 
+                    strokeWidth={2} 
+                    stroke="currentColor" 
+                    className={`w-4 h-4 transition-transform ${mobileServicesOpen ? 'rotate-180' : ''}`}
+                  >
+                    <path strokeLinecap="round" strokeLinejoin="round" d="M19.5 8.25l-7.5 7.5-7.5-7.5" />
+                  </svg>
+                </button>
+                <AnimatePresence>
+                  {mobileServicesOpen && (
+                    <motion.div
+                      initial={{ height: 0, opacity: 0 }}
+                      animate={{ height: 'auto', opacity: 1 }}
+                      exit={{ height: 0, opacity: 0 }}
+                      transition={{ duration: 0.2 }}
+                      className="overflow-hidden"
+                    >
+                      <div className="pl-4 pt-2 space-y-1">
+                        <Link
+                          to="/services"
+                          onClick={() => {
+                            setOpen(false);
+                            setMobileServicesOpen(false);
+                          }}
+                          className="block py-2 text-sm text-white/90 hover:text-white font-medium"
+                        >
+                          View All Services
+                        </Link>
+                        {services.map((service) => (
+                          <Link
+                            key={service.to}
+                            to={service.to}
+                            onClick={() => {
+                              setOpen(false);
+                              setMobileServicesOpen(false);
+                            }}
+                            className="block py-2 text-sm text-white/80 hover:text-white pl-2"
+                          >
+                            {service.label}
                           </Link>
                         ))}
                       </div>

@@ -157,7 +157,7 @@ export default function About() {
               About Hayagriva Associates
             </h1>
             <p className="text-base sm:text-lg text-white/90 leading-relaxed">
-              Your Trusted Partner in Digital Land Surveying. We save your time and money with precise, professional land surveying services backed by official permissions and licenses.
+              Your Trusted Partner in Professional Land Surveying. We save your time and money with precise services backed by official permissions and licenses.
             </p>
             </div>
           </div>
@@ -187,6 +187,15 @@ export default function About() {
                 <div>
                   <p className="text-sm font-semibold uppercase tracking-[0.3em] text-brand-primary/80">Founder & Principal Surveyor</p>
                   <h3 className="text-3xl sm:text-4xl font-bold text-white mt-2">ANKAM ARUN KUMAR</h3>
+                </div>
+                <div className="flex flex-wrap gap-2">
+                  <span className="px-3 py-1 rounded-full text-xs font-semibold bg-white/10 border border-white/20 text-white/90">Civil Engineer</span>
+                  <span className="px-3 py-1 rounded-full text-xs font-semibold bg-white/10 border border-white/20 text-white/90">Licensed Surveyor</span>
+                  <span className="px-3 py-1 rounded-full text-xs font-semibold bg-white/10 border border-white/20 text-white/90">Approved Valuer</span>
+                  <span className="px-3 py-1 rounded-full text-xs font-semibold bg-white/10 border border-white/20 text-white/90">IOV Registered Valuer</span>
+                  <span className="px-3 py-1 rounded-full text-xs font-semibold bg-white/10 border border-white/20 text-white/90">Chartered Engineer</span>
+                  <span className="px-3 py-1 rounded-full text-xs font-semibold bg-white/10 border border-white/20 text-white/90">ACCE India Member</span>
+                  <span className="px-3 py-1 rounded-full text-xs font-semibold bg-white/10 border border-white/20 text-white/90">Institution of Engineers (India) Member</span>
                 </div>
                 <p className="text-lg leading-relaxed">
                   ANKAM ARUN KUMAR established Hayagriva Associates with a clear mission: make professional land surveying accessible, transparent, and legally reliable for every client in Telangana. With over a decade of hands-on experience handling municipal approvals, revenue records, and high-stakes infrastructure projects, he brings both technical mastery and practical insight to every assignment.

@@ -61,7 +61,7 @@ export default function DTCPLayouts() {
     return dir + '/' + encodeURIComponent(filename);
   };
 
-  const imagePath = encodeImagePath('/images/DTCP Layouts.webp');
+  const imagePath = encodeImagePath('/images/DTCP Layouts.jpeg');
 
   const features = [
     {
@@ -131,7 +131,7 @@ export default function DTCPLayouts() {
         {/* Image Background */}
         <div className="absolute inset-0">
           <img
-            src="/images/DTCP Layouts1.jpg"
+            src="/images/DTCP Layouts.jpeg"
             alt="DTCP Layouts"
             className="w-full h-full object-cover"
             loading="eager"

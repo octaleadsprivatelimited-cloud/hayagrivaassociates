@@ -4,9 +4,9 @@ const path = require('path');
 
 const BASE_URL = process.env.SITE_URL || 'https://example.com';
 const routes = [
-  '/', '/about', '/services', '/portfolio', '/blog', '/contact', '/pricing', '/testimonials', '/faq', '/careers',
-  '/services/dgps-land-survey', '/services/digital-land-survey', '/services/dtcp-layouts', '/services/enjoyment-survey',
-  '/services/sub-division', '/services/survey-number-demarcation', '/services/registration-plans-location-sketch',
+  '/', '/about', '/services', '/portfolio', '/contact', '/pricing', '/testimonials', '/faq', '/careers',
+  '/services/dgps-land-survey', '/services/dtcp-layouts', '/services/enjoyment-survey',
+  '/services/survey-number-demarcation', '/services/registration-plans-location-sketch',
   '/land-surveying', '/boundary-surveying', '/plot-demarcation', '/land-title-surveys', '/topographic-surveys'
 ];
 

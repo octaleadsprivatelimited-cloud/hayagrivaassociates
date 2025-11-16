@@ -2,6 +2,7 @@ import { Helmet } from 'react-helmet-async';
 import { Link } from 'react-router-dom';
 import VideoHero from '../components/VideoHero.jsx';
 import { createKeywords, defaultLocation } from '../seo/config.js';
+import { HIDDEN_BLOG_IDS } from '../config/hiddenServices.js';
 
 export default function Blog() {
   const encodeImagePath = (path) => {
@@ -45,7 +46,7 @@ export default function Blog() {
       category: 'Legal',
       title: 'DTCP Layouts: Understanding Approval Process',
       excerpt: 'A comprehensive guide to DTCP layouts, approval requirements, and how professional surveys facilitate the process.',
-      img: '/images/DTCP Layouts.webp',
+      img: '/images/DTCP Layouts.jpeg',
       readTime: '8 min read'
     },
     {
@@ -90,7 +91,7 @@ export default function Blog() {
       category: 'Design',
       title: 'Building Elevation Design: Modern Trends',
       excerpt: 'Explore contemporary building elevation design trends and how they enhance property aesthetics and value.',
-      img: '/images/Building Elevation Designs.jpeg',
+      img: '/images/Building elevations.jpeg',
       readTime: '5 min read'
     },
     {
@@ -121,6 +122,8 @@ export default function Blog() {
       readTime: '7 min read'
     }
   ];
+
+  const visibleBlogPosts = blogPosts.filter((post) => !HIDDEN_BLOG_IDS.has(post.id));
 
   return (
     <>
@@ -171,7 +174,7 @@ export default function Blog() {
           </div>
 
           <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-6 max-w-6xl mx-auto">
-            {blogPosts.map((post) => (
+            {visibleBlogPosts.map((post) => (
               <article
                 key={post.id}
                 className="group border-2 border-slate-200 rounded-2xl bg-white hover:border-brand-primary/50 hover:shadow-xl transition-all duration-300 overflow-hidden"

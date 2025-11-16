@@ -1,5 +1,6 @@
 import { useState } from 'react';
 import { Link } from 'react-router-dom';
+import { HIDDEN_SERVICE_ROUTES } from '../config/hiddenServices.js';
 
 function Section({ title, children }) {
   const [open, setOpen] = useState(false);
@@ -13,6 +14,19 @@ function Section({ title, children }) {
     </div>
   );
 }
+
+const footerServiceLinks = [
+  { to: '/services/dgps-land-survey', label: 'DGPS Land Survey' },
+  { to: '/services/digital-land-survey', label: 'Digital Land Survey' },
+  { to: '/services/dtcp-layouts', label: 'DTCP Layouts' },
+  { to: '/services/enjoyment-survey', label: 'Enjoyment Survey' },
+  { to: '/services/sub-division', label: 'Sub-division' },
+  { to: '/services/survey-number-demarcation', label: 'Survey Number Demarcation' },
+  { to: '/services/road-survey', label: 'Road Survey' },
+  { to: '/services/registration-plans-location-sketch', label: 'Registration Plans & Location Sketch' },
+];
+
+const visibleFooterServices = footerServiceLinks.filter((service) => !HIDDEN_SERVICE_ROUTES.has(service.to));
 
 export default function Footer() {
   return (
@@ -56,14 +70,13 @@ export default function Footer() {
         </Section>
         <Section title="Services">
           <ul className="space-y-1">
-            <li><Link to="/services/dgps-land-survey" className="hover:underline">DGPS Land Survey</Link></li>
-            <li><Link to="/services/digital-land-survey" className="hover:underline">Digital Land Survey</Link></li>
-            <li><Link to="/services/dtcp-layouts" className="hover:underline">DTCP Layouts</Link></li>
-            <li><Link to="/services/enjoyment-survey" className="hover:underline">Enjoyment Survey</Link></li>
-            <li><Link to="/services/sub-division" className="hover:underline">Sub-division</Link></li>
-            <li><Link to="/services/survey-number-demarcation" className="hover:underline">Survey Number Demarcation</Link></li>
-            <li><Link to="/services/road-survey" className="hover:underline">Road Survey</Link></li>
-            <li><Link to="/services/registration-plans-location-sketch" className="hover:underline">Registration Plans & Location Sketch</Link></li>
+            {visibleFooterServices.map((service) => (
+              <li key={service.to}>
+                <Link to={service.to} className="hover:underline">
+                  {service.label}
+                </Link>
+              </li>
+            ))}
           </ul>
         </Section>
         <Section title="Company">
@@ -71,7 +84,6 @@ export default function Footer() {
             <li><Link to="/about" className="hover:underline">About Us</Link></li>
             <li><Link to="/services" className="hover:underline">Services</Link></li>
             <li><Link to="/portfolio" className="hover:underline">Portfolio</Link></li>
-            <li><Link to="/blog" className="hover:underline">Blog</Link></li>
             <li><Link to="/faq" className="hover:underline">FAQ</Link></li>
             <li><Link to="/contact" className="hover:underline">Contact</Link></li>
           </ul>

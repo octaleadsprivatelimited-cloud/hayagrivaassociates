@@ -2,6 +2,7 @@ import { Helmet } from 'react-helmet-async';
 import { Link } from 'react-router-dom';
 import VideoHero from '../components/VideoHero.jsx';
 import { createKeywords, defaultLocation } from '../seo/config.js';
+import { HIDDEN_SERVICE_ROUTES } from '../config/hiddenServices.js';
 
 export default function Services() {
   const encodeImagePath = (path) => {
@@ -16,7 +17,7 @@ export default function Services() {
     return encoded;
   };
 
-  const landSurveyServices = [
+  const landSurveyServicesData = [
     { 
       to: '/services/dgps-land-survey', 
       title: 'DGPS Land Survey', 
@@ -32,7 +33,7 @@ export default function Services() {
     { 
       to: '/services/dtcp-layouts', 
       title: 'DTCP Layouts', 
-      img: '/images/DTCP Layouts.webp',
+      img: '/images/DTCP Layouts.jpeg',
       desc: 'Layouts prepared as per DTCP norms and approvals.'
     },
     { 
@@ -56,7 +57,7 @@ export default function Services() {
     { 
       to: '/services/road-survey', 
       title: 'Road Survey', 
-      img: '/images/Construction Surveys.webp',
+      img: '/images/Road survey.jpeg',
       desc: 'Detailed road alignment, profile, and ROW surveys for infrastructure projects.'
     },
     { 
@@ -66,6 +67,8 @@ export default function Services() {
       desc: 'Preparation of registration plans and location sketches for legal processes.'
     },
   ];
+
+  const landSurveyServices = landSurveyServicesData.filter((service) => !HIDDEN_SERVICE_ROUTES.has(service.to));
 
   const permissionsServices = [
     { 
@@ -77,7 +80,7 @@ export default function Services() {
     { 
       to: '/services/ts-ipass', 
       title: 'TS iPASS Approvals', 
-      img: '/images/service-2.jpeg',
+      img: '/images/Ts I pass permissions.jpeg',
       desc: 'Streamlined approval process through Telangana Industrial Policy Approval System.'
     },
   ];
@@ -92,7 +95,7 @@ export default function Services() {
     { 
       to: '/services/building-elevation', 
       title: 'Building Elevation Designs', 
-      img: '/images/service-4.jpeg',
+      img: '/images/Building elevations.jpeg',
       desc: 'Professional elevation designs that enhance the aesthetic appeal and functionality of buildings.'
     },
   ];
@@ -107,13 +110,13 @@ export default function Services() {
     { 
       to: '/services/property-valuations', 
       title: 'Property Valuations', 
-      img: '/images/DTCP Layouts.webp',
+      img: '/images/DTCP Layouts.jpeg',
       desc: 'Professional property valuation services for sale, purchase, and legal purposes.'
     },
     { 
       to: '/services/home-loans', 
       title: 'Home Loans', 
-      img: '/images/DTCP Layouts.webp',
+      img: '/images/DTCP Layouts.jpeg',
       desc: 'Assistance with home loan applications and processing for residential properties.'
     },
   ];
@@ -126,13 +129,13 @@ export default function Services() {
         <title>Land Surveying & Approval Services | Hayagriva Associates Mancherial</title>
         <meta
           name="description"
-          content="Browse Hayagriva Associates services including DGPS land survey, digital surveying, DTCP layouts, municipal permissions, TS iPASS approvals, Vastu plans, property valuations and more across Mancherial, Telangana."
+          content="Browse Hayagriva Associates services including DGPS land survey, DTCP layouts, municipal permissions, TS iPASS approvals, Vastu plans, property valuations and more across Mancherial, Telangana."
         />
         <meta
           name="keywords"
           content={createKeywords(
             'DGPS survey services',
-            'digital land survey Mancherial',
+            'professional land survey Mancherial',
             'DTCP layout preparation Telangana',
             'TS iPASS approval support',
             `surveying and permissions in ${defaultLocation}`
