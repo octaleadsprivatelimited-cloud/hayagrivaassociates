@@ -556,7 +556,7 @@ const blogPosts = {
     category: 'Design',
     title: 'Vastu-Compliant Plans: Benefits and Process',
     excerpt: 'Learn how Vastu-compliant architectural plans can enhance your property and the process of creating them.',
-    img: '/images/Vastu Plans  Working Plans.jpeg',
+    img: '/images/Vastu Plans  Working Plans (2).jpeg',
     readTime: '6 min read',
     author: 'Hayagriva Associates',
     content: `

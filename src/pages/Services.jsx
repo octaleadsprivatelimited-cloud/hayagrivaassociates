@@ -21,7 +21,7 @@ export default function Services() {
     { 
       to: '/services/dgps-land-survey', 
       title: 'DGPS Land Survey', 
-      img: '/images/DGPS Land Survey.webp',
+      img: '/images/DGPS Land Survey.jpeg',
       desc: 'High-precision positioning using DGPS instruments for accurate control and mapping.'
     },
     { 
@@ -89,7 +89,7 @@ export default function Services() {
     { 
       to: '/services/vastu-plans', 
       title: 'Vastu Plans / Working Plans', 
-      img: '/images/service-3.jpeg',
+      img: '/images/Vastu Plans  Working Plans (2).jpeg',
       desc: 'Architectural plans designed according to Vastu principles and working drawings for construction.'
     },
     { 
@@ -171,45 +171,7 @@ export default function Services() {
             <div className="w-20 h-1 bg-brand-primary mx-auto mt-4"></div>
           </div>
           
-          {/* Land Survey Services */}
-          <div className="mb-16">
-            <h3 className="text-2xl font-bold text-slate-900 mb-6">Land Survey Services</h3>
-            <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-6">
-              {landSurveyServices.map((service) => (
-                <Link
-                  key={service.to}
-                  to={service.to}
-                  className="group border-2 border-slate-200 rounded-xl p-0 bg-white hover:shadow-xl hover:-translate-y-1 hover:border-brand-primary/50 transition-all duration-300 block overflow-hidden"
-                >
-                  <div className="relative h-48 overflow-hidden bg-slate-100">
-                    <img
-                      src={encodeImagePath(service.img)}
-                      alt={service.title}
-                      loading="lazy"
-                      className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500"
-                      onError={(e) => {
-                        console.error('Failed to load image:', service.img);
-                        e.target.src = service.img;
-                      }}
-                    />
-                    <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
-                  </div>
-                  <div className="p-6">
-                    <h4 className="font-semibold text-lg text-slate-900 group-hover:text-brand-primary transition-colors mb-3">
-                      {service.title}
-                    </h4>
-                    <p className="text-sm text-slate-600 leading-relaxed mb-4">
-                      {service.desc}
-                    </p>
-                    <span className="inline-flex items-center text-brand-primary text-sm font-medium group-hover:gap-2 gap-1 transition-all">
-                      Learn More 
-                      <span className="group-hover:translate-x-1 transition-transform">→</span>
-                    </span>
-                  </div>
-                </Link>
-              ))}
-            </div>
-          </div>
+          
 
           {/* Permissions Services */}
           <div className="mb-16">
@@ -296,6 +258,46 @@ export default function Services() {
             <h3 className="text-2xl font-bold text-slate-900 mb-6">Other Services</h3>
             <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-6">
               {otherServices.map((service) => (
+                <Link
+                  key={service.to}
+                  to={service.to}
+                  className="group border-2 border-slate-200 rounded-xl p-0 bg-white hover:shadow-xl hover:-translate-y-1 hover:border-brand-primary/50 transition-all duration-300 block overflow-hidden"
+                >
+                  <div className="relative h-48 overflow-hidden bg-slate-100">
+                    <img
+                      src={encodeImagePath(service.img)}
+                      alt={service.title}
+                      loading="lazy"
+                      className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500"
+                      onError={(e) => {
+                        console.error('Failed to load image:', service.img);
+                        e.target.src = service.img;
+                      }}
+                    />
+                    <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
+                  </div>
+                  <div className="p-6">
+                    <h4 className="font-semibold text-lg text-slate-900 group-hover:text-brand-primary transition-colors mb-3">
+                      {service.title}
+                    </h4>
+                    <p className="text-sm text-slate-600 leading-relaxed mb-4">
+                      {service.desc}
+                    </p>
+                    <span className="inline-flex items-center text-brand-primary text-sm font-medium group-hover:gap-2 gap-1 transition-all">
+                      Learn More 
+                      <span className="group-hover:translate-x-1 transition-transform">→</span>
+                    </span>
+                  </div>
+                </Link>
+              ))}
+            </div>
+          </div>
+
+          {/* Land Survey Services (moved below Other Services) */}
+          <div className="mb-16">
+            <h3 className="text-2xl font-bold text-slate-900 mb-6">Land Survey Services</h3>
+            <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-6">
+              {landSurveyServices.map((service) => (
                 <Link
                   key={service.to}
                   to={service.to}

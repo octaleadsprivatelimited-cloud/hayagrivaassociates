@@ -63,7 +63,7 @@ export default function DGPSLandSurvey() {
     return dir + '/' + encodeURIComponent(filename);
   };
 
-  const imagePath = encodeImagePath('/images/DGPS Land Survey.webp');
+  const imagePath = encodeImagePath('/images/DGPS Land Survey.jpeg');
 
   const features = [
     {

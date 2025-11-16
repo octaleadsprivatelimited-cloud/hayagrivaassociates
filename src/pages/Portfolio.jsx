@@ -86,7 +86,7 @@ export default function Portfolio() {
       title: 'DGPS Control Network',
       category: 'DGPS Survey',
       desc: 'High-precision DGPS control network establishment for large-scale mapping project.',
-      img: '/images/DGPS Land Survey.webp'
+      img: '/images/DGPS Land Survey.jpeg'
     },
     {
       id: 7,
@@ -100,7 +100,7 @@ export default function Portfolio() {
       title: 'Vastu-Compliant Residential Plans',
       category: 'Vastu Plans / Working Plans',
       desc: 'Designed Vastu-compliant floor plans and working drawings for residential building project in Mancherial.',
-      img: '/images/Vastu Plans  Working Plans.jpeg'
+      img: '/images/Vastu Plans  Working Plans (2).jpeg'
     },
     {
       id: 9,
@@ -177,34 +177,7 @@ export default function Portfolio() {
         </div>
       </VideoHero>
 
-      {/* Stats Section */}
-      <AnimatedSection className="py-16 sm:py-20 bg-white">
-        <div className="container-default">
-          <div className="text-center mb-12">
-            <h2 className="text-3xl sm:text-4xl font-bold text-slate-900 mb-4">Project Statistics</h2>
-            <p className="text-lg text-slate-600">Our track record of successful projects</p>
-            <div className="w-20 h-1 bg-brand-primary mx-auto mt-4"></div>
-          </div>
-          <AnimatedContainer className="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-6 gap-6">
-            {useMemo(() => {
-              const generateRandomCount = () => Math.floor(Math.random() * (1500 - 900 + 1)) + 900;
-              return [
-                { label: 'Topographic Survey', value: `${generateRandomCount()}+` },
-                { label: 'Boundary Survey', value: `${generateRandomCount()}+` },
-                { label: 'Setting-Out Survey', value: `${generateRandomCount()}+` },
-                { label: 'Layout Planning', value: `${generateRandomCount()}+` },
-                { label: 'Earthwork Volume', value: `${generateRandomCount()}+` },
-                { label: 'As-Built Survey', value: `${generateRandomCount()}+` },
-              ];
-            }, []).map((stat, i) => (
-              <motion.div key={stat.label} variants={itemFadeInUp} className="border-2 border-slate-200 rounded-xl p-6 bg-white hover:border-brand-primary/50 hover:shadow-lg transition-all text-center">
-                <div className="text-3xl sm:text-4xl font-bold text-brand-primary mb-2">{stat.value}</div>
-                <div className="text-xs sm:text-sm text-slate-600 font-medium">{stat.label}</div>
-              </motion.div>
-            ))}
-          </AnimatedContainer>
-        </div>
-      </AnimatedSection>
+      
 
       {/* Projects Grid */}
       <AnimatedSection className="py-16 sm:py-20 bg-slate-50">
@@ -241,6 +214,35 @@ export default function Portfolio() {
                     {project.desc}
                   </p>
                 </div>
+              </motion.div>
+            ))}
+          </AnimatedContainer>
+        </div>
+      </AnimatedSection>
+
+      {/* Project Statistics (after Featured Projects) */}
+      <AnimatedSection className="py-16 sm:py-20 bg-white">
+        <div className="container-default">
+          <div className="text-center mb-12">
+            <h2 className="text-3xl sm:text-4xl font-bold text-slate-900 mb-4">Project Statistics</h2>
+            <p className="text-lg text-slate-600">Our track record of successful projects</p>
+            <div className="w-20 h-1 bg-brand-primary mx-auto mt-4"></div>
+          </div>
+          <AnimatedContainer className="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-6 gap-6">
+            {useMemo(() => {
+              const generateRandomCount = () => Math.floor(Math.random() * (1500 - 900 + 1)) + 900;
+              return [
+                { label: 'Topographic Survey', value: `${generateRandomCount()}+` },
+                { label: 'Boundary Survey', value: `${generateRandomCount()}+` },
+                { label: 'Setting-Out Survey', value: `${generateRandomCount()}+` },
+                { label: 'Layout Planning', value: `${generateRandomCount()}+` },
+                { label: 'Earthwork Volume', value: `${generateRandomCount()}+` },
+                { label: 'As-Built Survey', value: `${generateRandomCount()}+` },
+              ];
+            }, []).map((stat, i) => (
+              <motion.div key={stat.label} variants={itemFadeInUp} className="border-2 border-slate-200 rounded-xl p-6 bg-white hover:border-brand-primary/50 hover:shadow-lg transition-all text-center">
+                <div className="text-3xl sm:text-4xl font-bold text-brand-primary mb-2">{stat.value}</div>
+                <div className="text-xs sm:text-sm text-slate-600 font-medium">{stat.label}</div>
               </motion.div>
             ))}
           </AnimatedContainer>

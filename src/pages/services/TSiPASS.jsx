@@ -3,7 +3,6 @@ import { Link } from 'react-router-dom';
 import { motion } from 'framer-motion';
 import { useInView } from 'framer-motion';
 import { useRef } from 'react';
-import VideoHero from '../../components/VideoHero.jsx';
 import ProcessTimeline from '../../components/ProcessTimeline.jsx';
 import { 
   ClipboardDocumentListIcon, 
@@ -106,18 +105,25 @@ export default function TSiPASS() {
         <meta name="description" content="Professional TS iPASS survey services for industrial projects, fast-track approvals, and self-certification support in Telangana." />
       </Helmet>
 
-      {/* Hero Section */}
-      <VideoHero>
+      {/* Hero Section with static image */}
+      <section className="relative h-[60vh] sm:h-[70vh] lg:h-[80vh] overflow-hidden">
+        <img
+          src="/images/Ts I pass permissions.jpeg"
+          alt="TS iPASS Approvals"
+          className="absolute inset-0 w-full h-full object-cover"
+          loading="eager"
+        />
+        <div className="absolute inset-0 bg-gradient-to-b from-black/50 via-black/40 to-black/60" />
         <div className="absolute inset-0 flex items-center">
           <div className="container-default w-full">
             <div className="max-w-3xl">
-              <div className="inline-block px-4 py-2 bg-brand-primary/90 backdrop-blur-sm rounded-full text-white text-sm font-semibold mb-6">
+              <div className="inline-block px-4 py-2 bg-brand-primary/90 backdrop-blur-sm rounded-full text-white text-sm font-semibold mb-6 drop-shadow-lg">
                 TS iPASS Services
               </div>
-              <h1 className="text-4xl sm:text-5xl lg:text-6xl font-bold text-white leading-tight mb-6">
+              <h1 className="text-4xl sm:text-5xl lg:text-6xl font-bold text-white leading-tight mb-6 drop-shadow-2xl">
                 TS iPASS Approvals
               </h1>
-              <p className="text-xl sm:text-2xl text-white/95 leading-relaxed mb-8">
+              <p className="text-xl sm:text-2xl text-white/95 leading-relaxed mb-8 drop-shadow-lg">
                 Certified for TS iPASS (Telangana State Industrial Project Approval and Self Certification System) projects
               </p>
               <div className="flex flex-wrap gap-4">
@@ -131,7 +137,7 @@ export default function TSiPASS() {
             </div>
           </div>
         </div>
-      </VideoHero>
+      </section>
 
       {/* Overview Section */}
       <AnimatedSection className="py-20 sm:py-24 bg-white">

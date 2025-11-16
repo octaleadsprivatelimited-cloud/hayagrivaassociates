@@ -28,6 +28,19 @@ const footerServiceLinks = [
 
 const visibleFooterServices = footerServiceLinks.filter((service) => !HIDDEN_SERVICE_ROUTES.has(service.to));
 
+const footerPermissionsLinks = [
+  { to: '/services/municipal-grampanchayat', label: 'Municipal & Grampanchayat Building Permission' },
+  { to: '/services/ts-ipass', label: 'TS iPASS Approvals' },
+];
+
+const footerDesignLinks = [
+  { to: '/services/vastu-plans', label: 'Vastu Plans / Working Plans' },
+  { to: '/services/building-elevation', label: 'Building Elevation Designs' },
+  { to: '/services/estimation-costing', label: 'Estimation Costing' },
+  { to: '/services/property-valuations', label: 'Property Valuations' },
+  { to: '/services/home-loans', label: 'Home Loans' },
+];
+
 export default function Footer() {
   return (
     <footer className="relative text-white overflow-hidden">
@@ -74,6 +87,28 @@ export default function Footer() {
               <li key={service.to}>
                 <Link to={service.to} className="hover:underline">
                   {service.label}
+                </Link>
+              </li>
+            ))}
+          </ul>
+        </Section>
+        <Section title="Permissions">
+          <ul className="space-y-1">
+            {footerPermissionsLinks.map((item) => (
+              <li key={item.to}>
+                <Link to={item.to} className="hover:underline">
+                  {item.label}
+                </Link>
+              </li>
+            ))}
+          </ul>
+        </Section>
+        <Section title="Design & Other Services">
+          <ul className="space-y-1">
+            {footerDesignLinks.map((item) => (
+              <li key={item.to}>
+                <Link to={item.to} className="hover:underline">
+                  {item.label}
                 </Link>
               </li>
             ))}
