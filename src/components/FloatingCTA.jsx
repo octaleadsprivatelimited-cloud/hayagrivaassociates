@@ -2,7 +2,7 @@ export default function FloatingCTA() {
   return (
     <div className="fixed bottom-5 right-5 z-40 flex flex-col gap-3">
       <a
-        href="https://wa.me/919966139588?text=Hello%20Hayagriva%20Associates%2C%20I%27d%20like%20to%20talk%20about%20your%20land%20survey%20services%20%28Digital%20Land%20Survey%2C%20TS%20iPASS%20approvals%2C%20Building%20Permissions%29."
+        href="https://wa.me/919966139588?text=Hello%20Hayagriva%20Associates%20%F0%9F%91%8B%0A%0APlease%20select%20a%20service%20by%20replying%20with%20the%20number%3A%0A%0A1)%20Land%20Survey%20Services%0A%E2%80%A2%20DGPS%20Land%20Survey%0A%E2%80%A2%20DTCP%20Layouts%0A%E2%80%A2%20Enjoyment%20Survey%0A%E2%80%A2%20Survey%20Number%20Demarcation%0A%E2%80%A2%20Road%20Survey%0A%E2%80%A2%20Registration%20Plans%20%26%20Location%20Sketch%0A%0A2)%20Permissions%0A%E2%80%A2%20Municipal%20%26%20Grampanchayat%20Building%20Permission%0A%E2%80%A2%20TS%20iPASS%20Approvals%0A%0A3)%20Design%20%26%20Other%20Services%0A%E2%80%A2%20Vastu%20Plans%20%2F%20Working%20Plans%0A%E2%80%A2%20Building%20Elevation%20Designs%0A%E2%80%A2%20Estimation%20Costing%0A%E2%80%A2%20Property%20Valuations%0A%E2%80%A2%20Home%20Loans%0A%0AName%3A%0ALocation%3A%0AProject%20Details%3A"
         target="_blank"
         rel="noreferrer"
         aria-label="WhatsApp"
