@@ -45,6 +45,26 @@ export default function App() {
       <Helmet>
         <title>Hayagriva Associates | Professional Land Surveying</title>
         <meta name="description" content="Land surveying, boundary surveys, plot demarcation, and topographic services by expert surveyors." />
+        
+        {/* Favicon */}
+        <link rel="icon" type="image/png" href="/images/hayagriva-logo.png" />
+        <link rel="apple-touch-icon" href="/images/hayagriva-logo.png" />
+        
+        {/* Open Graph / Facebook */}
+        <meta property="og:type" content="website" />
+        <meta property="og:url" content="https://hayagrivaassociates.com/" />
+        <meta property="og:title" content="Hayagriva Associates | Professional Land Surveying" />
+        <meta property="og:description" content="Land surveying, boundary surveys, plot demarcation, and topographic services by expert surveyors." />
+        <meta property="og:image" content="https://hayagrivaassociates.com/images/hayagriva-logo.png" />
+        <meta property="og:image:width" content="1200" />
+        <meta property="og:image:height" content="630" />
+        
+        {/* Twitter */}
+        <meta name="twitter:card" content="summary_large_image" />
+        <meta name="twitter:url" content="https://hayagrivaassociates.com/" />
+        <meta name="twitter:title" content="Hayagriva Associates | Professional Land Surveying" />
+        <meta name="twitter:description" content="Land surveying, boundary surveys, plot demarcation, and topographic services by expert surveyors." />
+        <meta name="twitter:image" content="https://hayagrivaassociates.com/images/hayagriva-logo.png" />
       </Helmet>
       <Header />
       <ScrollRestoration />
