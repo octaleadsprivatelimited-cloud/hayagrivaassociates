@@ -46,6 +46,9 @@ export default function App() {
         <title>Hayagriva Associates | Professional Land Surveying</title>
         <meta name="description" content="Land surveying, boundary surveys, plot demarcation, and topographic services by expert surveyors." />
         
+        {/* Google Site Verification */}
+        <meta name="google-site-verification" content="google7983b310bf4b7bab" />
+        
         {/* Favicon */}
         <link rel="icon" type="image/png" href="/images/hayagriva-logo.png" />
         <link rel="apple-touch-icon" href="/images/hayagriva-logo.png" />
