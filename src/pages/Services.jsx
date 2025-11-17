@@ -116,7 +116,7 @@ export default function Services() {
     { 
       to: '/services/home-loans', 
       title: 'Home Loans', 
-      img: '/images/DTCP Layouts.jpeg',
+      img: '/images/Home Loans1.jpeg',
       desc: 'Assistance with home loan applications and processing for residential properties.'
     },
   ];

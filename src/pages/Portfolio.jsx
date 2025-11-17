@@ -128,7 +128,7 @@ export default function Portfolio() {
       title: 'Home Loan Application Support',
       category: 'Home Loans',
       desc: 'Assisted with complete home loan application process and documentation for residential property.',
-      img: '/images/Home Loans.jpeg'
+      img: '/images/Home Loans1.jpeg'
     }
   ];
   const visibleProjects = projects.filter((project) => !HIDDEN_SERVICE_NAMES.has(project.category));

@@ -118,7 +118,7 @@ export default function Blog() {
       category: 'Finance',
       title: 'Home Loan Application: Documentation Guide',
       excerpt: 'Complete guide to home loan application process and required documentation for property purchase.',
-      img: '/images/Home Loans.jpeg',
+      img: '/images/Home Loans1.jpeg',
       readTime: '7 min read'
     }
   ];

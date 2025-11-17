@@ -113,17 +113,17 @@ export default function TSiPASS() {
           className="absolute inset-0 w-full h-full object-cover"
           loading="eager"
         />
-        <div className="absolute inset-0 bg-gradient-to-b from-black/50 via-black/40 to-black/60" />
+        <div className="absolute inset-0 bg-gradient-to-b from-black/70 via-black/60 to-black/80" />
         <div className="absolute inset-0 flex items-center">
           <div className="container-default w-full">
             <div className="max-w-3xl">
-              <div className="inline-block px-4 py-2 bg-brand-primary/90 backdrop-blur-sm rounded-full text-white text-sm font-semibold mb-6 drop-shadow-lg">
+              <div className="inline-block px-4 py-2 bg-brand-primary/90 backdrop-blur-sm rounded-full text-white text-sm font-semibold mb-6 drop-shadow-2xl">
                 TS iPASS Services
               </div>
-              <h1 className="text-4xl sm:text-5xl lg:text-6xl font-bold text-white leading-tight mb-6 drop-shadow-2xl">
+              <h1 className="text-4xl sm:text-5xl lg:text-6xl font-bold text-white leading-tight mb-6 drop-shadow-[0_4px_12px_rgba(0,0,0,0.8)]">
                 TS iPASS Approvals
               </h1>
-              <p className="text-xl sm:text-2xl text-white/95 leading-relaxed mb-8 drop-shadow-lg">
+              <p className="text-xl sm:text-2xl text-white drop-shadow-[0_2px_8px_rgba(0,0,0,0.7)] leading-relaxed mb-8">
                 Certified for TS iPASS (Telangana State Industrial Project Approval and Self Certification System) projects
               </p>
               <div className="flex flex-wrap gap-4">
