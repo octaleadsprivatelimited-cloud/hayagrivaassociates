@@ -157,7 +157,7 @@ export default function About() {
               About Hayagriva Associates
             </h1>
             <p className="text-base sm:text-lg text-white/90 leading-relaxed">
-              Your Trusted Partner in Professional Land Surveying. We save your time and money with precise services backed by official permissions and licenses.
+              Hayagriva Associates delivers end-to-end permission, design, and land survey solutions with precision and reliability.
             </p>
             </div>
           </div>

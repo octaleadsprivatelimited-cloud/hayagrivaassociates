@@ -81,12 +81,12 @@ export default function Footer() {
             View on Google Maps
           </a>
         </Section>
-        <Section title="Services">
+        <Section title="Design & Other Services">
           <ul className="space-y-1">
-            {visibleFooterServices.map((service) => (
-              <li key={service.to}>
-                <Link to={service.to} className="hover:underline">
-                  {service.label}
+            {footerDesignLinks.map((item) => (
+              <li key={item.to}>
+                <Link to={item.to} className="hover:underline">
+                  {item.label}
                 </Link>
               </li>
             ))}
@@ -103,12 +103,12 @@ export default function Footer() {
             ))}
           </ul>
         </Section>
-        <Section title="Design & Other Services">
+        <Section title="Survey Services">
           <ul className="space-y-1">
-            {footerDesignLinks.map((item) => (
-              <li key={item.to}>
-                <Link to={item.to} className="hover:underline">
-                  {item.label}
+            {visibleFooterServices.map((service) => (
+              <li key={service.to}>
+                <Link to={service.to} className="hover:underline">
+                  {service.label}
                 </Link>
               </li>
             ))}

@@ -111,7 +111,7 @@ export default function VastuPlans() {
         {/* Image Background */}
         <div className="absolute inset-0">
           <img
-            src="/images/Vastu Plans  Working Plans (2).jpeg"
+            src="/images/Vastu Plans.jpeg"
             alt="Vastu Plans / Working Plans"
             className="w-full h-full object-cover"
             loading="eager"

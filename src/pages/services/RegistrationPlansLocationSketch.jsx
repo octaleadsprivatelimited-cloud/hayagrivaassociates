@@ -3,7 +3,6 @@ import { Link } from 'react-router-dom';
 import { motion } from 'framer-motion';
 import { useInView } from 'framer-motion';
 import { useRef } from 'react';
-import VideoHero from '../../components/VideoHero.jsx';
 import ProcessTimeline from '../../components/ProcessTimeline.jsx';
 import { 
   ClipboardDocumentListIcon, 
@@ -64,6 +63,7 @@ export default function RegistrationPlansLocationSketch() {
   };
 
   const imagePath = encodeImagePath('/images/Registration Plans & Location Sketch.avif');
+  const heroImage = '/images/Registration Plans & Location Sketch.avif';
 
   const features = [
     {
@@ -126,17 +126,28 @@ export default function RegistrationPlansLocationSketch() {
       </Helmet>
 
       {/* Hero Section */}
-      <VideoHero>
+      <section className="relative h-[50vh] sm:h-[60vh] lg:h-[70vh] overflow-hidden">
+        <div className="absolute inset-0">
+          <img
+            src={heroImage}
+            alt="Registration Plans & Location Sketch"
+            className="w-full h-full object-cover"
+            loading="eager"
+          />
+        </div>
+
+        <div className="absolute inset-0 bg-gradient-to-b from-black/70 via-black/60 to-black/80"></div>
+
         <div className="absolute inset-0 flex items-center">
           <div className="container-default w-full">
             <div className="max-w-3xl">
-              <div className="inline-block px-4 py-2 bg-brand-primary/90 backdrop-blur-sm rounded-full text-white text-sm font-semibold mb-6">
+              <div className="inline-block px-4 py-2 bg-brand-primary/90 backdrop-blur-sm rounded-full text-white text-sm font-semibold mb-6 drop-shadow-2xl">
                 Legal Documentation
               </div>
-              <h1 className="text-4xl sm:text-5xl lg:text-6xl font-bold text-white leading-tight mb-6">
+              <h1 className="text-4xl sm:text-5xl lg:text-6xl font-bold text-white leading-tight mb-6 drop-shadow-[0_4px_12px_rgba(0,0,0,0.8)]">
                 Registration Plans & Location Sketch
               </h1>
-              <p className="text-xl sm:text-2xl text-white/95 leading-relaxed mb-8">
+              <p className="text-xl sm:text-2xl text-white drop-shadow-[0_2px_8px_rgba(0,0,0,0.7)] leading-relaxed mb-8">
                 Preparation of registration plans and location sketches for legal processes
               </p>
               <div className="flex flex-wrap gap-4">
@@ -150,7 +161,7 @@ export default function RegistrationPlansLocationSketch() {
             </div>
           </div>
         </div>
-      </VideoHero>
+      </section>
 
       {/* Overview Section */}
       <AnimatedSection className="py-20 sm:py-24 bg-white">

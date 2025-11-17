@@ -17,11 +17,21 @@ export default function Services() {
     return encoded;
   };
 
+  const getImageWrapperClass = (service) =>
+    service?.imageFit === 'contain'
+      ? 'relative h-48 overflow-hidden bg-black'
+      : 'relative h-48 overflow-hidden bg-slate-100';
+
+  const getImageClass = (service) =>
+    service?.imageFit === 'contain'
+      ? 'w-full h-full object-contain transition-transform duration-500'
+      : 'w-full h-full object-cover group-hover:scale-110 transition-transform duration-500';
+
   const landSurveyServicesData = [
     { 
       to: '/services/dgps-land-survey', 
       title: 'DGPS Land Survey', 
-      img: '/images/DGPS Land Survey.jpeg',
+      img: '/images/dgps-surveys.avif',
       desc: 'High-precision positioning using DGPS instruments for accurate control and mapping.'
     },
     { 
@@ -89,14 +99,15 @@ export default function Services() {
     { 
       to: '/services/vastu-plans', 
       title: 'Vastu Plans / Working Plans', 
-      img: '/images/Vastu Plans  Working Plans (2).jpeg',
+      img: '/images/Vastu Plans.jpeg',
       desc: 'Architectural plans designed according to Vastu principles and working drawings for construction.'
     },
     { 
       to: '/services/building-elevation', 
       title: 'Building Elevation Designs', 
-      img: '/images/Building elevations.jpeg',
-      desc: 'Professional elevation designs that enhance the aesthetic appeal and functionality of buildings.'
+      img: '/images/Building Elevation Designs.jpg',
+      desc: 'Professional elevation designs that enhance the aesthetic appeal and functionality of buildings.',
+      imageFit: 'contain'
     },
   ];
 
@@ -110,7 +121,7 @@ export default function Services() {
     { 
       to: '/services/property-valuations', 
       title: 'Property Valuations', 
-      img: '/images/DTCP Layouts.jpeg',
+      img: '/images/Property Valuations.jpeg',
       desc: 'Professional property valuation services for sale, purchase, and legal purposes.'
     },
     { 
@@ -183,12 +194,12 @@ export default function Services() {
                   to={service.to}
                   className="group border-2 border-slate-200 rounded-xl p-0 bg-white hover:shadow-xl hover:-translate-y-1 hover:border-brand-primary/50 transition-all duration-300 block overflow-hidden"
                 >
-                  <div className="relative h-48 overflow-hidden bg-slate-100">
+                  <div className={getImageWrapperClass(service)}>
                     <img
                       src={encodeImagePath(service.img)}
                       alt={service.title}
                       loading="lazy"
-                      className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500"
+                      className={getImageClass(service)}
                       onError={(e) => {
                         console.error('Failed to load image:', service.img);
                         e.target.src = service.img;
@@ -223,12 +234,12 @@ export default function Services() {
                   to={service.to}
                   className="group border-2 border-slate-200 rounded-xl p-0 bg-white hover:shadow-xl hover:-translate-y-1 hover:border-brand-primary/50 transition-all duration-300 block overflow-hidden"
                 >
-                  <div className="relative h-48 overflow-hidden bg-slate-100">
+                  <div className={getImageWrapperClass(service)}>
                     <img
                       src={encodeImagePath(service.img)}
                       alt={service.title}
                       loading="lazy"
-                      className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500"
+                      className={getImageClass(service)}
                       onError={(e) => {
                         console.error('Failed to load image:', service.img);
                         e.target.src = service.img;
@@ -263,12 +274,12 @@ export default function Services() {
                   to={service.to}
                   className="group border-2 border-slate-200 rounded-xl p-0 bg-white hover:shadow-xl hover:-translate-y-1 hover:border-brand-primary/50 transition-all duration-300 block overflow-hidden"
                 >
-                  <div className="relative h-48 overflow-hidden bg-slate-100">
+                  <div className={getImageWrapperClass(service)}>
                     <img
                       src={encodeImagePath(service.img)}
                       alt={service.title}
                       loading="lazy"
-                      className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500"
+                      className={getImageClass(service)}
                       onError={(e) => {
                         console.error('Failed to load image:', service.img);
                         e.target.src = service.img;
@@ -303,12 +314,12 @@ export default function Services() {
                   to={service.to}
                   className="group border-2 border-slate-200 rounded-xl p-0 bg-white hover:shadow-xl hover:-translate-y-1 hover:border-brand-primary/50 transition-all duration-300 block overflow-hidden"
                 >
-                  <div className="relative h-48 overflow-hidden bg-slate-100">
+                  <div className={getImageWrapperClass(service)}>
                     <img
                       src={encodeImagePath(service.img)}
                       alt={service.title}
                       loading="lazy"
-                      className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500"
+                      className={getImageClass(service)}
                       onError={(e) => {
                         console.error('Failed to load image:', service.img);
                         e.target.src = service.img;

@@ -119,7 +119,7 @@ export default function SurveyNumberDemarcation() {
         {/* Image Background */}
         <div className="absolute inset-0">
           <img
-            src="/images/Survey Number Demarcation.jpeg"
+            src={imagePath}
             alt="Survey Number Demarcation"
             className="w-full h-full object-cover"
             loading="eager"

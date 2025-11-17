@@ -121,11 +121,11 @@ export default function BuildingElevation() {
       {/* Hero Section */}
       <section className="relative h-[50vh] sm:h-[60vh] lg:h-[70vh] overflow-hidden">
         {/* Image Background */}
-        <div className="absolute inset-0">
+        <div className="absolute inset-0 bg-black">
           <img
-            src="/images/Building elevations.jpeg"
+            src="/images/Building Elevation Designs.jpg"
             alt="Building Elevation Designs"
-            className="w-full h-full object-cover"
+            className="w-full h-full object-contain"
             loading="eager"
           />
         </div>
