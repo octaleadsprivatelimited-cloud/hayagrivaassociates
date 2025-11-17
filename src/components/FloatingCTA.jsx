@@ -1,30 +1,5 @@
 export default function FloatingCTA() {
-  const message = `Hello Hayagriva Associates 👋
-
-Please select a service (type the number):
-
-1) Land Survey Services
-• DGPS Land Survey
-• DTCP Layouts
-• Enjoyment Survey
-• Survey Number Demarcation
-• Road Survey
-• Registration Plans & Location Sketch
-
-2) Permissions
-• Municipal & Grampanchayat Building Permission
-• TS iPASS Approvals
-
-3) Design & Other Services
-• Vastu Plans / Working Plans
-• Building Elevation Designs
-• Estimation Costing
-• Property Valuations
-• Home Loans
-
-Name:
-Location:
-Project Details:`;
+  const message = 'Hello, I’d like to enquire about your services.';
   const waUrl = `https://wa.me/919966139588?text=${encodeURIComponent(message)}`;
 
   return (

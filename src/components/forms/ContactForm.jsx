@@ -22,10 +22,19 @@ export default function ContactForm({ compact = false }) {
     if (error) { setStatus({ loading: false, success: null, error }); return; }
     setStatus({ loading: true, success: null, error: null });
     try {
-      const res = await fetch('/api/contact', {
+      const res = await fetch('https://formspree.io/f/mnnlrpva', {
         method: 'POST',
-        headers: { 'Content-Type': 'application/json' },
-        body: JSON.stringify(form)
+        headers: { 
+          'Content-Type': 'application/json',
+          'Accept': 'application/json'
+        },
+        body: JSON.stringify({
+          name: form.name,
+          email: form.email,
+          phone: form.phone,
+          service: form.service,
+          message: form.message
+        })
       });
       if (!res.ok) throw new Error('Failed to submit');
       setStatus({ loading: false, success: 'We have received your request. We will contact you shortly.', error: null });
