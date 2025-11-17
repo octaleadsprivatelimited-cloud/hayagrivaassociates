@@ -51,7 +51,9 @@ export default function App() {
         
         {/* Favicon */}
         <link rel="icon" type="image/png" href="/images/hayagriva-logo.png" />
+        <link rel="shortcut icon" type="image/png" href="/images/hayagriva-logo.png" />
         <link rel="apple-touch-icon" href="/images/hayagriva-logo.png" />
+        <link rel="apple-touch-icon" sizes="180x180" href="/images/hayagriva-logo.png" />
         
         {/* Open Graph / Facebook */}
         <meta property="og:type" content="website" />
