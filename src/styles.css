@@ -326,8 +326,11 @@
  html { scrollbar-width:none; }
  html::-webkit-scrollbar { display:none; }
  /* Remove large mobile section gutters across the main website as well. */
- .site-main section:is(.py-12,.py-16,.py-20,.py-24,.py-28),
- .site-main > div.container-default:is(.py-12,.py-16,.py-20) { padding-top:6px; padding-bottom:6px; }
+ .site-main :is(section,div):is(.py-12,.py-16,.py-20,.py-24,.py-28) { padding-top:6px; padding-bottom:6px; }
  .site-main :is(.mb-12,.mb-16) { margin-bottom:12px; }
  .site-main :is(.gap-12,.gap-16) { gap:16px; }
+ .site-main :is(.p-8,.p-10,.p-12) { padding:16px; }
+ .site-main .grid > *, .site-main .flex > div { min-width:0; }
+ .site-main a[href^="mailto:"] { overflow-wrap:anywhere; }
+ .site-main form :is(input,select,textarea) { min-width:0; max-width:100%; font-size:16px; }
 }
