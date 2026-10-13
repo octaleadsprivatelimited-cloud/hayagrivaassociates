@@ -20,6 +20,13 @@ test('no optional script, event or attribution storage before consent',()=>{
  assert.equal(f.browser.dataLayer[0][2].ad_user_data,'denied');
 });
 
+test('legacy cookie choices cannot authorize newly introduced enhanced matching',()=>{
+ const f=fixture({VITE_GOOGLE_ADS_ENHANCED_CONVERSIONS:'true'});
+ f.browser.localStorage.setItem('hayagriva:consent:v1',JSON.stringify({analytics:true,ads:true,timestamp:Date.now()}));
+ f.tracker.init();assert.equal(f.scripts.length,0);assert.deepEqual(f.tracker.getConsent(),{analytics:false,ads:false,decided:false});
+ f.tracker.setConsent({analytics:true,ads:true});assert.equal(f.tracker.getConsent().ads,true);
+});
+
 test('analytics consent loads GA4 and Clarity once and excludes Ads',()=>{
  const f=fixture();f.tracker.trackPageView('/land-surveying','Survey');f.tracker.setConsent({analytics:true,ads:false});f.tracker.init();f.tracker.setConsent({analytics:true,ads:false});
  assert.equal(f.scripts.length,2); assert.equal(f.events().filter(e=>e[1]==='page_view').length,1);

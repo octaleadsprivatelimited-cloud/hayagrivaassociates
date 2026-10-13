@@ -1,7 +1,8 @@
 import { hashCustomerData } from './enhancedConversions.js';
 import { createWebsiteCalls } from './websiteCalls.js';
 
-const CONSENT_KEY = 'hayagriva:consent:v1';
+// Enhanced conversion matching is a new data use: request fresh visitor choices.
+const CONSENT_KEY = 'hayagriva:consent:v2';
 const ATTRIBUTION_KEY = 'hayagriva:attribution:v1';
 const MAX_CONSENT_AGE = 180 * 24 * 60 * 60 * 1000;
 const ATTRIBUTION_PARAMS = ['utm_source', 'utm_medium', 'utm_campaign', 'utm_content', 'utm_term', 'gclid', 'gbraid', 'wbraid'];

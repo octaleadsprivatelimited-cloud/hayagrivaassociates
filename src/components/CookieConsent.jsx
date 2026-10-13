@@ -19,7 +19,7 @@ export default function CookieConsent() {
     <section aria-label="Cookie choices" className="cookie-consent">
       <div>
         <strong>Your cookie choices</strong>
-        <p>With your permission, we use Google Analytics and Microsoft Clarity to understand site use, and advertising cookies to measure campaigns. <Link to="/privacy">Privacy details</Link></p>
+        <p>With your permission, Google Analytics and Microsoft Clarity measure site use. Google Ads measures ad leads and can use hashed email and phone after an accepted inquiry. <Link to="/privacy">Privacy details</Link></p>
       </div>
       <div className="cookie-actions">
         <button onClick={() => choose(false, false)}>Essential only</button>
