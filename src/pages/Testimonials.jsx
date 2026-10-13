@@ -1,12 +1,11 @@
+import Reviews from '../components/Reviews.jsx';
+import { reviewSnapshot } from '../config/reviews.js';
+import { site } from '../config/site.js';
 import { Helmet } from 'react-helmet-async';
 import { createKeywords, defaultLocation } from '../seo/config.js';
 
 export default function Testimonials() {
-  const items = [
-    { name: 'Client A', text: 'Professional and accurate surveying. Highly recommended.' },
-    { name: 'Client B', text: 'Resolved boundary issues quickly with clear documentation.' },
-    { name: 'Client C', text: 'Topographic survey helped our project planning immensely.' },
-  ];
+
   return (
     <div className="container-default py-12">
       <Helmet>
@@ -25,15 +24,9 @@ export default function Testimonials() {
           )}
         />
       </Helmet>
-      <h1 className="text-3xl font-semibold">Testimonials</h1>
-      <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-6 mt-6">
-        {items.map((t, i) => (
-          <div key={i} className="border rounded p-6">
-            <p className="text-slate-700">“{t.text}”</p>
-            <p className="mt-3 text-sm text-slate-500">— {t.name}</p>
-          </div>
-        ))}
-      </div>
+      <h1 className="text-3xl font-semibold">Client Reviews</h1>
+      <p className="mt-4">Google Maps: {reviewSnapshot.rating}/5 from {reviewSnapshot.count} reviews, checked {reviewSnapshot.checked}. <a href={site.maps} target="_blank" rel="noopener noreferrer" className="underline">Read the full reviews on Google Maps</a>.</p>
+      <div className="mt-6"><Reviews /></div>
     </div>
   );
 }

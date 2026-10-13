@@ -1,34 +1,12 @@
-import { useRef, useEffect } from 'react';
 import { Link } from 'react-router-dom';
+import BackgroundMedia from './BackgroundMedia.jsx';
 
 export default function Hero() {
-  const videoRef = useRef(null);
-
-  useEffect(() => {
-    // Ensure video plays and loops
-    if (videoRef.current) {
-      videoRef.current.play().catch(err => {
-        console.log('Video autoplay prevented:', err);
-      });
-    }
-  }, []);
-
   return (
     <section className="relative">
       <div className="h-[75vh] sm:h-[85vh] lg:h-screen relative overflow-hidden">
         {/* Video Background */}
-        <video
-          ref={videoRef}
-          autoPlay
-          loop
-          muted
-          playsInline
-          className="absolute inset-0 w-full h-full object-cover"
-        >
-          <source src="/videos/hero-video.mp4" type="video/mp4" />
-          {/* Fallback image if video doesn't load */}
-          <img src="/images/Hero1.avif" alt="Professional land surveying services" className="w-full h-full object-cover" />
-        </video>
+        <BackgroundMedia src="/videos/hero-video.mp4" title="Homepage surveying overview" />
         
         {/* Overlay */}
         <div className="absolute inset-0 bg-gradient-to-b from-black/40 via-black/30 to-black/50" />

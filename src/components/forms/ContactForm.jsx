@@ -1,46 +1,47 @@
-import { useState } from 'react';
+import { useId, useRef, useState } from 'react';
 import { HIDDEN_SERVICE_NAMES } from '../../config/hiddenServices.js';
+import { site } from '../../config/site.js';
+import { tracker } from '../../analytics/index.js';
+import { validateInquiry, submitInquiry } from '../../lib/inquiries.js';
 
-export default function ContactForm({ compact = false }) {
+export default function ContactForm({ compact = false, source = 'contact', submitLabel = 'Submit Request' }) {
+  const formId = useId();
+  const started = useRef(false);
+  const submitting = useRef(false);
   const [form, setForm] = useState({ name: '', email: '', phone: '', service: '', message: '' });
   const [status, setStatus] = useState({ loading: false, success: null, error: null });
 
   const onChange = (e) => setForm({ ...form, [e.target.name]: e.target.value });
 
-  const validate = () => {
-    if (!form.name || !form.email || !form.phone || !form.service) return 'Please fill in all required fields.';
-    const emailOk = /.+@.+\..+/.test(form.email);
-    const phoneOk = /^[0-9+\-()\s]{7,}$/.test(form.phone);
-    if (!emailOk) return 'Please enter a valid email.';
-    if (!phoneOk) return 'Please enter a valid phone number.';
-    return null;
-  };
-
   const onSubmit = async (e) => {
     e.preventDefault();
-    const error = validate();
+    if (submitting.current) return;
+    const error = validateInquiry(form);
     if (error) { setStatus({ loading: false, success: null, error }); return; }
+    submitting.current = true;
+    const leadId = crypto.randomUUID();
+    tracker.trackEvent('lead_form_submit', { form_name: source, service: form.service });
     setStatus({ loading: true, success: null, error: null });
     try {
-      const res = await fetch('https://formspree.io/f/mnnlrpva', {
-        method: 'POST',
-        headers: { 
-          'Content-Type': 'application/json',
-          'Accept': 'application/json'
-        },
-        body: JSON.stringify({
-          name: form.name,
-          email: form.email,
-          phone: form.phone,
-          service: form.service,
-          message: form.message
-        })
+      await submitInquiry(site.formEndpoint, {
+        name: form.name.trim(),
+        email: form.email.trim(),
+        phone: form.phone.trim(),
+        service: form.service,
+        message: form.message,
+        lead_id: leadId,
+        inquiry_page: window.location.pathname,
+        ...tracker.getAttribution(),
       });
-      if (!res.ok) throw new Error('Failed to submit');
+      tracker.trackLead('form', { lead_id: leadId, form_name: source, service: form.service });
       setStatus({ loading: false, success: 'We have received your request. We will contact you shortly.', error: null });
       setForm({ name: '', email: '', phone: '', service: '', message: '' });
+      started.current = false;
     } catch (err) {
+      tracker.trackEvent('lead_form_error', { form_name: source });
       setStatus({ loading: false, success: null, error: 'Something went wrong. Please try again.' });
+    } finally {
+      submitting.current = false;
     }
   };
 
@@ -68,32 +69,40 @@ export default function ContactForm({ compact = false }) {
   const services = serviceOptions.filter((service) => !HIDDEN_SERVICE_NAMES.has(service));
 
   return (
-    <form onSubmit={onSubmit} className="space-y-4">
+    <form onSubmit={onSubmit} className="space-y-4" data-clarity-mask="true" aria-label="Project inquiry" onFocus={() => {
+      if (started.current) return;
+      started.current = true;
+      tracker.trackEvent('lead_form_start', { form_name: source });
+    }}>
       <div className="grid sm:grid-cols-2 gap-4">
         <div>
-          <label htmlFor="name" className="block text-sm font-medium text-slate-700 mb-2">
+          <label htmlFor={`${formId}-name`} className="block text-sm font-medium text-slate-700 mb-2">
             Name <span className="text-red-500">*</span>
           </label>
           <input
-            id="name"
+            id={`${formId}-name`}
             name="name"
             value={form.name}
             onChange={onChange}
+            autoComplete="name"
+            maxLength={100}
             placeholder="Your full name"
             className="w-full border-2 border-slate-200 rounded-lg px-4 py-3 focus:border-brand-primary focus:ring-2 focus:ring-brand-primary/20 outline-none transition-all"
             required
           />
         </div>
         <div>
-          <label htmlFor="email" className="block text-sm font-medium text-slate-700 mb-2">
+          <label htmlFor={`${formId}-email`} className="block text-sm font-medium text-slate-700 mb-2">
             Email <span className="text-red-500">*</span>
           </label>
           <input
-            id="email"
+            id={`${formId}-email`}
             type="email"
             name="email"
             value={form.email}
             onChange={onChange}
+            autoComplete="email"
+            maxLength={254}
             placeholder="your.email@example.com"
             className="w-full border-2 border-slate-200 rounded-lg px-4 py-3 focus:border-brand-primary focus:ring-2 focus:ring-brand-primary/20 outline-none transition-all"
             required
@@ -102,26 +111,28 @@ export default function ContactForm({ compact = false }) {
       </div>
       <div className="grid sm:grid-cols-2 gap-4">
         <div>
-          <label htmlFor="phone" className="block text-sm font-medium text-slate-700 mb-2">
+          <label htmlFor={`${formId}-phone`} className="block text-sm font-medium text-slate-700 mb-2">
             Phone <span className="text-red-500">*</span>
           </label>
           <input
-            id="phone"
+            id={`${formId}-phone`}
             type="tel"
             name="phone"
             value={form.phone}
             onChange={onChange}
-            placeholder="+91 1234567890"
+            autoComplete="tel"
+            maxLength={30}
+            placeholder="Your contact number"
             className="w-full border-2 border-slate-200 rounded-lg px-4 py-3 focus:border-brand-primary focus:ring-2 focus:ring-brand-primary/20 outline-none transition-all"
             required
           />
         </div>
         <div>
-          <label htmlFor="service" className="block text-sm font-medium text-slate-700 mb-2">
+          <label htmlFor={`${formId}-service`} className="block text-sm font-medium text-slate-700 mb-2">
             Service Inquiry <span className="text-red-500">*</span>
           </label>
           <select
-            id="service"
+            id={`${formId}-service`}
             name="service"
             value={form.service}
             onChange={onChange}
@@ -137,16 +148,17 @@ export default function ContactForm({ compact = false }) {
       </div>
       {!compact && (
         <div>
-          <label htmlFor="message" className="block text-sm font-medium text-slate-700 mb-2">
+          <label htmlFor={`${formId}-message`} className="block text-sm font-medium text-slate-700 mb-2">
             Message
           </label>
           <textarea
-            id="message"
+            id={`${formId}-message`}
             name="message"
             value={form.message}
             onChange={onChange}
             placeholder="Tell us about your project requirements..."
-            rows="5"
+            rows="3"
+            maxLength={2000}
             className="w-full border-2 border-slate-200 rounded-lg px-4 py-3 focus:border-brand-primary focus:ring-2 focus:ring-brand-primary/20 outline-none transition-all resize-none"
           />
         </div>
@@ -165,16 +177,16 @@ export default function ContactForm({ compact = false }) {
             Submitting...
           </span>
         ) : (
-          'Submit Request'
+          submitLabel
         )}
       </button>
       {status.error && (
-        <div className="p-4 bg-red-50 border-2 border-red-200 rounded-lg">
+        <div role="alert" className="p-4 bg-red-50 border-2 border-red-200 rounded-lg">
           <p className="text-red-700 text-sm font-medium">{status.error}</p>
         </div>
       )}
       {status.success && (
-        <div className="p-4 bg-green-50 border-2 border-green-200 rounded-lg">
+        <div role="status" className="p-4 bg-green-50 border-2 border-green-200 rounded-lg">
           <p className="text-green-700 text-sm font-medium">{status.success}</p>
         </div>
       )}

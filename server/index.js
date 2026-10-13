@@ -14,7 +14,7 @@ const distPath = path.resolve(__dirname, '../dist');
 app.use(cors());
 app.use(express.json());
 
-app.use(express.static(distPath));
+app.use(express.static(distPath, { extensions: ['html'] }));
 
 app.get('/api/health', (_req, res) => res.json({ ok: true }));
 
@@ -49,7 +49,7 @@ app.post('/api/contact', async (req, res) => {
 });
 
 app.get('*', (_req, res) => {
-  res.sendFile(path.join(distPath, 'index.html'));
+  res.status(404).sendFile(path.join(distPath, '404.html'));
 });
 
 app.listen(port, () => console.log(`Server listening on http://localhost:${port}`));

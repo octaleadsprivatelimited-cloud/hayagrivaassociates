@@ -1,3 +1,4 @@
+import { tracker } from '../analytics/index.js';
 import { useState } from 'react';
 import { Link } from 'react-router-dom';
 import { HIDDEN_SERVICE_ROUTES } from '../config/hiddenServices.js';
@@ -125,6 +126,9 @@ export default function Footer() {
             <li><Link to="/portfolio" className="hover:underline">Portfolio</Link></li>
             <li><Link to="/faq" className="hover:underline">FAQ</Link></li>
             <li><Link to="/contact" className="hover:underline">Contact</Link></li>
+            <li><Link to="/land-surveying" className="hover:underline">Request a survey quote</Link></li>
+            <li><Link to="/privacy" className="hover:underline">Privacy</Link></li>
+            {tracker.configured && <li><button onClick={() => window.dispatchEvent(new Event('hayagriva:cookie-settings'))} className="hover:underline">Cookie choices</button></li>}
           </ul>
         </Section>
       </div>

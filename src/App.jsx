@@ -1,11 +1,16 @@
 import { Suspense, lazy } from 'react';
-import { Routes, Route } from 'react-router-dom';
-import { Helmet } from 'react-helmet-async';
-import Header from './components/Header.jsx';
+import { Routes, Route, useLocation } from 'react-router-dom';
+import RouteMetadata from './seo/RouteMetadata.jsx';
+import Analytics from './components/Analytics.jsx';
+import CookieConsent from './components/CookieConsent.jsx';
 import Footer from './components/Footer.jsx';
 import FloatingCTA from './components/FloatingCTA.jsx';
 import ScrollRestoration from './components/ScrollRestoration.jsx';
 import PageHidden from './components/PageHidden.jsx';
+
+const Header = lazy(() => import('./components/Header.jsx'));
+const Privacy = lazy(() => import('./pages/Privacy.jsx'));
+const NotFound = lazy(() => import('./pages/NotFound.jsx'));
 
 const Home = lazy(() => import('./pages/Home.jsx'));
 const About = lazy(() => import('./pages/About.jsx'));
@@ -40,38 +45,12 @@ const LandingLandTitleSurveys = lazy(() => import('./pages/landing/LandTitleSurv
 const LandingTopographicSurveys = lazy(() => import('./pages/landing/TopographicSurveysLanding.jsx'));
 
 export default function App() {
+  const { pathname } = useLocation();
+  const landing = pathname.replace(/\/$/, '') === '/land-surveying';
   return (
     <div className="min-h-screen flex flex-col">
-      <Helmet>
-        <title>Hayagriva Associates | Professional Land Surveying</title>
-        <meta name="description" content="Land surveying, boundary surveys, plot demarcation, and topographic services by expert surveyors." />
-        
-        {/* Google Site Verification */}
-        <meta name="google-site-verification" content="google7983b310bf4b7bab" />
-        
-        {/* Favicon */}
-        <link rel="icon" type="image/png" href="/images/hayagriva-logo.png" />
-        <link rel="shortcut icon" type="image/png" href="/images/hayagriva-logo.png" />
-        <link rel="apple-touch-icon" href="/images/hayagriva-logo.png" />
-        <link rel="apple-touch-icon" sizes="180x180" href="/images/hayagriva-logo.png" />
-        
-        {/* Open Graph / Facebook */}
-        <meta property="og:type" content="website" />
-        <meta property="og:url" content="https://hayagrivaassociates.com/" />
-        <meta property="og:title" content="Hayagriva Associates | Professional Land Surveying" />
-        <meta property="og:description" content="Land surveying, boundary surveys, plot demarcation, and topographic services by expert surveyors." />
-        <meta property="og:image" content="https://hayagrivaassociates.com/images/hayagriva-logo.png" />
-        <meta property="og:image:width" content="1200" />
-        <meta property="og:image:height" content="630" />
-        
-        {/* Twitter */}
-        <meta name="twitter:card" content="summary_large_image" />
-        <meta name="twitter:url" content="https://hayagrivaassociates.com/" />
-        <meta name="twitter:title" content="Hayagriva Associates | Professional Land Surveying" />
-        <meta name="twitter:description" content="Land surveying, boundary surveys, plot demarcation, and topographic services by expert surveyors." />
-        <meta name="twitter:image" content="https://hayagrivaassociates.com/images/hayagriva-logo.png" />
-      </Helmet>
-      <Header />
+      <RouteMetadata />
+      {!landing && <Suspense fallback={<div className="h-32" />}><Header /></Suspense>}
       <ScrollRestoration />
       <main className="flex-1">
         <Suspense fallback={<div className="container-default py-12">Loading...</div>}>
@@ -87,6 +66,8 @@ export default function App() {
             <Route path="/testimonials" element={<Testimonials />} />
             <Route path="/faq" element={<FAQ />} />
             <Route path="/careers" element={<Careers />} />
+            <Route path="/privacy" element={<Privacy />} />
+            <Route path="*" element={<NotFound />} />
 
             <Route path="/services/dgps-land-survey" element={<DGPSLandSurvey />} />
             <Route path="/services/dtcp-layouts" element={<DTCPLayouts />} />
@@ -108,10 +89,12 @@ export default function App() {
             <Route path="/land-title-surveys" element={<LandingLandTitleSurveys />} />
             <Route path="/topographic-surveys" element={<LandingTopographicSurveys />} />
           </Routes>
+          <Analytics />
         </Suspense>
       </main>
-      <Footer />
-      <FloatingCTA />
+      {!landing && <Footer />}
+      {!landing && <FloatingCTA />}
+      <CookieConsent />
     </div>
   );
 }

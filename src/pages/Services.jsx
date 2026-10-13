@@ -10,10 +10,6 @@ export default function Services() {
     const filename = parts[parts.length - 1];
     const dir = parts.slice(0, -1).join('/');
     const encoded = dir + '/' + encodeURIComponent(filename);
-    // Debug for Registration Plans image
-    if (filename.includes('Registration Plans')) {
-      console.log('Encoding image:', filename, '->', encoded);
-    }
     return encoded;
   };
 

@@ -1,3 +1,5 @@
+import Reviews from '../components/Reviews.jsx';
+import { businessSchema } from '../config/site.js';
 import { Helmet } from 'react-helmet-async';
 import { Link } from 'react-router-dom';
 import { motion } from 'framer-motion';
@@ -78,34 +80,9 @@ export default function Home() {
     const filename = parts[parts.length - 1];
     const dir = parts.slice(0, -1).join('/');
     const encoded = dir + '/' + encodeURIComponent(filename);
-    // Debug for Registration Plans image
-    if (filename.includes('Registration Plans')) {
-      console.log('Encoding image:', filename, '->', encoded);
-    }
     return encoded;
   };
 
-  const orgSchema = {
-    '@context': 'https://schema.org',
-    '@type': 'LocalBusiness',
-    name: 'Hayagriva Associates',
-    url: 'https://example.com',
-    telephone: '+91 00000 00000',
-    address: {
-      '@type': 'PostalAddress',
-      streetAddress: 'Your office address',
-      addressLocality: 'City',
-      addressRegion: 'State',
-      postalCode: '000000',
-      addressCountry: 'IN'
-    },
-    areaServed: 'India',
-    sameAs: [
-      'https://www.facebook.com/',
-      'https://www.linkedin.com/',
-      'https://www.instagram.com/'
-    ]
-  };
 
   return (
     <div>
@@ -125,7 +102,7 @@ export default function Home() {
             `surveying solutions in ${defaultLocation}`
           )}
         />
-        <script type="application/ld+json">{JSON.stringify(orgSchema)}</script>
+        <script type="application/ld+json">{JSON.stringify(businessSchema)}</script>
       </Helmet>
       <Hero />
       {/* Services Overview */}
@@ -302,37 +279,7 @@ export default function Home() {
             <h2 className="text-3xl sm:text-4xl font-bold text-white drop-shadow">Client Testimonials</h2>
             <p className="mt-4 text-lg text-white/90">What our clients say about us</p>
           </div>
-          <AnimatedContainer className="grid sm:grid-cols-2 lg:grid-cols-3 gap-6">
-            {[
-              { 
-                name: 'Rajesh Kumar', 
-                place: 'Mancherial', 
-                text: 'Accurate and professional boundary survey. Delivered on time!', 
-                img: 'https://images.unsplash.com/photo-1524504388940-b1c1722653e1?auto=format&fit=crop&w=160&h=160&q=80'
-              },
-              { 
-                name: 'Priya Sharma', 
-                place: 'Mancherial', 
-                text: 'Detailed topographic survey with comprehensive documentation.', 
-                img: 'https://images.unsplash.com/photo-1544723795-3fb6469f5b39?auto=format&fit=crop&w=160&h=160&q=80'
-              },
-              { 
-                name: 'Amit Patel', 
-                place: 'Telangana', 
-                text: 'Quick turnaround and reliable reports for our project.', 
-                img: 'https://images.unsplash.com/photo-1500648767791-00dcc994a43e?auto=format&fit=crop&w=160&h=160&q=80'
-              },
-            ].map((t, i) => (
-              <motion.div key={i} variants={itemFadeInUp} className="border-2 border-slate-200 rounded-2xl p-6 bg-white hover:border-brand-primary/50 hover:shadow-xl transition-all">
-                <div className="text-4xl text-brand-primary/20 mb-4">"</div>
-                <p className="text-slate-700 leading-relaxed">"{t.text}"</p>
-                <div className="mt-4 pt-4 border-t border-slate-100">
-                  <p className="font-semibold text-slate-900">{t.name}</p>
-                  <p className="text-sm text-slate-500">{t.place}</p>
-                </div>
-              </motion.div>
-            ))}
-          </AnimatedContainer>
+          <Reviews />
         </div>
       </AnimatedSection>
 
