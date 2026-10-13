@@ -94,7 +94,7 @@ export function createTracker(env = {}, browser) {
     initialized = true;
     readConsent();
     browser.dataLayer = browser.dataLayer || [];
-    browser.gtag = browser.gtag || function (...args) { browser.dataLayer.push(args); };
+    browser.gtag = browser.gtag || function () { browser.dataLayer.push(arguments); };
     browser.gtag('consent', 'default', consentValues());
     browser.gtag('set', 'ads_data_redaction', true);
     loadTags();

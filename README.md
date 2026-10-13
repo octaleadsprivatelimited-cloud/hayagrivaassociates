@@ -54,7 +54,7 @@ Optional analytics scripts load only after the visitor chooses the corresponding
 
 ## Inquiry delivery
 
-The existing form provider is `https://formspree.io/f/mnnlrpva`. Override `VITE_CONTACT_ENDPOINT` to change it. The provider must confirm acceptance with JSON `{ "ok": true }`; a generic HTML fallback or HTTP error cannot create a lead event. Browser tests of provider failure and success used a local mock without sending email.
+The existing form provider is `https://formspree.io/f/mnnlrpva`. Override `VITE_CONTACT_ENDPOINT` to change it. The provider must confirm acceptance with JSON `{ "ok": true }`; a generic HTML fallback or HTTP error cannot create a lead event. Browser tests of provider failure and success used a local mock. With explicit approval, one clearly labelled Website Setup Test was then submitted on 13 October 2026 using the business contact details; the real Formspree endpoint confirmed acceptance. Inbox delivery has not been independently verified.
 
 The optional Express SMTP backend is available with `npm run server`; it serves the built pages on port 4000 and exposes `/api/contact`. It requires real SMTP credentials in the process environment. The frontend does not use it by default. Vercel serves the static frontend and uses Formspree for inquiries.
 
@@ -67,3 +67,7 @@ The revised landing page's local mobile audit scored performance 94, accessibili
 Heavy background videos now load on demand, page content is available in the initial HTML, and render-blocking remote fonts have been removed. Canonical URLs, social metadata and business details use the real site/business information. Google Maps review excerpts and the 4.9/5 from 30 reviews figure are a dated snapshot checked on 13 October 2026, with source links, rather than a live API feed or review-rich-result schema.
 
 Implementation references: [GA4 SPA measurement](https://developers.google.com/analytics/devguides/collection/ga4/single-page-applications), [Google Ads website conversions](https://support.google.com/google-ads/answer/16560108), [Clarity Consent V2](https://learn.microsoft.com/en-us/clarity/setup-and-installation/clarity-consent-api-v2).
+
+## Mobile layout
+
+The land surveying page uses WhatsApp green, call/inquiry blue and quote amber. Its bottom contact bar offers call, WhatsApp and quote actions. Mobile section gutters are reduced by about 90%, with compact images, cards and headings. Shared feedback scrolls automatically without a visible scrollbar. The From Question to Clarity accordion advances every 6.5 seconds while visible, pauses for interaction, and supports manual expansion, collapse and pause. Reduced-motion preferences disable automatic movement.

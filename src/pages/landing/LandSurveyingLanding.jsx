@@ -1,7 +1,9 @@
 import Reviews from '../../components/Reviews.jsx';
 import { Link } from 'react-router-dom';
 import { Helmet } from 'react-helmet-async';
-import { ArrowUpRightIcon, CheckIcon, MapPinIcon, PhoneIcon, ChatBubbleLeftRightIcon } from '@heroicons/react/24/outline';
+import { ArrowUpRightIcon, CheckIcon, MapPinIcon, PhoneIcon, DocumentTextIcon } from '@heroicons/react/24/outline';
+import WhatsAppIcon from '../../components/WhatsAppIcon.jsx';
+import ProcessSteps from '../../components/ProcessSteps.jsx';
 import ContactForm from '../../components/forms/ContactForm.jsx';
 import TrackedVideo from '../../components/TrackedVideo.jsx';
 import { businessSchema, site, whatsappUrl } from '../../config/site.js';
@@ -20,7 +22,7 @@ const faqs = [
   { question: 'Can you help with building plans and approvals too?', answer: 'Yes. Along with land surveys, we offer layout planning, working plans, elevation design and documentation support for building permissions. Approval decisions are made by the relevant authorities.' },
 ];
 function WhatsAppLink({ children = 'Chat on WhatsApp', placement, service = 'land surveying', className = 'survey-button survey-button-green' }) {
-  return <a href={whatsappUrl(service)} target="_blank" rel="noopener noreferrer" className={className} data-tracking-location={placement} data-service={service}><ChatBubbleLeftRightIcon aria-hidden="true" />{children}<ArrowUpRightIcon aria-hidden="true" /></a>;
+  return <a href={whatsappUrl(service)} target="_blank" rel="noopener noreferrer" className={`${className} whatsapp-action`} data-tracking-location={placement} data-service={service}><WhatsAppIcon />{children}<ArrowUpRightIcon aria-hidden="true" /></a>;
 }
 export default function LandSurveyingLanding() {
   return (
@@ -34,7 +36,7 @@ export default function LandSurveyingLanding() {
       <header className="survey-header"><div className="survey-container survey-nav">
         <Link to="/" aria-label="Hayagriva Associates home"><img src="/images/hayagriva-logo.png" width="1925" height="765" alt="Hayagriva Associates" /></Link>
         <nav aria-label="Landing page navigation"><a href="#services">Services</a><a href="#videos">Videos</a><a href="#reviews">Reviews</a></nav>
-        <a href={whatsappUrl()} target="_blank" rel="noopener noreferrer" className="survey-nav-contact" data-tracking-location="landing_header">Let’s talk <ArrowUpRightIcon aria-hidden="true" /></a>
+        <a href={whatsappUrl()} target="_blank" rel="noopener noreferrer" className="survey-nav-contact whatsapp-action" data-tracking-location="landing_header"><WhatsAppIcon />Let’s talk <ArrowUpRightIcon aria-hidden="true" /></a>
       </div></header>
       <div id="survey-main">
         <section className="survey-hero"><div className="survey-container survey-hero-grid">
@@ -53,13 +55,13 @@ export default function LandSurveyingLanding() {
           <article><TrackedVideo src="/videos/hero-video.mp4" poster="/images/Hero1.avif" title="Surveying overview" /><div><span>01 / FIELD VIEW</span><h3>Surveying overview</h3></div></article>
           <article><TrackedVideo src="/videos/hero-video-secondary.mp4" poster="/images/hero2.jpg" title="A closer look at site work" /><div><span>02 / A CLOSER LOOK</span><h3>A closer look at site work</h3></div></article>
         </div></div></section>
-        <section className="survey-process survey-section survey-container"><div className="survey-section-heading"><div><p className="survey-eyebrow">FROM QUESTION TO CLARITY</p><h2>Let’s make a start.</h2></div><WhatsAppLink placement="landing_process" /></div><div className="survey-process-grid">{[['01', 'Tell us about your site', 'Send the location, approximate area and your requirement on WhatsApp or through the form.'], ['02', 'Agree on the scope', 'We review your details, discuss the documents and confirm the quote and site visit schedule.'], ['03', 'Get your next step clear', 'Receive the measurements, drawings or documentation agreed for your project.']].map(([number, title, text]) => <article key={number}><span>{number}</span><h3>{title}</h3><p>{text}</p></article>)}</div></section>
+        <section id="process" className="survey-process survey-section survey-container"><div className="survey-section-heading"><div><p className="survey-eyebrow">FROM QUESTION TO CLARITY</p><h2>Let’s make a start.</h2></div><WhatsAppLink placement="landing_process" /></div><ProcessSteps /></section>
         <section id="reviews" className="survey-reviews survey-section"><div className="survey-container"><div className="survey-section-heading"><div><p className="survey-eyebrow">CLIENT FEEDBACK</p><h2>Good work. Clear communication.</h2></div><a href={site.maps} target="_blank" rel="noopener noreferrer" className="survey-text-link">{reviewSnapshot.rating}/5 · {reviewSnapshot.count} reviews on Google Maps <ArrowUpRightIcon aria-hidden="true" /></a></div><p className="survey-review-date">Google Maps rating checked {reviewSnapshot.checked}. Read the full reviews on Google Maps.</p><Reviews /></div></section>
         <section id="quote" className="survey-quote survey-section survey-container"><div className="survey-quote-copy"><p className="survey-eyebrow">YOUR PROJECT STARTS HERE</p><h2>A small conversation.<br /><span>A clearer next step.</span></h2><p>Tell us what you’re planning. Our Mancherial team will get in touch to discuss your requirement and prepare a quote.</p><WhatsAppLink placement="landing_quote" /><div className="survey-contact-info"><a href={`tel:${site.phone}`} data-tracking-location="landing_quote"><PhoneIcon aria-hidden="true" />{site.phoneDisplay}</a><a href={site.maps} target="_blank" rel="noopener noreferrer"><MapPinIcon aria-hidden="true" />{site.address}</a></div></div><div className="survey-form-panel"><h3>Request a project quote</h3><p>Share a few details so we can help you.</p><ContactForm source="land-surveying" submitLabel="Send my inquiry" /><p className="survey-form-note">By submitting, you agree that we may contact you about this inquiry. <Link to="/privacy">Privacy details</Link></p></div></section>
         <section className="survey-faq survey-section survey-container"><p className="survey-eyebrow">BEFORE WE BEGIN</p><h2>A few useful answers.</h2><div>{faqs.map((faq) => <details key={faq.question}><summary>{faq.question}<span aria-hidden="true">+</span></summary><p>{faq.answer}</p></details>)}</div></section>
       </div>
       <footer className="survey-footer"><div className="survey-container"><div><strong>Hayagriva Associates</strong><p>Land surveys. Thoughtful plans. Clear next steps.</p></div><div className="survey-footer-links"><Link to="/">Visit our website</Link><Link to="/privacy">Privacy</Link>{tracker.configured && <button onClick={() => window.dispatchEvent(new Event('hayagriva:cookie-settings'))}>Cookie choices</button>}<a href={`mailto:${site.email}`}>{site.email}</a></div><p>© {new Date().getFullYear()} Hayagriva Associates</p></div></footer>
-      <div className="survey-mobile-cta"><a href={`tel:${site.phone}`} data-tracking-location="landing_mobile"><PhoneIcon aria-hidden="true" />Call us</a><WhatsAppLink placement="landing_mobile" /></div>
+      <nav className="survey-mobile-cta" aria-label="Quick contact"><a className="contact-call" href={`tel:${site.phone}`} data-tracking-location="landing_mobile"><PhoneIcon aria-hidden="true" />Call us</a><WhatsAppLink placement="landing_mobile">WhatsApp</WhatsAppLink><a className="contact-quote" href="#quote"><DocumentTextIcon aria-hidden="true" />Get quote</a></nav>
     </div>
   );
 }

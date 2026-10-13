@@ -52,7 +52,7 @@ export default function App() {
       <RouteMetadata />
       {!landing && <Suspense fallback={<div className="h-32" />}><Header /></Suspense>}
       <ScrollRestoration />
-      <main className="flex-1">
+      <main className="site-main flex-1">
         <Suspense fallback={<div className="container-default py-12">Loading...</div>}>
           <Routes>
             <Route path="/" element={<Home />} />
