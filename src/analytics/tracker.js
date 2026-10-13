@@ -1,3 +1,6 @@
+import { hashCustomerData } from './enhancedConversions.js';
+import { createWebsiteCalls } from './websiteCalls.js';
+
 const CONSENT_KEY = 'hayagriva:consent:v1';
 const ATTRIBUTION_KEY = 'hayagriva:attribution:v1';
 const MAX_CONSENT_AGE = 180 * 24 * 60 * 60 * 1000;
@@ -23,6 +26,9 @@ export function createTracker(env = {}, browser) {
   let previousLocation = '';
   let lastPage = '';
   let attribution = null;
+  let adsConsentVersion = 0;
+  const websiteCallLabel = env.VITE_GOOGLE_ADS_WEBSITE_CALL_LABEL;
+  const websiteCalls = createWebsiteCalls(browser, ads && /^[A-Za-z0-9_-]+$/.test(websiteCallLabel || '') ? `${ads}/${websiteCallLabel}` : '');
 
   function readConsent() {
     try {
@@ -79,6 +85,7 @@ export function createTracker(env = {}, browser) {
         ...(env.VITE_ANALYTICS_DEBUG === 'true' ? { debug_mode: true } : {}),
       });
     });
+    if (consent.ads && ads) websiteCalls.start();
     if (clarity && consent.analytics && !clarityLoaded) {
       clarityLoaded = true;
       browser.clarity = browser.clarity || function (...args) { (browser.clarity.q = browser.clarity.q || []).push(args); };
@@ -156,6 +163,10 @@ export function createTracker(env = {}, browser) {
   function setConsent(next) {
     init();
     consent = { analytics: next.analytics === true, ads: next.ads === true, decided: true };
+    if (!consent.ads) {
+      adsConsentVersion += 1;
+      websiteCalls.stop();
+    }
     try { browser?.localStorage.setItem(CONSENT_KEY, JSON.stringify({ ...consent, timestamp: Date.now() })); } catch { /* Optional. */ }
     if (!browser) return;
     browser.gtag('consent', 'update', consentValues());
@@ -170,17 +181,30 @@ export function createTracker(env = {}, browser) {
     browser.dispatchEvent(new browser.Event('hayagriva:consent-changed'));
   }
 
-  function trackLead(channel, parameters = {}) {
+  async function trackLead(channel, parameters = {}, customer) {
     const names = { form: 'generate_lead', whatsapp: 'whatsapp_click', call: 'phone_click' };
     if (!names[channel]) return;
     trackEvent(names[channel], { ...parameters, lead_channel: channel });
     const label = labels[channel];
     if (!browser || !consent.ads || !ads || !/^[A-Za-z0-9_-]+$/.test(label || '')) return;
-    browser.gtag('event', 'conversion', {
-      send_to: `${ads}/${label}`,
-      ...(parameters.lead_id ? { transaction_id: parameters.lead_id } : {}),
-      transport_type: 'beacon',
-    });
+    const consentVersion = adsConsentVersion;
+    let userData;
+    if (channel === 'form' && env.VITE_GOOGLE_ADS_ENHANCED_CONVERSIONS === 'true' && customer) {
+      try { userData = await hashCustomerData(customer, browser.crypto); } catch { /* Ordinary measurement still works without Web Crypto. */ }
+    }
+    if (!consent.ads || consentVersion !== adsConsentVersion) return;
+    // Queue synchronously: data belongs only to the accepted form conversion.
+    // No Analytics event is queued between setting and clearing the Ads data.
+    try {
+      if (userData) browser.gtag('set', 'user_data', userData);
+      browser.gtag('event', 'conversion', {
+        send_to: `${ads}/${label}`,
+        ...(parameters.lead_id ? { transaction_id: parameters.lead_id } : {}),
+        transport_type: 'beacon',
+      });
+    } finally {
+      if (userData) browser.gtag('set', 'user_data', null);
+    }
   }
 
   return { configured, init, getConsent: readConsent, setConsent, getAttribution, trackEvent, trackPageView, trackLead };

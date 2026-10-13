@@ -6,7 +6,7 @@ const baseKeywords = [
   'DGPS survey specialists',
   'plot demarcation and boundary surveys',
   'topographic and construction surveys',
-  'licensed surveyors Telangana'
+  'land surveyors Telangana'
 ];
 
 export const createKeywords = (...additional) => {

@@ -12,7 +12,7 @@ export default function Careers() {
         <title>Careers at Hayagriva Associates | Land Surveying Jobs in Mancherial</title>
         <meta
           name="description"
-          content="Explore career opportunities with Hayagriva Associates in Mancherial, Telangana. Join our licensed land surveying team for DGPS, CAD drafting, and site documentation roles."
+          content="Explore career opportunities with Hayagriva Associates in Mancherial, Telangana. Join our land surveying team for DGPS, CAD drafting, and site documentation roles."
         />
         <meta
           name="keywords"

@@ -124,7 +124,7 @@ export default function TSiPASS() {
                 TS iPASS Approvals
               </h1>
               <p className="text-xl sm:text-2xl text-white drop-shadow-[0_2px_8px_rgba(0,0,0,0.7)] leading-relaxed mb-8">
-                Certified for TS iPASS (Telangana State Industrial Project Approval and Self Certification System) projects
+                Survey and documentation support for TS iPASS industrial projects
               </p>
               <div className="flex flex-wrap gap-4">
                 <Link to="/contact" className="px-8 py-4 bg-brand-primary hover:bg-brand-primary/90 text-white rounded-lg font-semibold shadow-xl hover:shadow-2xl transition-all">
@@ -153,16 +153,16 @@ export default function TSiPASS() {
             <div className="grid lg:grid-cols-2 gap-12 items-center">
               <div className="space-y-6">
                 <p className="text-xl text-slate-700 leading-relaxed">
-                  We are <strong className="text-brand-primary">certified and authorized</strong> for TS iPASS (Telangana State Industrial Project Approval and Self Certification System) projects. Our services support industrial project surveys, fast-track approvals, and self-certification requirements.
+                  We provide <strong className="text-brand-primary">survey and documentation support</strong> for TS iPASS (Telangana State Industrial Project Approval and Self Certification System) applications. Our services cover industrial project surveys and self-certification documentation.
                 </p>
                 <p className="text-lg text-slate-600 leading-relaxed">
-                  Our expertise ensures that your industrial projects meet all TS iPASS requirements for efficient approval and certification processes.
+                  We help you understand the survey and documentation requirements for your project. Application assessment, approval and certification decisions rest with the relevant authorities.
                 </p>
               </div>
               <div className="bg-gradient-to-br from-brand-primary/10 via-brand-primary/5 to-slate-50 rounded-2xl p-8 border-2 border-brand-primary/20">
                 <h3 className="text-2xl font-bold text-slate-900 mb-6">Why Choose Our TS iPASS Services?</h3>
                 <div className="space-y-4">
-                  {['TS iPASS certification', 'Fast-track approval support', 'Industrial project expertise', 'Self-certification assistance'].map((item, i) => (
+                  {['TS iPASS documentation support', 'Fast-track approval support', 'Industrial project expertise', 'Self-certification assistance'].map((item, i) => (
                     <div key={i} className="flex items-center gap-3">
                       <div className="w-8 h-8 rounded-full bg-brand-primary text-white flex items-center justify-center font-bold flex-shrink-0">
                         ✓

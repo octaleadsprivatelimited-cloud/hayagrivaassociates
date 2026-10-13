@@ -17,8 +17,8 @@ const faqs = [
         a: 'We are headquartered in Mancherial, Telangana and deploy teams across the state for residential, commercial, agricultural, and infrastructure assignments. We also collaborate with partners for projects in neighboring states on request.'
       },
       {
-        q: 'Are you licensed and authorized?',
-        a: 'Yes. Our surveyors are licensed and our firm holds the necessary Municipal, Grampanchayat, and TS iPASS registrations required to execute surveys, permissions, and documentation with full legal validity.'
+        q: 'Can you help with permission documentation?',
+        a: 'We support surveys, plans and application documentation for Municipal, Grampanchayat and TS iPASS projects. Requirements vary by project; contact us to confirm the required documents and professional credentials. Approval decisions rest with the relevant authorities.'
       }
     ]
   },
@@ -106,7 +106,7 @@ const faqs = [
       },
       {
         q: 'Do you offer estimation costing and property valuation services?',
-        a: 'Yes. Our engineers prepare detailed estimation and costing reports for construction projects, while certified valuers assess property market value for sale, purchase, banking, or legal needs.'
+        a: 'Yes. Our engineers prepare detailed estimation and costing reports for construction projects, while our team supports property valuation reports for sale, purchase, banking, or legal needs.'
       },
       {
         q: 'Can you help arrange financing or home loans?',

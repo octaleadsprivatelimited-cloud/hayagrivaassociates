@@ -87,10 +87,10 @@ export default function Home() {
   return (
     <div>
       <Helmet>
-        <title>Hayagriva Associates | Licensed Land Surveyors in Mancherial, Telangana</title>
+        <title>Hayagriva Associates | Land Surveyors in Mancherial, Telangana</title>
         <meta
           name="description"
-          content="Licensed land surveyors delivering boundary, DGPS, digital and construction surveys across Mancherial, Telangana. Get precise reports, approvals and layout documentation from Hayagriva Associates."
+          content="Professional land surveyors delivering boundary, DGPS, digital and construction surveys across Mancherial, Telangana. Get precise reports, approvals and layout documentation from Hayagriva Associates."
         />
         <meta
           name="keywords"

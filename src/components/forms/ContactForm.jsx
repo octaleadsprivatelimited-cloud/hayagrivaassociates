@@ -33,7 +33,8 @@ export default function ContactForm({ compact = false, source = 'contact', submi
         inquiry_page: window.location.pathname,
         ...tracker.getAttribution(),
       });
-      tracker.trackLead('form', { lead_id: leadId, form_name: source, service: form.service });
+      // Measurement must never turn an accepted inquiry into a submission failure.
+      void tracker.trackLead('form', { lead_id: leadId, form_name: source, service: form.service }, { email: form.email, phone: form.phone }).catch(() => {});
       setStatus({ loading: false, success: 'We have received your request. We will contact you shortly.', error: null });
       setForm({ name: '', email: '', phone: '', service: '', message: '' });
       started.current = false;

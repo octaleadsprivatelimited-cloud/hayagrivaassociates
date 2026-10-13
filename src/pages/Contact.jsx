@@ -54,7 +54,7 @@ export default function Contact() {
         <title>Contact Hayagriva Associates | Land Surveyors in Mancherial, Telangana</title>
         <meta
           name="description"
-          content="Reach Hayagriva Associates for boundary surveys, DGPS mapping, plot demarcation and construction layouts across Mancherial, Telangana. Request a quote or schedule a licensed surveyor today."
+          content="Reach Hayagriva Associates for boundary surveys, DGPS mapping, plot demarcation and construction layouts across Mancherial, Telangana. Request a quote or schedule a site survey today."
         />
         <meta
           name="keywords"

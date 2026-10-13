@@ -59,7 +59,7 @@ const blogPosts = {
       <p>At Hayagriva Associates, our boundary survey process includes:</p>
       <ol>
         <li><strong>Research and Documentation:</strong> We review property deeds, maps, and historical records to understand the property boundaries.</li>
-        <li><strong>Field Survey:</strong> Our licensed surveyors use advanced equipment to physically measure and mark the property boundaries.</li>
+        <li><strong>Field Survey:</strong> Our survey team use advanced equipment to physically measure and mark the property boundaries.</li>
         <li><strong>Analysis:</strong> We compare field measurements with existing records to identify any discrepancies.</li>
         <li><strong>Report and Documentation:</strong> We provide detailed survey reports, maps, and legal documentation.</li>
       </ol>

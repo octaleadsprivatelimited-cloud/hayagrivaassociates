@@ -84,27 +84,27 @@ export default function About() {
     {
       title: 'Municipal',
       icon: BuildingOffice2Icon,
-      description: 'Licensed to provide land surveying services for municipal projects and approvals.',
+      description: 'Land surveying and documentation support for municipal projects and permission applications.',
       features: ['Municipal Layout Approvals', 'Building Plan Verification', 'Property Tax Assessment']
     },
     {
       title: 'Grampanchayat',
       icon: HomeModernIcon,
-      description: 'Authorized surveyor for Grampanchayat land records and village-level surveys.',
+      description: 'Village-level surveying and documentation support for Grampanchayat applications.',
       features: ['Village Land Surveys', 'Revenue Records', 'Rural Property Documentation']
     },
     {
       title: 'TS iPASS Approvals',
       icon: ClipboardDocumentCheckIcon,
-      description: 'Certified for TS iPASS (Telangana State Industrial Project Approval and Self Certification System) projects.',
+      description: 'Surveying and application documentation support for TS iPASS industrial projects.',
       features: ['Industrial Project Surveys', 'Fast Track Approvals', 'Self Certification Support']
     }
   ];
 
   const whyChooseUs = [
     {
-      title: 'Licensed & Authorized',
-      desc: 'Fully licensed with Municipal, Grampanchayat, and TS iPASS approvals for comprehensive coverage.'
+      title: 'Survey & Documentation Support',
+      desc: 'Surveying, plans and documentation support for Municipal, Grampanchayat and TS iPASS applications.'
     },
     {
       title: 'Experienced Team',
@@ -131,16 +131,16 @@ export default function About() {
   return (
     <>
       <Helmet>
-        <title>About Hayagriva Associates | Licensed Land Survey Experts in Mancherial, Telangana</title>
+        <title>About Hayagriva Associates | Land Survey Experts in Mancherial, Telangana</title>
         <meta
           name="description"
-          content="Discover Hayagriva Associates, a licensed land surveying firm in Mancherial, Telangana delivering DGPS surveys, municipal approvals, DTCP layouts, TS iPASS support and end-to-end documentation."
+          content="Discover Hayagriva Associates, a land surveying firm in Mancherial, Telangana delivering DGPS surveys, municipal approvals, DTCP layouts, TS iPASS support and end-to-end documentation."
         />
         <meta
           name="keywords"
           content={createKeywords(
             'about Hayagriva Associates',
-            'licensed land surveyors Mancherial',
+            'land surveyors Mancherial',
             'DGPS survey experts Telangana',
             'Municipal and TS iPASS approvals',
             `professional surveying team ${defaultLocation}`
@@ -190,7 +190,7 @@ export default function About() {
                 </div>
                 <div className="flex flex-wrap gap-2">
                   <span className="px-3 py-1 rounded-full text-xs font-semibold bg-white/10 border border-white/20 text-white/90">Civil Engineer</span>
-                  <span className="px-3 py-1 rounded-full text-xs font-semibold bg-white/10 border border-white/20 text-white/90">Licensed Surveyor</span>
+                  <span className="px-3 py-1 rounded-full text-xs font-semibold bg-white/10 border border-white/20 text-white/90">Land Survey Team</span>
                   <span className="px-3 py-1 rounded-full text-xs font-semibold bg-white/10 border border-white/20 text-white/90">Approved Valuer</span>
                   <span className="px-3 py-1 rounded-full text-xs font-semibold bg-white/10 border border-white/20 text-white/90">IOV Registered Valuer</span>
                   <span className="px-3 py-1 rounded-full text-xs font-semibold bg-white/10 border border-white/20 text-white/90">Chartered Engineer</span>
@@ -323,9 +323,9 @@ export default function About() {
       <AnimatedSection className="py-16 sm:py-20 bg-slate-50">
         <div className="container-default">
           <div className="text-center mb-12">
-            <h2 className="text-3xl sm:text-4xl font-bold text-slate-900 mb-4">Our Permissions & Licenses</h2>
+            <h2 className="text-3xl sm:text-4xl font-bold text-slate-900 mb-4">Permission Documentation Support</h2>
             <p className="text-lg text-slate-600 max-w-2xl mx-auto">
-              We are fully authorized and licensed to provide land surveying services across multiple jurisdictions
+              We help prepare surveys and documentation for permission applications. Approval decisions rest with the relevant authorities.
             </p>
             <div className="w-20 h-1 bg-brand-primary mx-auto mt-4"></div>
           </div>
@@ -394,7 +394,7 @@ export default function About() {
               <Link to="/contact" className="inline-flex items-center justify-center gap-2 px-8 py-3 bg-white text-brand-primary rounded-lg font-semibold hover:bg-slate-100 transition-colors shadow-lg">
                 Get a Quote
               </Link>
-              <a href="tel:+910000000000" className="inline-flex items-center justify-center gap-2 px-8 py-3 bg-white/10 hover:bg-white/20 text-white rounded-lg font-semibold border-2 border-white/30 transition-colors">
+              <a href="tel:+919966139588" className="inline-flex items-center justify-center gap-2 px-8 py-3 bg-white/10 hover:bg-white/20 text-white rounded-lg font-semibold border-2 border-white/30 transition-colors">
                 Call Us Now
               </a>
             </div>

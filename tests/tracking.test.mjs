@@ -1,6 +1,8 @@
 import test from 'node:test';
 import assert from 'node:assert/strict';
+import { webcrypto, createHash } from 'node:crypto';
 import { createTracker } from '../src/analytics/tracker.js';
+import { normalizeEmail, normalizePhone } from '../src/analytics/enhancedConversions.js';
 
 const env = { VITE_GA4_MEASUREMENT_ID:'G-TEST12345', VITE_GOOGLE_ADS_ID:'AW-123456789', VITE_CLARITY_PROJECT_ID:'testclarity', VITE_GOOGLE_ADS_FORM_LABEL:'form_label', VITE_GOOGLE_ADS_WHATSAPP_LABEL:'wa_label', VITE_GOOGLE_ADS_CALL_LABEL:'call_label' };
 function fixture(overrides = {}) {
@@ -67,4 +69,63 @@ test('blocked browser storage does not break consent, tracking or attribution',(
 
 test('Clarity-only installations receive custom events without needing a GA4 property',()=>{
  const f=fixture({VITE_GA4_MEASUREMENT_ID:'',VITE_GOOGLE_ADS_ID:''});f.tracker.setConsent({analytics:true});f.tracker.trackLead('whatsapp');assert.equal(f.scripts.length,1);assert.deepEqual(f.browser.clarity.q.at(-1),['event','whatsapp_click']);
+});
+
+test('enhanced conversions normalize and hash identifiers only for consented accepted forms', async () => {
+ const f=fixture({VITE_GOOGLE_ADS_ENHANCED_CONVERSIONS:'true'});f.browser.crypto=webcrypto;
+ f.tracker.setConsent({analytics:true,ads:true});
+ await f.tracker.trackLead('form',{lead_id:'accepted-123'},{email:' Ravi.Teja@Gmail.com ',phone:'099661 39588',name:'Private Name'});
+ const userData=f.browser.dataLayer.find(e=>e[0]==='set' && e[1]==='user_data' && e[2]);
+ assert.deepEqual(userData[2],{
+   sha256_email_address:createHash('sha256').update('raviteja@gmail.com').digest('hex'),
+   sha256_phone_number:createHash('sha256').update('+919966139588').digest('hex'),
+ });
+ assert.deepEqual(Array.from(f.browser.dataLayer.at(-1)),['set','user_data',null]);
+ assert.equal(f.events().find(e=>e[1]==='generate_lead')[2].user_data,undefined);
+ assert.equal(JSON.stringify(f.browser.dataLayer).includes('Ravi.Teja'),false);
+ assert.equal(JSON.stringify(f.browser.dataLayer).includes('Private Name'),false);
+ const count=f.browser.dataLayer.filter(e=>e[1]==='user_data').length;
+ await f.tracker.trackLead('whatsapp',{}, {email:'private@example.test'});
+ assert.equal(f.browser.dataLayer.filter(e=>e[1]==='user_data').length,count);
+ assert.equal(normalizeEmail(' A.B@example.com '),'a.b@example.com');
+ assert.equal(normalizePhone('+44 7911 123456'),'+447911123456');
+ assert.equal(normalizePhone('1234'),'');
+});
+
+test('disabled enhanced conversions and analytics-only consent never hash contact details', async () => {
+ for (const settings of [{flag:'false',ads:true},{flag:'true',ads:false}]) {
+   const f=fixture({VITE_GOOGLE_ADS_ENHANCED_CONVERSIONS:settings.flag});
+   f.browser.crypto={subtle:{digest(){throw Error('Must not hash');}}};
+   f.tracker.setConsent({analytics:true,ads:settings.ads});
+   await f.tracker.trackLead('form',{}, {email:'private@example.test'});
+   assert.equal(f.browser.dataLayer.some(e=>e[1]==='user_data'),false);
+ }
+});
+
+test('revocation during hashing suppresses pending Ads conversion, including after re-consent', async () => {
+ const f=fixture({VITE_GOOGLE_ADS_ENHANCED_CONVERSIONS:'true'});
+ let finish;
+ f.browser.crypto={subtle:{digest:()=>new Promise(resolve=>{finish=resolve;})}};
+ f.tracker.setConsent({analytics:true,ads:true});
+ const pending=f.tracker.trackLead('form',{}, {email:'private@example.test'});
+ f.tracker.setConsent({analytics:true,ads:false});f.tracker.setConsent({analytics:true,ads:true});
+ finish(new Uint8Array(32).buffer);await pending;
+ assert.equal(f.events().some(e=>e[1]==='conversion'),false);
+ assert.equal(f.browser.dataLayer.some(e=>e[1]==='user_data'),false);
+});
+
+test('unavailable hashing retains ordinary accepted-form conversion measurement', async () => {
+ const f=fixture({VITE_GOOGLE_ADS_ENHANCED_CONVERSIONS:'true'});f.tracker.setConsent({ads:true});
+ await f.tracker.trackLead('form',{lead_id:'accepted'},{email:'private@example.test'});
+ assert.equal(f.events()[0][2].transaction_id,'accepted');
+ assert.equal(f.browser.dataLayer.some(e=>e[1]==='user_data'),false);
+});
+
+test('website call configuration is consent gated and restarted after revocation',()=>{
+ const f=fixture({VITE_GOOGLE_ADS_WEBSITE_CALL_LABEL:'website_call_label'});
+ const configs=()=>f.browser.dataLayer.filter(e=>e[0]==='config' && e[1]==='AW-123456789/website_call_label');
+ f.tracker.setConsent({analytics:true});assert.equal(configs().length,0);
+ f.tracker.setConsent({analytics:true,ads:true});assert.equal(configs().length,1);
+ f.tracker.setConsent({analytics:true,ads:true});assert.equal(configs().length,1);
+ f.tracker.setConsent({analytics:true,ads:false});f.tracker.setConsent({analytics:true,ads:true});assert.equal(configs().length,2);
 });
