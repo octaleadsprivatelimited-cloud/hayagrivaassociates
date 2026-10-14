@@ -276,12 +276,11 @@
  .survey-footer .survey-container { gap:12px; }
  .survey-footer .survey-container > p { padding-top:12px; }
  .survey-footer-links { gap:12px; overflow-wrap:anywhere; }
- .survey-mobile-cta { display:grid; grid-template-columns:1fr 1.15fr 1fr; position:fixed; bottom:0; left:0; right:0; z-index:50; background:#fff; border-top:1px solid #dce3d7; box-shadow:0 -3px 18px #102b2314; padding:8px 10px max(8px,env(safe-area-inset-bottom)); gap:6px; }
+ .survey-mobile-cta { display:grid; grid-template-columns:repeat(2,minmax(0,1fr)); position:fixed; bottom:0; left:0; right:0; z-index:50; background:#fff; border-top:1px solid #dce3d7; box-shadow:0 -3px 18px #102b2314; padding:8px 10px max(8px,env(safe-area-inset-bottom)); gap:6px; }
  .survey-mobile-cta > a { display:flex; align-items:center; justify-content:center; gap:5px; min-width:0; min-height:44px; font-size:11px; font-weight:600; border:0; border-radius:5px; padding:8px 5px; }
  .survey-mobile-cta svg { width:17px; height:17px; }
  .survey-mobile-cta .whatsapp-action > svg:last-child { display:none; }
  .contact-call { background:#155eef; color:white; }
- .contact-quote { background:#f4b740; color:#382500; }
  .cookie-consent { bottom:calc(68px + env(safe-area-inset-bottom)); left:10px; right:10px; padding:14px; gap:10px; }
  .cookie-actions { flex-shrink:1; }
 }

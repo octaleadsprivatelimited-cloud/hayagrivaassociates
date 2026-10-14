@@ -1,7 +1,7 @@
 import Reviews from '../../components/Reviews.jsx';
 import { Link } from 'react-router-dom';
 import { Helmet } from 'react-helmet-async';
-import { ArrowUpRightIcon, CheckIcon, MapPinIcon, PhoneIcon, DocumentTextIcon } from '@heroicons/react/24/outline';
+import { ArrowUpRightIcon, CheckIcon, MapPinIcon, PhoneIcon } from '@heroicons/react/24/outline';
 import WhatsAppIcon from '../../components/WhatsAppIcon.jsx';
 import ProcessSteps from '../../components/ProcessSteps.jsx';
 import ContactForm from '../../components/forms/ContactForm.jsx';
@@ -40,7 +40,7 @@ export default function LandSurveyingLanding() {
       </div></header>
       <div id="survey-main">
         <section className="survey-hero"><div className="survey-container survey-hero-grid">
-          <div className="survey-hero-copy"><p className="survey-eyebrow"><span /> LAND SURVEYING · MANCHERIAL, TELANGANA</p><h1>Know your land.<br /><span>Plan with confidence.</span></h1><p className="survey-hero-description">From your first boundary survey to your next building plan, get clear measurements, useful documentation and a team you can talk to.</p><div className="survey-hero-actions"><WhatsAppLink placement="landing_hero" /><a href="#quote" className="survey-button survey-button-outline">Request a quote <ArrowUpRightIcon aria-hidden="true" /></a></div><div className="survey-hero-notes"><span><CheckIcon aria-hidden="true" /> Survey & planning support</span><span><CheckIcon aria-hidden="true" /> Local Mancherial office</span></div></div>
+          <div className="survey-hero-copy"><p className="survey-eyebrow"><span /> LAND SURVEYING · MANCHERIAL, TELANGANA</p><h1>Know your land.<br /><span>Plan with confidence.</span></h1><p className="survey-hero-description">From your first boundary survey to your next building plan, get clear measurements, useful documentation and a team you can talk to.</p><div className="survey-hero-actions"><WhatsAppLink placement="landing_hero" /></div><div className="survey-hero-notes"><span><CheckIcon aria-hidden="true" /> Survey & planning support</span><span><CheckIcon aria-hidden="true" /> Local Mancherial office</span></div></div>
           <div className="survey-hero-visual"><img src="/images/Hero1.avif" width="600" height="369" fetchpriority="high" alt="Surveying instruments set up on a site" /><div className="survey-photo-label"><span>Every project starts<br />with a clear picture.</span><a href="#videos" aria-label="Watch surveying videos"><ArrowUpRightIcon aria-hidden="true" /></a></div><div className="survey-location"><MapPinIcon aria-hidden="true" /> Mancherial, Telangana</div></div>
         </div></section>
         <div className="survey-service-strip"><div className="survey-container"><span>Land surveys</span><span>Plot demarcation</span><span>Building plans</span><span>Permissions & approvals</span></div></div>
@@ -61,7 +61,7 @@ export default function LandSurveyingLanding() {
         <section className="survey-faq survey-section survey-container"><p className="survey-eyebrow">BEFORE WE BEGIN</p><h2>A few useful answers.</h2><div>{faqs.map((faq) => <details key={faq.question}><summary>{faq.question}<span aria-hidden="true">+</span></summary><p>{faq.answer}</p></details>)}</div></section>
       </div>
       <footer className="survey-footer"><div className="survey-container"><div><strong>Hayagriva Associates</strong><p>Land surveys. Thoughtful plans. Clear next steps.</p></div><div className="survey-footer-links"><Link to="/">Visit our website</Link><Link to="/privacy">Privacy</Link>{tracker.configured && <button onClick={() => window.dispatchEvent(new Event('hayagriva:cookie-settings'))}>Cookie choices</button>}<a href={`mailto:${site.email}`}>{site.email}</a></div><p>© {new Date().getFullYear()} Hayagriva Associates</p></div></footer>
-      <nav className="survey-mobile-cta" aria-label="Quick contact"><a className="contact-call" href={`tel:${site.phone}`} data-tracking-location="landing_mobile"><PhoneIcon aria-hidden="true" />Call us</a><WhatsAppLink placement="landing_mobile">WhatsApp</WhatsAppLink><a className="contact-quote" href="#quote"><DocumentTextIcon aria-hidden="true" />Get quote</a></nav>
+      <nav className="survey-mobile-cta" aria-label="Quick contact"><a className="contact-call" href={`tel:${site.phone}`} data-tracking-location="landing_mobile"><PhoneIcon aria-hidden="true" />Call us</a><WhatsAppLink placement="landing_mobile">WhatsApp</WhatsAppLink></nav>
     </div>
   );
 }
