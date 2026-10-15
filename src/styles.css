@@ -99,7 +99,7 @@
 .survey-nav { min-height:96px; display:flex; align-items:center; justify-content:space-between; gap:24px; }
 .survey-nav img { width:192px; height:auto; }
 .survey-nav nav { display:flex; gap:32px; font-size:14px; font-weight:500; }
-.survey-nav-contact { display:flex; gap:10px; align-items:center; padding:12px 16px; border:1px solid #25d366; border-radius:5px; font-size:14px; font-weight:600; background:#25d366; color:#073b25; }
+.survey-nav-contact { display:flex; gap:10px; align-items:center; padding:12px 16px; border:1px solid #155eef; border-radius:5px; font-size:14px; font-weight:600; background:#155eef; color:#fff; }
 .survey-nav a:hover, .survey-footer a:hover { text-decoration:underline; text-underline-offset:5px; }
 .survey-skip { position:absolute; left:16px; top:-100px; z-index:70; padding:12px; background:#fff; }
 .survey-skip:focus { top:12px; }
@@ -114,7 +114,14 @@
 .survey-hero-actions { display:flex; gap:12px; flex-wrap:wrap; margin-top:30px; }
 .survey-button { display:inline-flex; align-items:center; justify-content:center; gap:10px; padding:16px 18px; min-height:52px; font-size:13px; font-weight:600; border-radius:5px; transition:background .2s; }
 .survey-button-green { background:#25d366; color:#073b25; }
-.survey-button-green:hover, .survey-nav-contact:hover { background:#20c45c; }
+.survey-button-green:hover { background:#20c45c; }
+.survey-button-call { background:#155eef; color:#fff; }
+.survey-button-call:hover, .survey-nav-contact:hover { background:#124fd1; }
+.survey-call-panel { padding:32px; border:1px solid #dce3d7; background:#fafbf7; border-radius:6px; }
+.survey-call-panel h3 { font-size:23px; font-weight:500; }
+.survey-call-panel p { color:var(--muted); margin:16px 0; }
+.survey-call-icon { width:32px; height:32px; color:#155eef; margin-bottom:16px; }
+.survey-call-number { display:block; font-size:clamp(22px,4vw,32px); color:#155eef; font-weight:600; margin-top:20px; }
 .survey-button-outline { border:1px solid #e1a129; background:#f4b740; color:#382500; }
 .survey-button-outline:hover { background:#eaaa2f; }
 .survey-hero-notes { margin-top:24px; display:flex; flex-wrap:wrap; gap:18px; font-size:11px; color:var(--muted); }
@@ -224,7 +231,6 @@
  .survey-nav img { width:140px; }
  .survey-nav nav { display:none; }
  .survey-nav-contact { min-height:44px; padding:8px 10px; font-size:11px; gap:6px; }
- .survey-nav-contact > svg:last-child { display:none; }
  .survey-hero { padding:12px 0; }
  .survey-hero-grid { grid-template-columns:1fr; gap:14px; }
  .survey-eyebrow { font-size:9px; letter-spacing:1.1px; }
@@ -261,7 +267,7 @@
  .process-answer p { font-size:12px; }
  .survey-quote-copy > p:not(.survey-eyebrow) { font-size:13px; line-height:1.6; margin:12px 0; }
  .survey-contact-info { margin-top:12px; padding-top:12px; gap:8px; }
- .survey-form-panel { padding:16px; }
+ .survey-form-panel, .survey-call-panel { padding:16px; }
  .survey-form-panel > h3 { font-size:21px; }
  .survey-form-panel > p { margin:6px 0 12px; }
  .survey-form-panel form > :not([hidden]) ~ :not([hidden]) { margin-top:12px; }
@@ -276,7 +282,7 @@
  .survey-footer .survey-container { gap:12px; }
  .survey-footer .survey-container > p { padding-top:12px; }
  .survey-footer-links { gap:12px; overflow-wrap:anywhere; }
- .survey-mobile-cta { display:grid; grid-template-columns:repeat(2,minmax(0,1fr)); position:fixed; bottom:0; left:0; right:0; z-index:50; background:#fff; border-top:1px solid #dce3d7; box-shadow:0 -3px 18px #102b2314; padding:8px 10px max(8px,env(safe-area-inset-bottom)); gap:6px; }
+ .survey-mobile-cta { display:grid; grid-template-columns:minmax(0,1fr); position:fixed; bottom:0; left:0; right:0; z-index:50; background:#fff; border-top:1px solid #dce3d7; box-shadow:0 -3px 18px #102b2314; padding:8px 10px max(8px,env(safe-area-inset-bottom)); gap:6px; }
  .survey-mobile-cta > a { display:flex; align-items:center; justify-content:center; gap:5px; min-width:0; min-height:44px; font-size:11px; font-weight:600; border:0; border-radius:5px; padding:8px 5px; }
  .survey-mobile-cta svg { width:17px; height:17px; }
  .survey-mobile-cta .whatsapp-action > svg:last-child { display:none; }

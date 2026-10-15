@@ -1,3 +1,4 @@
+import CallNowLink from './CallNowLink.jsx';
 import { Link } from 'react-router-dom';
 import BackgroundMedia from './BackgroundMedia.jsx';
 
@@ -19,7 +20,7 @@ export default function Hero() {
             </h1>
             <p className="mt-4 text-white/90 text-base sm:text-lg">Accurate boundary surveys, plot demarcation, topographic & construction surveys with reliable reports.</p>
             <div className="mt-6 flex gap-3">
-              <Link to="/contact" className="rounded-lg px-5 py-2.5 bg-brand-primary hover:bg-brand-primary/90 text-white shadow transition-colors">Get a Quote</Link>
+              <CallNowLink className="rounded-lg px-5 py-2.5 bg-brand-primary hover:bg-brand-primary/90 text-white shadow transition-colors" placement="hero_cta_1" />
               <Link to="/about" className="rounded-lg px-5 py-2.5 bg-white/10 hover:bg-white/20 text-white border border-white/30 transition-colors">Know About Us</Link>
             </div>
           </div>

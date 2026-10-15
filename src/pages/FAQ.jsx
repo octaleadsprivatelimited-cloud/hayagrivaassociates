@@ -1,7 +1,7 @@
+import CallNowLink from '../components/CallNowLink.jsx';
 import { useState } from 'react';
 import { Helmet } from 'react-helmet-async';
 import VideoHero from '../components/VideoHero.jsx';
-import { Link } from 'react-router-dom';
 import { createKeywords, defaultLocation } from '../seo/config.js';
 
 const faqs = [
@@ -267,12 +267,7 @@ export default function FAQ() {
               Contact us today and we'll get back to you as soon as possible.
             </p>
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
-              <Link
-                to="/contact"
-                className="inline-flex items-center justify-center gap-2 px-8 py-3 bg-brand-primary text-white rounded-lg font-semibold hover:bg-brand-primary/90 transition-colors shadow-lg hover:shadow-xl"
-              >
-                Contact Us
-              </Link>
+              <CallNowLink className="inline-flex items-center justify-center gap-2 px-8 py-3 bg-brand-primary text-white rounded-lg font-semibold hover:bg-brand-primary/90 transition-colors shadow-lg hover:shadow-xl" placement="faq_cta_1" />
               <div className="flex flex-col gap-2">
                 <a
                   href="tel:+919966139588"

@@ -1,3 +1,4 @@
+import CallNowLink from '../components/CallNowLink.jsx';
 import Reviews from '../components/Reviews.jsx';
 import { businessSchema } from '../config/site.js';
 import { Helmet } from 'react-helmet-async';
@@ -200,7 +201,7 @@ export default function Home() {
                   <li className="flex items-start gap-2"><span className="text-brand-primary">✔</span><span>Legal-ready documentation as required</span></li>
                 </ul>
                 <div className="mt-6 flex flex-wrap gap-3">
-                  <Link to="/contact" className="rounded-lg px-5 py-2.5 bg-brand-primary text-white font-semibold hover:bg-brand-primary/90 transition-colors">Let's Talk</Link>
+                  <CallNowLink className="rounded-lg px-5 py-2.5 bg-brand-primary text-white font-semibold hover:bg-brand-primary/90 transition-colors" placement="home_cta_1" />
                   <Link to="/about" className="rounded-lg px-5 py-2.5 border-2 border-brand-primary/30 text-brand-primary font-semibold hover:border-brand-primary/60 transition-colors">Know About Us</Link>
                 </div>
               </div>
@@ -293,8 +294,7 @@ export default function Home() {
                 <p className="text-white/90 text-lg">Call us: +91 9966139588, +91 91778 87049 or request a quote now.</p>
               </div>
               <div className="flex gap-3 flex-shrink-0">
-                <a href="tel:+919966139588" className="bg-white/10 hover:bg-white/20 backdrop-blur px-6 py-3 rounded-lg text-white font-semibold transition-colors border border-white/20">Call Now</a>
-                <Link to="/contact" className="bg-white text-brand-primary px-6 py-3 rounded-lg font-semibold hover:bg-slate-100 transition-colors">Request Quote</Link>
+                <CallNowLink className="bg-white text-brand-primary px-6 py-3 rounded-lg font-semibold hover:bg-slate-100 transition-colors" placement="home_cta_2" />
               </div>
             </div>
           </div>

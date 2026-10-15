@@ -1,5 +1,5 @@
+import CallNowLink from '../components/CallNowLink.jsx';
 import { Helmet } from 'react-helmet-async';
-import { Link } from 'react-router-dom';
 import { motion } from 'framer-motion';
 import {
   BuildingOffice2Icon,
@@ -214,13 +214,7 @@ export default function About() {
                   </div>
                 </div>
                 <div className="pt-4">
-                  <Link
-                    to="/contact"
-                    className="inline-flex items-center gap-2 px-6 py-3 bg-brand-primary hover:bg-brand-primary/90 text-white font-semibold rounded-lg transition-colors"
-                  >
-                    Consult with Arun Kumar
-                    <span>→</span>
-                  </Link>
+                  <CallNowLink className="inline-flex items-center gap-2 px-6 py-3 bg-brand-primary hover:bg-brand-primary/90 text-white font-semibold rounded-lg transition-colors" placement="about_cta_1" />
                 </div>
               </motion.div>
             </AnimatedContainer>
@@ -391,12 +385,7 @@ export default function About() {
               Contact us today for accurate, professional land surveying services. We'll assess your needs and provide a detailed quote.
             </p>
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
-              <Link to="/contact" className="inline-flex items-center justify-center gap-2 px-8 py-3 bg-white text-brand-primary rounded-lg font-semibold hover:bg-slate-100 transition-colors shadow-lg">
-                Get a Quote
-              </Link>
-              <a href="tel:+919966139588" className="inline-flex items-center justify-center gap-2 px-8 py-3 bg-white/10 hover:bg-white/20 text-white rounded-lg font-semibold border-2 border-white/30 transition-colors">
-                Call Us Now
-              </a>
+              <CallNowLink className="inline-flex items-center justify-center gap-2 px-8 py-3 bg-white text-brand-primary rounded-lg font-semibold hover:bg-slate-100 transition-colors shadow-lg" placement="about_cta_2" />
             </div>
           </div>
         </div>

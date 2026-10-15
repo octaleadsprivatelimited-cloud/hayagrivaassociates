@@ -1,5 +1,6 @@
 import { Helmet } from 'react-helmet-async';
-import ContactForm from '../components/forms/ContactForm.jsx';
+import CallNowLink from '../components/CallNowLink.jsx';
+import { site } from '../config/site.js';
 import VideoHero from '../components/VideoHero.jsx';
 import { createKeywords, defaultLocation } from '../seo/config.js';
 
@@ -54,7 +55,7 @@ export default function Contact() {
         <title>Contact Hayagriva Associates | Land Surveyors in Mancherial, Telangana</title>
         <meta
           name="description"
-          content="Reach Hayagriva Associates for boundary surveys, DGPS mapping, plot demarcation and construction layouts across Mancherial, Telangana. Request a quote or schedule a site survey today."
+          content="Reach Hayagriva Associates for boundary surveys, DGPS mapping, plot demarcation and construction layouts across Mancherial, Telangana. Call our Mancherial team to discuss your project today."
         />
         <meta
           name="keywords"
@@ -77,7 +78,7 @@ export default function Contact() {
             </h1>
             <p className="text-base sm:text-lg text-white/90 leading-relaxed">
               Have questions about our land surveying services? We're here to help. 
-              Contact us today for a consultation or to request a quote.
+              Call our team today to discuss your site and the service you need.
             </p>
             </div>
           </div>
@@ -113,22 +114,25 @@ export default function Contact() {
         </div>
       </section>
 
-      {/* Contact Form and Map Section */}
+      {/* Call and Map Section */}
       <section className="py-16 sm:py-20 bg-slate-50">
         <div className="container-default">
           <div className="text-center mb-12">
-            <h2 className="text-3xl sm:text-4xl font-bold text-slate-900 mb-4">Send Us a Message</h2>
+            <h2 className="text-3xl sm:text-4xl font-bold text-slate-900 mb-4">Speak Directly with Our Team</h2>
             <p className="text-lg text-slate-600 max-w-2xl mx-auto">
-              Fill out the form below and we'll get back to you as soon as possible
+              Call our Mancherial office for surveying, plans and permission support.
             </p>
             <div className="w-20 h-1 bg-brand-primary mx-auto mt-4"></div>
           </div>
 
           <div className="grid lg:grid-cols-2 gap-8 max-w-6xl mx-auto">
-            {/* Contact Form */}
+            {/* Direct phone contact */}
             <div className="bg-white rounded-2xl p-8 shadow-lg border-2 border-slate-200">
-              <h3 className="text-2xl font-bold text-slate-900 mb-6">Request a Quote</h3>
-              <ContactForm />
+              <h3 className="text-2xl font-bold text-slate-900 mb-6">Call Our Mancherial Office</h3>
+              <a href={`tel:${site.phone}`} data-tracking-location="contact_number" className="block text-2xl font-semibold text-brand-primary mb-4">{site.phoneDisplay}</a>
+              <p className="text-slate-600 mb-4">Monday–Saturday, 9 AM–6 PM. Sunday closed.</p>
+              <p className="text-slate-600 mb-6">Tell our team your site location, approximate area and requirements during the call.</p>
+              <CallNowLink placement="contact_primary" className="rounded-lg bg-brand-primary px-6 py-3 font-semibold text-white hover:bg-brand-primary/90" />
             </div>
 
             {/* Office Information & Map */}

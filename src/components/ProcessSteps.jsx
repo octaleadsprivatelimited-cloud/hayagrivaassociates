@@ -2,7 +2,7 @@ import { useEffect, useId, useRef, useState } from 'react';
 import { ChevronDownIcon, PauseIcon, PlayIcon } from '@heroicons/react/24/outline';
 
 const steps = [
-  ['Tell us about your site', 'Send the location, approximate area and your requirement on WhatsApp or through the form.'],
+  ['Tell us about your site', 'Call our Mancherial team to discuss the location, approximate area and your requirement.'],
   ['Agree on the scope', 'We review your details, discuss the documents and confirm the quote and site visit schedule.'],
   ['Get your next step clear', 'Receive the measurements, drawings or documentation agreed for your project.'],
 ];

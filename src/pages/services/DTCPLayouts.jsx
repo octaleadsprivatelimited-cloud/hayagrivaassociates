@@ -1,5 +1,5 @@
+import CallNowLink from '../../components/CallNowLink.jsx';
 import { Helmet } from 'react-helmet-async';
-import { Link } from 'react-router-dom';
 import { motion } from 'framer-motion';
 import { useInView } from 'framer-motion';
 import { useRef } from 'react';
@@ -155,12 +155,7 @@ export default function DTCPLayouts() {
                 Layouts prepared as per DTCP norms and approvals
               </p>
               <div className="flex flex-wrap gap-4">
-                <Link to="/contact" className="px-8 py-4 bg-brand-primary hover:bg-brand-primary/90 text-white rounded-lg font-semibold shadow-xl hover:shadow-2xl transition-all">
-                  Get a Quote
-                </Link>
-                <a href="tel:+919966139588" className="px-8 py-4 bg-white/10 hover:bg-white/20 backdrop-blur-sm text-white rounded-lg font-semibold border-2 border-white/30 transition-all">
-                  Call Now
-                </a>
+                <CallNowLink className="px-8 py-4 bg-brand-primary hover:bg-brand-primary/90 text-white rounded-lg font-semibold shadow-xl hover:shadow-2xl transition-all" placement="dtcplayouts_cta_1" />
               </div>
             </div>
           </div>
@@ -292,12 +287,7 @@ export default function DTCPLayouts() {
               Get DTCP-compliant layouts with professional approval assistance. Contact us today.
             </p>
             <div className="flex flex-col sm:flex-row gap-6 justify-center">
-              <Link to="/contact" className="px-10 py-4 bg-white text-brand-primary rounded-lg font-semibold hover:bg-slate-100 transition-all shadow-xl hover:shadow-2xl text-lg">
-                Request a Quote
-              </Link>
-              <a href="tel:+919966139588" className="px-10 py-4 bg-white/10 hover:bg-white/20 backdrop-blur-sm text-white rounded-lg font-semibold border-2 border-white/30 transition-all text-lg">
-                Call +91 9966139588
-              </a>
+              <CallNowLink className="px-10 py-4 bg-white text-brand-primary rounded-lg font-semibold hover:bg-slate-100 transition-all shadow-xl hover:shadow-2xl text-lg" placement="dtcplayouts_cta_2" />
             </div>
           </div>
         </div>

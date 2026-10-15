@@ -126,7 +126,7 @@ export default function Footer() {
             <li><Link to="/portfolio" className="hover:underline">Portfolio</Link></li>
             <li><Link to="/faq" className="hover:underline">FAQ</Link></li>
             <li><Link to="/contact" className="hover:underline">Contact</Link></li>
-            <li><Link to="/land-surveying" className="hover:underline">Request a survey quote</Link></li>
+            <li><a href="tel:+919966139588" data-tracking-location="footer_cta" className="hover:underline">Call Now</a></li>
             <li><Link to="/privacy" className="hover:underline">Privacy</Link></li>
             {tracker.configured && <li><button onClick={() => window.dispatchEvent(new Event('hayagriva:cookie-settings'))} className="hover:underline">Cookie choices</button></li>}
           </ul>

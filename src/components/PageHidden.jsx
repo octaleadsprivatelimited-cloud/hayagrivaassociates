@@ -1,3 +1,4 @@
+import CallNowLink from './CallNowLink.jsx';
 import { Link } from 'react-router-dom';
 
 export default function PageHidden({ title = 'This page' }) {
@@ -22,12 +23,7 @@ export default function PageHidden({ title = 'This page' }) {
             >
               Go to Home
             </Link>
-            <Link
-              to="/contact"
-              className="inline-flex items-center justify-center gap-2 px-8 py-3 border-2 border-brand-primary text-brand-primary rounded-lg font-semibold hover:bg-brand-primary/5 transition-colors"
-            >
-              Contact Us
-            </Link>
+            <CallNowLink className="inline-flex items-center justify-center gap-2 px-8 py-3 border-2 border-brand-primary text-brand-primary rounded-lg font-semibold hover:bg-brand-primary/5 transition-colors" placement="pagehidden_cta_1" />
           </div>
         </div>
       </div>

@@ -1,5 +1,5 @@
+import CallNowLink from '../../components/CallNowLink.jsx';
 import { Helmet } from 'react-helmet-async';
-import { Link } from 'react-router-dom';
 import { motion } from 'framer-motion';
 import { useRef } from 'react';
 import { useInView } from 'framer-motion';
@@ -154,15 +154,7 @@ export default function RoadSurvey() {
                 Alignment, profiles, and ROW data you can trust for every stage of road development.
               </p>
               <div className="flex flex-wrap gap-4">
-                <Link to="/contact" className="px-8 py-4 bg-brand-primary hover:bg-brand-primary/90 text-white rounded-lg font-semibold shadow-xl hover:shadow-2xl transition-all">
-                  Get a Quote
-                </Link>
-                <a
-                  href="tel:+919966139588"
-                  className="px-8 py-4 bg-white/10 hover:bg-white/20 backdrop-blur-sm text-white rounded-lg font-semibold border-2 border-white/30 transition-all"
-                >
-                  Call Now
-                </a>
+                <CallNowLink className="px-8 py-4 bg-brand-primary hover:bg-brand-primary/90 text-white rounded-lg font-semibold shadow-xl hover:shadow-2xl transition-all" placement="roadsurvey_cta_1" />
               </div>
             </div>
           </div>
@@ -299,18 +291,7 @@ export default function RoadSurvey() {
               From feasibility to execution, we partner with infrastructure teams to deliver reliable survey data, clear documentation, and responsive support.
             </p>
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
-              <Link
-                to="/contact"
-                className="inline-flex items-center justify-center gap-2 px-8 py-3 bg-brand-primary text-white rounded-lg font-semibold hover:bg-brand-primary/90 transition-colors shadow-lg hover:shadow-xl"
-              >
-                Book a Consultation
-              </Link>
-              <a
-                href="tel:+919966139588"
-                className="inline-flex items-center justify-center gap-2 px-8 py-3 bg-white border-2 border-brand-primary text-brand-primary rounded-lg font-semibold hover:bg-brand-primary/5 transition-colors"
-              >
-                Call Us
-              </a>
+              <CallNowLink className="inline-flex items-center justify-center gap-2 px-8 py-3 bg-brand-primary text-white rounded-lg font-semibold hover:bg-brand-primary/90 transition-colors shadow-lg hover:shadow-xl" placement="roadsurvey_cta_2" />
             </div>
           </div>
         </div>

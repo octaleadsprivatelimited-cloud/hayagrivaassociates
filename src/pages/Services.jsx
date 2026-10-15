@@ -1,3 +1,4 @@
+import CallNowLink from '../components/CallNowLink.jsx';
 import { Helmet } from 'react-helmet-async';
 import { Link } from 'react-router-dom';
 import VideoHero from '../components/VideoHero.jsx';
@@ -352,12 +353,7 @@ export default function Services() {
             <p className="text-slate-600 mb-6">
               Contact us today and we'll help you determine the right surveying service for your project.
             </p>
-            <Link
-              to="/contact"
-              className="inline-flex items-center gap-2 px-8 py-3 bg-brand-primary text-white rounded-lg font-semibold hover:bg-brand-primary/90 transition-colors shadow-lg hover:shadow-xl"
-            >
-              Get in Touch
-            </Link>
+            <CallNowLink className="inline-flex items-center gap-2 px-8 py-3 bg-brand-primary text-white rounded-lg font-semibold hover:bg-brand-primary/90 transition-colors shadow-lg hover:shadow-xl" placement="services_cta_1" />
           </div>
         </div>
       </section>
